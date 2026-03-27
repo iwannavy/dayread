@@ -1,0 +1,11 @@
+# The IPO Race in AI
+> Source: Distill Premium | Date: March 13, 2026
+> Note: Original premium lesson synthesized from internal reference pack
+
+The race to dominate artificial intelligence has become so expensive that the next major battle may be fought in public markets as much as in laboratories. OpenAI, Anthropic, and the xAI-SpaceX combination all need staggering amounts of capital to build data centers, train models, and serve growing demand. That financing pressure has turned three bitter rivals into potential mega-IPO candidates at almost the same moment.
+
+The contest is not only financial, because each company is also selling a different story about what leadership in AI should look like. OpenAI presents itself as the broad commercial platform, Anthropic leans on safety and enterprise discipline, and Elon Musk frames xAI as part of a far larger mission. Their bosses also bring personal rivalry into every negotiation, which makes contracts, public statements, and fundraising rounds feel like moves in a long political game. When companies need cash, status, and strategic advantage at the same time, even ordinary business decisions start to look theatrical.
+
+Those tensions are sharpest where business opportunity overlaps with government power. Recent fights over defense work and regulatory positioning show that technical competition is now entangled with lobbying, reputation, and access to the state. At the same time, none of the firms is close to comfortable self-financing, because revenue is rising quickly while infrastructure spending is rising even faster. That imbalance helps explain why public listing looks attractive even at enormous valuations and uncertain profit timelines.
+
+If several giant offerings arrive together, markets may have to absorb a fundraising wave that would normally be spread across many years. Investors are being asked to believe not only that demand for AI will stay intense, but also that today's leaders can defend their place while prices fall and competition hardens. Alphabet sits quietly in the background as a reminder that existing profits can fund AI ambition without the same dramatic appeal to outside investors. In that sense, the IPO race looks less like a victory lap than a public search for time, money, and strategic breathing room in an industry that keeps getting more expensive.

@@ -1,0 +1,86 @@
+{
+  "identifier" : "59728B8E-3ADC-42A2-9927-5CB9FE630D54",
+  "type" : "com.apple.storekit.testing",
+  "version" : 3,
+  "localizations" : [],
+  "settings" : {
+    "_applicationInternalID" : "",
+    "_developerTeamID" : "358S53JSMU",
+    "_failTransactionsEnabled" : false,
+    "_lastVerificationError" : "",
+    "_locale" : "ko_KR",
+    "_storefront" : "KOR",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "cycleCount"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "69EA2E95-A031-419C-9BCA-02AC62738898",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "프리미엄",
+          "locale" : "ko"
+        }
+      ],
+      "name" : "Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "7900",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "99AFEFC8-CB86-4AF5-AF71-91F48BCEA0AE",
+          "introductoryOffer" : {
+            "internalID" : "AFE5751B-77B2-4F2A-932F-10EDD214ACAF",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "매달 자동 결제되는 프리미엄 구독",
+              "displayName" : "월간 프리미엄",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dayread.app.premium.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Premium",
+          "subscriptionGroupID" : "69EA2E95-A031-419C-9BCA-02AC62738898",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "59900",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "C68B987E-1A09-4E4E-8A84-9AA6B613BB63",
+          "introductoryOffer" : {
+            "internalID" : "748886A8-5C76-4435-AEDA-CA8ECBCF9439",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "연간 결제로 37% 할인되는 프리미엄 구독",
+              "displayName" : "연간 프리미엄",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.dayread.app.premium.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Annual Premium",
+          "subscriptionGroupID" : "69EA2E95-A031-419C-9BCA-02AC62738898",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ]
+}
