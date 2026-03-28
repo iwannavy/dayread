@@ -8,8 +8,7 @@ struct ImmersiveView: View {
     let onStudied: (Int) -> Void
 
     @State private var sentenceIndex: Int
-    @State private var swipeOffset: CGFloat = 0
-    @State private var swipeTriggered = false
+    @State private var scrolledID: Int?
     private let hapticLight = UIImpactFeedbackGenerator(style: .light)
     private let hapticMedium = UIImpactFeedbackGenerator(style: .medium)
 
@@ -23,107 +22,195 @@ struct ImmersiveView: View {
         self.onSentenceChange = onSentenceChange
         self.onStudied = onStudied
         _sentenceIndex = State(initialValue: initialIndex)
+        _scrolledID = State(initialValue: initialIndex)
     }
-
-    private var sentence: AnalyzedSentence? { sentences[safe: sentenceIndex] }
-    private var isLastSentence: Bool { sentenceIndex == sentences.count - 1 }
 
     var body: some View {
-        ScrollViewReader { proxy in
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                // Previous sentences (faded context)
-                previousSentences
-                    .id("immersiveTop")
-
-                if let sentence {
-                    // Counter
-                    Text("\(sentenceIndex + 1) / \(sentences.count)")
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
-                        .monospacedDigit()
-                        .padding(.bottom, StudyLayout.spacingSM)
-                        .accessibilityLabel("문장 \(sentenceIndex + 1)/\(sentences.count)")
-
-                    // English sentence
-                    Text(sentence.original)
-                        .studySentenceStyle()
-                        .foregroundStyle(.primary)
-                        .padding(.bottom, StudyLayout.spacingBase)
-                        .accessibilityLabel("영어 문장: \(sentence.original)")
-
-                    // Korean translation
-                    Text(sentence.translation)
-                        .studyTranslationStyle()
-                        .padding(.bottom, StudyLayout.spacingLG)
-                        .accessibilityLabel("번역: \(sentence.translation)")
-
-                    // Phrase translation
-                    if let alignment = sentence.koreanAlignment, !alignment.isEmpty {
-                        phraseSection(alignment)
-                            .padding(.bottom, StudyLayout.spacingLG)
-                    }
-
-                    // Key vocabulary
-                    if !sentence.vocabulary.isEmpty {
-                        vocabularySection(sentence.vocabulary)
-                            .padding(.bottom, StudyLayout.spacingBase)
-                    }
-
-                    // Expressions
-                    if !sentence.expressions.isEmpty {
-                        expressionsSection(sentence.expressions)
-                            .padding(.bottom, StudyLayout.spacingBase)
-                    }
-
-                    // Compact grammar summary
-                    GrammarVizView(
-                        elements: sentence.grammarElements,
-                        translation: sentence.translation,
-                        original: sentence.original,
-                        hideOriginal: true,
-                        allActive: true,
-                        compact: true
-                    )
-                    .padding(StudyLayout.cardPadding)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: StudyLayout.cornerRadiusMD))
-                    .padding(.bottom, StudyLayout.spacingXL)
-
-                    // Swipe-up navigation zone
-                    swipeUpZone
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack(spacing: 0) {
+                ForEach(Array(sentences.enumerated()), id: \.offset) { idx, sentence in
+                    sentenceCard(sentence, index: idx)
+                        .containerRelativeFrame(.vertical)
+                        .id(idx)
                 }
+
+                // Completion card after last sentence
+                completionCard
+                    .containerRelativeFrame(.vertical)
+                    .id(sentences.count)
             }
-            .padding(.horizontal, StudyLayout.pageHorizontal)
-            .padding(.top, StudyLayout.spacingBase)
-            .padding(.bottom, StudyLayout.spacingXXL)
+            .scrollTargetLayout()
         }
-        .onChange(of: sentenceIndex) { _, _ in
-            swipeOffset = 0
-            swipeTriggered = false
-            withAnimation(.easeOut(duration: 0.3)) {
-                proxy.scrollTo("immersiveTop", anchor: .top)
-            }
-        }
+        .scrollTargetBehavior(.viewAligned)
+        .scrollPosition(id: $scrolledID)
+        .onChange(of: scrolledID) { _, newID in
+            handleCardChange(newID)
         }
     }
 
-    // MARK: - Previous Sentences
+    // MARK: - Sentence Card
 
     @ViewBuilder
-    private var previousSentences: some View {
-        let prevSlice = Array(sentences.prefix(sentenceIndex).suffix(3))
-        if !prevSlice.isEmpty {
-            let groups = groupByParagraph(prevSlice)
-            VStack(alignment: .leading, spacing: 4) {
-                ForEach(Array(groups.enumerated()), id: \.offset) { gi, group in
-                    Text(group.texts.joined(separator: " "))
-                        .studyContextStyle()
-                        .opacity(0.35 + Double(gi) / max(Double(groups.count), 1) * 0.3)
+    private func sentenceCard(_ sentence: AnalyzedSentence, index: Int) -> some View {
+        ZStack(alignment: .bottom) {
+            // Card content
+            VStack(alignment: .leading, spacing: 0) {
+                // Counter
+                Text("\(index + 1) / \(sentences.count)")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .monospacedDigit()
+                    .padding(.bottom, StudyLayout.spacingSM)
+                    .accessibilityLabel("문장 \(index + 1)/\(sentences.count)")
+
+                // English sentence
+                Text(sentence.original)
+                    .studySentenceStyle()
+                    .foregroundStyle(.primary)
+                    .padding(.bottom, StudyLayout.spacingBase)
+                    .accessibilityLabel("영어 문장: \(sentence.original)")
+
+                // Korean translation
+                Text(sentence.translation)
+                    .studyTranslationStyle()
+                    .padding(.bottom, StudyLayout.spacingLG)
+                    .accessibilityLabel("번역: \(sentence.translation)")
+
+                // Phrase translation
+                if let alignment = sentence.koreanAlignment, !alignment.isEmpty {
+                    phraseSection(alignment)
+                        .padding(.bottom, StudyLayout.spacingLG)
                 }
+
+                // Key vocabulary
+                if !sentence.vocabulary.isEmpty {
+                    vocabularySection(sentence.vocabulary)
+                        .padding(.bottom, StudyLayout.spacingBase)
+                }
+
+                // Expressions
+                if !sentence.expressions.isEmpty {
+                    expressionsSection(sentence.expressions)
+                        .padding(.bottom, StudyLayout.spacingBase)
+                }
+
+                // Compact grammar summary
+                GrammarVizView(
+                    elements: sentence.grammarElements,
+                    translation: sentence.translation,
+                    original: sentence.original,
+                    hideOriginal: true,
+                    allActive: true,
+                    compact: true
+                )
+                .padding(StudyLayout.cardPadding)
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: StudyLayout.cornerRadiusMD))
+
+                Spacer(minLength: 0)
             }
-            .padding(.bottom, StudyLayout.spacingMD)
+            .padding(.horizontal, StudyLayout.immersiveHorizontal)
+            .padding(.top, StudyLayout.spacingBase)
+            .padding(.bottom, 60) // Room for fade + indicator
+
+            // Bottom fade gradient
+            LinearGradient(
+                colors: [.clear, Color(.systemBackground)],
+                startPoint: UnitPoint(x: 0.5, y: 0.7),
+                endPoint: .bottom
+            )
+            .frame(height: 60)
+            .allowsHitTesting(false)
+
+            // Card indicator
+            cardIndicator(index: index)
         }
+        .clipped()
+    }
+
+    // MARK: - Completion Card
+
+    private var completionCard: some View {
+        VStack(spacing: 12) {
+            Spacer()
+
+            Image(systemName: "checkmark.circle.fill")
+                .font(.system(size: 40))
+                .foregroundStyle(.green)
+
+            Text("Immersive 학습 완료!")
+                .font(.title3.weight(.medium))
+
+            Text("Focus 단계로 이동합니다")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .onAppear {
+            hapticMedium.impactOccurred()
+            if let s = sentences.last { onStudied(s.id) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                onAdvanceMode()
+            }
+        }
+    }
+
+    // MARK: - Card Indicator
+
+    private func cardIndicator(index: Int) -> some View {
+        HStack {
+            Text("\(index + 1) / \(sentences.count)")
+                .font(.caption2)
+                .monospacedDigit()
+                .foregroundStyle(.tertiary)
+
+            Spacer()
+
+            if index < sentences.count - 1 {
+                HStack(spacing: 4) {
+                    Text("다음")
+                        .font(.caption2)
+                    Image(systemName: "chevron.up")
+                        .font(.caption2)
+                }
+                .foregroundStyle(.tertiary)
+            } else {
+                HStack(spacing: 4) {
+                    Text("완료")
+                        .font(.caption2)
+                    Image(systemName: "chevron.up")
+                        .font(.caption2)
+                }
+                .foregroundStyle(Color.dayreadGold)
+            }
+        }
+        .padding(.horizontal, StudyLayout.immersiveHorizontal)
+        .padding(.bottom, StudyLayout.spacingSM)
+    }
+
+    // MARK: - Card Change Handler
+
+    private func handleCardChange(_ newID: Int?) {
+        guard let newID, newID != sentenceIndex else { return }
+        let oldIndex = sentenceIndex
+
+        // Mark previous sentence as studied when advancing
+        if newID > oldIndex, let s = sentences[safe: oldIndex] {
+            onStudied(s.id)
+        }
+
+        hapticLight.impactOccurred()
+
+        // Completion card reached
+        if newID >= sentences.count {
+            sentenceIndex = sentences.count - 1
+            return
+        }
+
+        sentenceIndex = newID
+        onSentenceChange(newID)
     }
 
     // MARK: - Phrase Translation
@@ -201,108 +288,6 @@ struct ImmersiveView: View {
                 }
             }
         }
-    }
-
-    // MARK: - Swipe-Up Navigation Zone
-
-    private var swipeUpZone: some View {
-        VStack(spacing: StudyLayout.spacingSM) {
-            Text("\(sentenceIndex + 1) / \(sentences.count)")
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
-                .monospacedDigit()
-
-            if isLastSentence {
-                Text("Immersive 학습 완료!")
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundStyle(.green)
-                Text("다음은 Focus에서 심층 분석합니다")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
-            }
-
-            // Swipe indicator with live feedback
-            VStack(spacing: 4) {
-                Image(systemName: "chevron.compact.up")
-                    .font(.title2)
-                    .foregroundColor(swipeTriggered ? Color.dayreadGold : Color.gray.opacity(0.4))
-                    .scaleEffect(1 + min(0.3, abs(swipeOffset) / 200))
-                    .offset(y: swipeOffset * 0.3)
-
-                Text(isLastSentence ? "스와이프하여 Focus 단계로" : "스와이프하여 다음 문장")
-                    .font(.caption2)
-                    .foregroundColor(swipeTriggered ? Color.dayreadGold : Color.gray.opacity(0.3))
-                    .accessibilityHint(isLastSentence ? "위로 스와이프하여 Focus 단계로 이동" : "위로 스와이프하여 다음 문장으로 이동")
-            }
-            .padding(.top, StudyLayout.spacingSM)
-        }
-        .frame(maxWidth: .infinity)
-        .frame(minHeight: 100)
-        .contentShape(Rectangle())
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 10, coordinateSpace: .local)
-                .onChanged { value in
-                    let dy = value.translation.height
-                    guard dy < 0 else {
-                        swipeOffset = 0
-                        swipeTriggered = false
-                        return
-                    }
-                    // Dampened rubber-band offset
-                    swipeOffset = dy * 0.4
-                    let newTriggered = dy < -50
-                    if newTriggered && !swipeTriggered {
-                        hapticLight.impactOccurred()
-                    }
-                    swipeTriggered = newTriggered
-                }
-                .onEnded { value in
-                    let dy = value.translation.height
-                    let vy = value.velocity.height
-                    let predicted = value.predictedEndTranslation.height
-
-                    if swipeTriggered || (dy < -30 && vy < -400) || predicted < -80 {
-                        hapticMedium.impactOccurred()
-                        if isLastSentence {
-                            if let s = sentence { onStudied(s.id) }
-                            onAdvanceMode()
-                        } else {
-                            goToNextSentence()
-                        }
-                    }
-
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                        swipeOffset = 0
-                        swipeTriggered = false
-                    }
-                }
-        )
-        .padding(.bottom, StudyLayout.spacingXXL)
-    }
-
-    // MARK: - Actions
-
-    private func goToNextSentence() {
-        if let s = sentence { onStudied(s.id) }
-        let nextIdx = sentenceIndex + 1
-        sentenceIndex = nextIdx
-        onSentenceChange(nextIdx)
-    }
-
-    // MARK: - Helpers
-
-    private func groupByParagraph(_ slice: [AnalyzedSentence]) -> [(pIdx: Int, texts: [String])] {
-        var groups: [(pIdx: Int, texts: [String])] = []
-        for s in slice {
-            let pIdx = s.paragraphIndex
-            if let last = groups.last, last.pIdx == pIdx {
-                groups[groups.count - 1].texts.append(s.original)
-            } else {
-                groups.append((pIdx: pIdx, texts: [s.original]))
-            }
-        }
-        return groups
     }
 }
 

@@ -15,6 +15,9 @@ enum StudyLayout {
     // Horizontal page margins (consistent across all study views)
     static let pageHorizontal: CGFloat = 24
 
+    // Immersive card — tighter margins for card-based paging
+    static let immersiveHorizontal: CGFloat = 16
+
     // Card internal padding
     static let cardPadding: CGFloat = 16
     static let cardPaddingLarge: CGFloat = 24
