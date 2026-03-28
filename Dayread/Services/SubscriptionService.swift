@@ -49,6 +49,7 @@ final class SubscriptionService {
             monthlyPackage = current?.monthly
             annualPackage = current?.annual
         } catch {
+            AnalyticsService.captureError(error, context: "fetchOfferings")
             self.error = "상품 정보를 불러올 수 없습니다."
         }
     }

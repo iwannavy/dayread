@@ -128,6 +128,8 @@ struct GrammarVizView: View {
                         : Color.grammarBgColor(for: el.role)
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 8))
+                .accessibilityLabel("\(el.role.labelKo): \(el.text.trimmingCharacters(in: .whitespaces))")
+                .accessibilityHint("탭하여 문장에서 강조 표시")
                 .onTapGesture {
                     if !allActive {
                         withAnimation(.easeInOut(duration: 0.2)) {
@@ -138,6 +140,8 @@ struct GrammarVizView: View {
                 }
             }
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("문법 구조 분석")
     }
 
     // MARK: - Rhetorical Device

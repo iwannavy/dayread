@@ -28,6 +28,7 @@ final class UserService {
             let response = try await apiClient.fetchProfile()
             profile = response.profile
         } catch {
+            AnalyticsService.captureError(error, context: "loadProfile")
             self.error = error
         }
 
@@ -39,6 +40,7 @@ final class UserService {
             let response = try await apiClient.fetchProfile()
             profile = response.profile
         } catch {
+            AnalyticsService.captureError(error, context: "refreshProfile")
             self.error = error
         }
     }

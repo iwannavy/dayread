@@ -120,7 +120,7 @@ enum CurriculumContent {
                 learningPoints: "비교급, because / so, 기억 관련 어휘",
                 status: "session",
                 sessionId: "original-stories-stay-longer-than-facts",
-                textFilePath: nil
+                textFilePath: "docs/text/week-03/article-original-stories-stay-longer-than-facts.md"
             ),
             CurriculumContentItem(
                 id: "w03-study-styles",
@@ -132,7 +132,7 @@ enum CurriculumContent {
                 learningPoints: "비교·대조, while, 학습 습관 표현",
                 status: "session",
                 sessionId: "original-two-friends-two-study-styles",
-                textFilePath: nil
+                textFilePath: "docs/text/week-03/article-original-two-friends-two-study-styles.md"
             ),
             CurriculumContentItem(
                 id: "w03-music-room",
@@ -144,7 +144,7 @@ enum CurriculumContent {
                 learningPoints: "원인-결과, 감각 묘사, 비교 표현",
                 status: "session",
                 sessionId: "original-how-music-changes-a-room",
-                textFilePath: nil
+                textFilePath: "docs/text/week-03/article-original-how-music-changes-a-room.md"
             ),
             CurriculumContentItem(
                 id: "w03-teams-problems",
@@ -156,7 +156,7 @@ enum CurriculumContent {
                 learningPoints: "이유 설명, 협업 어휘, 비교 구조",
                 status: "session",
                 sessionId: "original-why-some-teams-solve-problems-faster",
-                textFilePath: nil
+                textFilePath: "docs/text/week-03/article-original-why-some-teams-solve-problems-faster.md"
             ),
         ],
         // Week 4

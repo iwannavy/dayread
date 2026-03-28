@@ -119,27 +119,21 @@ struct StudySessionView: View {
     private var header: some View {
         VStack(spacing: 0) {
             HStack(alignment: .center, spacing: 8) {
-                // Title area
-                VStack(alignment: .leading, spacing: 2) {
-                    HStack(spacing: 6) {
-                        if session.overview.source != "Unknown" {
-                            Text(session.overview.source)
-                                .font(.caption2)
-                                .textCase(.uppercase)
-                                .tracking(1)
-                                .foregroundStyle(Color.dayreadGold)
-                        }
-                        if viewMode == .immersive || viewMode == .focus {
-                            Text("\(currentIndex + 1)/\(n)")
-                                .font(.caption2)
-                                .foregroundStyle(.tertiary)
-                                .monospacedDigit()
-                        }
+                // Source + counter
+                HStack(spacing: 6) {
+                    if session.overview.source != "Unknown" {
+                        Text(session.overview.source)
+                            .font(.caption2)
+                            .textCase(.uppercase)
+                            .tracking(1)
+                            .foregroundStyle(Color.dayreadGold)
                     }
-                    Text(session.overview.title)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
+                    if viewMode == .immersive || viewMode == .focus {
+                        Text("\(currentIndex + 1)/\(n)")
+                            .font(.caption2)
+                            .foregroundStyle(.tertiary)
+                            .monospacedDigit()
+                    }
                 }
 
                 Spacer()
@@ -158,7 +152,16 @@ struct StudySessionView: View {
                 )
             }
             .padding(.horizontal, StudyLayout.pageHorizontal)
-            .padding(.vertical, 6)
+            .padding(.top, 6)
+
+            // Title — full width, up to 2 lines
+            Text(session.overview.title)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .lineLimit(2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, StudyLayout.pageHorizontal)
+                .padding(.bottom, 6)
         }
         .background(.bar)
     }

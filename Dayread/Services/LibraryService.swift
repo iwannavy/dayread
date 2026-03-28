@@ -121,9 +121,13 @@ final class LibraryService {
             #if DEBUG
             print("[LibraryService] loadSummaries failed: \(error)")
             #endif
+            AnalyticsService.captureError(error, context: "loadSummaries")
             if sessions.isEmpty {
                 // Fall back to bundled manifest (guest mode / offline)
                 loadBundledFallback()
+            } else {
+                // API 실패했지만 캐시된 세션 존재 — 캐시 데이터 표시
+                summariesStatus = .ready
             }
         }
     }
@@ -160,6 +164,7 @@ final class LibraryService {
             #if DEBUG
             print("[LibraryService] reloadLibrary failed: \(error)")
             #endif
+            AnalyticsService.captureError(error, context: "reloadLibrary")
             summariesStatus = .error
         }
     }
@@ -204,6 +209,7 @@ final class LibraryService {
             #if DEBUG
             print("[LibraryService] flushProgressRow failed for \(sessionId): \(error)")
             #endif
+            AnalyticsService.captureError(error, context: "flushProgressRow:\(sessionId)")
         }
     }
 
@@ -274,6 +280,7 @@ final class LibraryService {
                 #if DEBUG
                 print("[LibraryService] ensureSession failed for \(sessionId): \(error)")
                 #endif
+                AnalyticsService.captureError(error, context: "ensureSession:\(sessionId)")
                 self.detailStatusById[sessionId] = .error
                 return nil
             }
@@ -317,6 +324,7 @@ final class LibraryService {
             #if DEBUG
             print("[LibraryService] claimSessionAccess failed for \(sessionId): \(error)")
             #endif
+            AnalyticsService.captureError(error, context: "claimSessionAccess:\(sessionId)")
             return nil
         }
     }

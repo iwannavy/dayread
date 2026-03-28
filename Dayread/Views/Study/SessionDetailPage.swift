@@ -36,16 +36,8 @@ struct SessionDetailPage: View {
                 errorView("세션을 찾을 수 없습니다.")
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button { dismiss() } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.body)
-                }
-            }
-        }
         .navigationBarBackButtonHidden()
+        .toolbar(.hidden, for: .navigationBar)
         .task {
             await loadSession()
         }

@@ -69,6 +69,10 @@ enum CollectionContent {
                     sessionId: "collection-the-art-of-the-retraction",
                     textFilePath: "docs/text/collections/media-literacy/article-original-the-art-of-the-retraction.md"
                 ),
+                CollectionContentItem(id: "c-research-peer-review-when", title: "How Peer Review Works — And When It Doesn't", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "동료 심사 프로세스, 출판 부정행위, 오픈 사이언스", status: "session", sessionId: "collection-how-peer-review-works-and-when-it-doesnt", textFilePath: "docs/text/collections/research-reading/article-original-how-peer-review-works-and-when-it-doesnt.md"),
+                CollectionContentItem(id: "c-research-peer-review-shapes", title: "How Peer Review Shapes What We Know", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "블라인드 리뷰, 학술 게이트키핑, 재현 가능성", status: "session", sessionId: "collection-how-peer-review-shapes-what-we-know", textFilePath: "docs/text/collections/research-reading/article-original-how-peer-review-shapes-what-we-know.md"),
+                CollectionContentItem(id: "c-research-replication", title: "Why Replication Matters More Than Discovery", source: "Dayread Original", genre: "essay", difficulty: 6, learningPoints: "재현 위기, p-해킹, 출판 편향과 사전등록", status: "session", sessionId: "collection-why-replication-matters-more-than-discovery", textFilePath: "docs/text/collections/research-reading/essay-original-why-replication-matters-more-than-discovery.md"),
+                CollectionContentItem(id: "c-research-footnotes", title: "Reading Between the Footnotes", source: "Dayread Original", genre: "essay", difficulty: 6, learningPoints: "각주 읽기, 인용 전략, 학술적 수사 포지셔닝", status: "session", sessionId: "collection-reading-between-the-footnotes", textFilePath: "docs/text/collections/research-reading/essay-original-reading-between-the-footnotes.md"),
             ]
         ),
 
@@ -147,6 +151,9 @@ enum CollectionContent {
                     sessionId: "collection-the-hidden-grammar-of-startup-pitch-decks",
                     textFilePath: "docs/text/collections/business-english/article-original-the-hidden-grammar-of-startup-pitch-decks.md"
                 ),
+                CollectionContentItem(id: "c-business-presentation", title: "How to Give a Presentation That Lands", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "프레젠테이션 구조, 시그널 표현, 청중 참여 전략", status: "session", sessionId: "collection-how-to-give-a-presentation-that-lands", textFilePath: "docs/text/collections/business-english/article-original-how-to-give-a-presentation-that-lands.md"),
+                CollectionContentItem(id: "c-business-negotiating", title: "Negotiating Without Saying No", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "협상 화법, 간접 거절, 이해관계자 조율 전략", status: "session", sessionId: "collection-negotiating-without-saying-no", textFilePath: "docs/text/collections/business-english/article-original-negotiating-without-saying-no.md"),
+                CollectionContentItem(id: "c-business-apology", title: "The Art of a Professional Apology", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "공식 사과문, 기업 책임, 비사과(non-apology) 분석", status: "session", sessionId: "collection-the-art-of-a-professional-apology", textFilePath: "docs/text/collections/business-english/article-original-the-art-of-a-professional-apology.md"),
             ]
         ),
 
@@ -214,6 +221,10 @@ enum CollectionContent {
                     sessionId: "collection-how-podcasts-rewired-public-conversation",
                     textFilePath: "docs/text/collections/media-literacy/article-original-how-podcasts-rewired-public-conversation.md"
                 ),
+                CollectionContentItem(id: "c-media-crisis", title: "The Rhetoric of Crisis Reporting", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "위기 보도 수사학, 미디어 인센티브, 선정주의 분석", status: "session", sessionId: "collection-the-rhetoric-of-crisis-reporting", textFilePath: "docs/text/collections/media-literacy/article-original-the-rhetoric-of-crisis-reporting.md"),
+                CollectionContentItem(id: "c-media-think-tanks", title: "What Think Tank Reports Don't Tell You", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "싱크탱크 보고서 비판적 읽기, 정책 연구 자금, 제도적 편향", status: "session", sessionId: "collection-what-think-tank-reports-dont-tell-you", textFilePath: "docs/text/collections/media-literacy/article-original-what-think-tank-reports-dont-tell-you.md"),
+                CollectionContentItem(id: "c-media-framing", title: "How Framing Changes the Debate", source: "Dayread Original", genre: "article", difficulty: 6, learningPoints: "프레이밍 효과, 의제 설정, 인지 스키마와 정치 커뮤니케이션", status: "session", sessionId: "collection-how-framing-changes-the-debate", textFilePath: "docs/text/collections/media-literacy/article-original-how-framing-changes-the-debate.md"),
+                CollectionContentItem(id: "c-media-satire", title: "When Satire Does the Work of Journalism", source: "Dayread Original", genre: "essay", difficulty: 6, learningPoints: "풍자와 저널리즘, 미디어 비평, 수사적 아이러니", status: "session", sessionId: "collection-when-satire-does-the-work-of-journalism", textFilePath: "docs/text/collections/media-literacy/essay-original-when-satire-does-the-work-of-journalism.md"),
             ]
         ),
 
@@ -292,6 +303,9 @@ enum CollectionContent {
                     sessionId: "collection-why-literary-awards-shape-the-way-we-read",
                     textFilePath: "docs/text/collections/literature-criticism/essay-original-why-literary-awards-shape-the-way-we-read.md"
                 ),
+                CollectionContentItem(id: "c-lit-unreliable-narrators", title: "Why Unreliable Narrators Work", source: "Dayread Original", genre: "essay", difficulty: 6, learningPoints: "신뢰할 수 없는 화자, 극적 아이러니, 서사적 회의주의", status: "session", sessionId: "collection-why-unreliable-narrators-work", textFilePath: "docs/text/collections/literature-criticism/essay-original-why-unreliable-narrators-work.md"),
+                CollectionContentItem(id: "c-lit-translation-story", title: "How Translation Changes a Story", source: "Dayread Original", genre: "essay", difficulty: 6, learningPoints: "문학 번역, 자국화 vs 이화, 번역 불가능성과 문체 변환", status: "session", sessionId: "collection-how-translation-changes-a-story", textFilePath: "docs/text/collections/literature-criticism/essay-original-how-translation-changes-a-story.md"),
+                CollectionContentItem(id: "c-lit-ethics-real-people", title: "The Ethics of Writing About Real People", source: "Dayread Original", genre: "essay", difficulty: 6, learningPoints: "실존 인물 서사 윤리, 동의와 서사화, 합성 캐릭터와 프라이버시", status: "session", sessionId: "collection-the-ethics-of-writing-about-real-people", textFilePath: "docs/text/collections/literature-criticism/essay-original-the-ethics-of-writing-about-real-people.md"),
             ]
         ),
 

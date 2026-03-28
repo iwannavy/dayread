@@ -1,9 +1,9 @@
 import SwiftUI
 
 enum LibrarySection: String, CaseIterable {
-    case path = "Path"
-    case daily = "Daily"
-    case topics = "Topics"
+    case path = "학습 경로"
+    case daily = "데일리"
+    case topics = "토픽"
 }
 
 struct LibraryView: View {

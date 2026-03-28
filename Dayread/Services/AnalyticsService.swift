@@ -56,6 +56,20 @@ enum AnalyticsService {
         #endif
     }
 
+    // MARK: - Error Capture
+
+    static func captureError(_ error: Error, context: String? = nil) {
+        #if DEBUG
+        print("[Analytics] error: \(context ?? "") \(error)")
+        #else
+        SentrySDK.capture(error: error) { scope in
+            if let context {
+                scope.setContext(value: ["info": context], key: "dayread")
+            }
+        }
+        #endif
+    }
+
     // MARK: - Event Tracking
 
     static func track(_ event: String, properties: [String: MixpanelType]? = nil) {

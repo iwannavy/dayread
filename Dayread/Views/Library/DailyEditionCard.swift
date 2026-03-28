@@ -17,6 +17,9 @@ struct DailyEditionCard: View {
                 editionCard(edition)
             }
             .buttonStyle(.plain)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("오늘의 에디션: \(edition.subjectLine)")
+            .accessibilityHint(edition.sessionId != nil ? "탭하여 오늘의 브리핑 열기" : "")
         }
     }
 

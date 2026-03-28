@@ -37,8 +37,8 @@ enum SRSAlgorithm {
 
         let calendar = Calendar.current
         let nextDate = calendar.date(byAdding: .day, value: updated.interval, to: Date()) ?? Date()
-        updated.nextReview = ISO8601DateFormatter().string(from: nextDate)
-        updated.lastReview = ISO8601DateFormatter().string(from: Date())
+        updated.nextReview = DateFormatters.iso8601.string(from: nextDate)
+        updated.lastReview = DateFormatters.iso8601.string(from: Date())
 
         return updated
     }

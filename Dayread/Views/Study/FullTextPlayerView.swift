@@ -22,7 +22,8 @@ struct FullTextPlayerView: View {
             Button { handlePrev() } label: {
                 Image(systemName: "backward.fill")
                     .font(.caption)
-                    .frame(width: 28, height: 28)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .foregroundStyle(.tertiary)
 
@@ -46,7 +47,7 @@ struct FullTextPlayerView: View {
                             .font(.caption)
                     }
                 }
-                .frame(width: 32, height: 32)
+                .frame(width: 44, height: 44)
                 .background(tts.isSpeaking ? Color.dayreadGold.opacity(0.15) : Color.gray.opacity(0.12))
                 .clipShape(RoundedRectangle(cornerRadius: 12))
             }
@@ -57,7 +58,8 @@ struct FullTextPlayerView: View {
             Button { handleNext() } label: {
                 Image(systemName: "forward.fill")
                     .font(.caption)
-                    .frame(width: 28, height: 28)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .foregroundStyle(.tertiary)
 
@@ -67,7 +69,8 @@ struct FullTextPlayerView: View {
             Button { showSettings.toggle() } label: {
                 Image(systemName: "gearshape")
                     .font(.caption)
-                    .frame(width: 28, height: 28)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
             }
             .foregroundStyle(.tertiary)
             .popover(isPresented: $showSettings) {

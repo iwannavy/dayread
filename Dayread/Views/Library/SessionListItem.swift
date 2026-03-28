@@ -86,6 +86,23 @@ struct SessionListItemView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(sessionAccessibilityLabel)
+        .accessibilityHint(isLocked ? "프리미엄 구독으로 잠금 해제" : "탭하여 학습 시작")
         .onAppear { onAppear?() }
+    }
+
+    private var sessionAccessibilityLabel: String {
+        var parts = [session.overview.title]
+        if isLocked {
+            parts.insert("프리미엄 전용 세션:", at: 0)
+        }
+        parts.append("난이도 \(session.overview.difficulty)")
+        if isCompleted {
+            parts.append("완료됨")
+        } else if progressPercent > 0 {
+            parts.append("진행률 \(Int(progressPercent))%")
+        }
+        return parts.joined(separator: ", ")
     }
 }

@@ -97,6 +97,7 @@ enum ReadableContentBlock: Codable {
     case table(TableBlock)
     case code(CodeBlock)
     case mermaid(MermaidBlock)
+    case unknown
 
     struct TableBlock: Codable {
         let type: String
@@ -135,9 +136,7 @@ enum ReadableContentBlock: Codable {
         case "mermaid":
             self = .mermaid(try MermaidBlock(from: decoder))
         default:
-            throw DecodingError.dataCorrupted(
-                .init(codingPath: decoder.codingPath, debugDescription: "Unknown block type: \(type)")
-            )
+            self = .unknown
         }
     }
 
@@ -146,6 +145,7 @@ enum ReadableContentBlock: Codable {
         case .table(let block): try block.encode(to: encoder)
         case .code(let block): try block.encode(to: encoder)
         case .mermaid(let block): try block.encode(to: encoder)
+        case .unknown: break
         }
     }
 }

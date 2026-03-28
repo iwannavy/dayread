@@ -27,9 +27,14 @@ enum DateFormatters {
         return formatter
     }()
 
+    /// Fallback: fractional seconds 없는 ISO8601
+    static let iso8601Plain: ISO8601DateFormatter = {
+        ISO8601DateFormatter()
+    }()
+
     static func parseISO(_ string: String?) -> Date? {
         guard let string else { return nil }
-        return iso8601.date(from: string) ?? ISO8601DateFormatter().date(from: string)
+        return iso8601.date(from: string) ?? iso8601Plain.date(from: string)
     }
 
     static func relativeTime(from dateString: String?) -> String {

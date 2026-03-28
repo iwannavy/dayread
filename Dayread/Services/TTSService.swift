@@ -60,6 +60,7 @@ final class TTSService {
                     self.playURL(url, onEnd: onEnd)
                 }
             } catch {
+                AnalyticsService.captureError(error, context: "ttsSpeak")
                 guard self.requestId == currentRequestId else { return }
                 await MainActor.run {
                     self.isLoading = false
@@ -170,7 +171,27 @@ final class TTSService {
         inflightTasks[assetKey] = task
         defer { inflightTasks.removeValue(forKey: assetKey) }
 
-        return try await task.value
+        let result = try await task.value
+        evictCacheIfNeeded()
+        return result
+    }
+
+    // MARK: - Cache Eviction
+
+    private func evictCacheIfNeeded() {
+        let fm = FileManager.default
+        guard let files = try? fm.contentsOfDirectory(at: cacheDir, includingPropertiesForKeys: [.contentModificationDateKey]) else { return }
+        guard files.count > maxCacheEntries else { return }
+
+        let sorted = files.compactMap { url -> (URL, Date)? in
+            guard let date = (try? url.resourceValues(forKeys: [.contentModificationDateKey]))?.contentModificationDate else { return nil }
+            return (url, date)
+        }.sorted { $0.1 < $1.1 }
+
+        let toRemove = sorted.prefix(files.count - maxCacheEntries)
+        for (url, _) in toRemove {
+            try? fm.removeItem(at: url)
+        }
     }
 
     // MARK: - Private Helpers

@@ -43,17 +43,20 @@ struct ImmersiveView: View {
                         .foregroundStyle(.tertiary)
                         .monospacedDigit()
                         .padding(.bottom, StudyLayout.spacingSM)
+                        .accessibilityLabel("문장 \(sentenceIndex + 1)/\(sentences.count)")
 
                     // English sentence
                     Text(sentence.original)
                         .studySentenceStyle()
                         .foregroundStyle(.primary)
                         .padding(.bottom, StudyLayout.spacingBase)
+                        .accessibilityLabel("영어 문장: \(sentence.original)")
 
                     // Korean translation
                     Text(sentence.translation)
                         .studyTranslationStyle()
                         .padding(.bottom, StudyLayout.spacingLG)
+                        .accessibilityLabel("번역: \(sentence.translation)")
 
                     // Phrase translation
                     if let alignment = sentence.koreanAlignment, !alignment.isEmpty {
@@ -230,6 +233,7 @@ struct ImmersiveView: View {
                 Text(isLastSentence ? "스와이프하여 Focus 단계로" : "스와이프하여 다음 문장")
                     .font(.caption2)
                     .foregroundColor(swipeTriggered ? Color.dayreadGold : Color.gray.opacity(0.3))
+                    .accessibilityHint(isLastSentence ? "위로 스와이프하여 Focus 단계로 이동" : "위로 스와이프하여 다음 문장으로 이동")
             }
             .padding(.top, StudyLayout.spacingSM)
         }
@@ -261,7 +265,7 @@ struct ImmersiveView: View {
                     if swipeTriggered || (dy < -30 && vy < -400) || predicted < -80 {
                         hapticMedium.impactOccurred()
                         if isLastSentence {
-                            onStudied(sentence!.id)
+                            if let s = sentence { onStudied(s.id) }
                             onAdvanceMode()
                         } else {
                             goToNextSentence()

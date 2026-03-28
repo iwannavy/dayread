@@ -32,9 +32,10 @@ struct PaywallView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     headerSection
+                    socialProofBanner
                     if !isPremium { planSelectionSection }
-                    infoCard
                     featureList
+                    infoCard
                     if let error { errorMessage(error) }
                     actionButtons
                     subscriptionStatus
@@ -53,6 +54,9 @@ struct PaywallView: View {
                 AnalyticsService.track("paywall_shown")
                 await subscriptionService.fetchOfferings()
             }
+            .onDisappear {
+                AnalyticsService.track("paywall_dismissed")
+            }
         }
     }
 
@@ -70,6 +74,42 @@ struct PaywallView: View {
                 .multilineTextAlignment(.center)
         }
         .padding(.top, 8)
+    }
+
+    // MARK: - Social Proof
+
+    private var socialProofBanner: some View {
+        HStack(spacing: 0) {
+            socialProofStat("97개+", label: "Original 콘텐츠")
+            Spacer()
+            socialProofDivider
+            Spacer()
+            socialProofStat("3,500+", label: "문장 분석")
+            Spacer()
+            socialProofDivider
+            Spacer()
+            socialProofStat("₩164", label: "하루 비용")
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 14)
+        .background(Color.dayreadGold.opacity(0.06), in: RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func socialProofStat(_ value: String, label: String) -> some View {
+        VStack(spacing: 2) {
+            Text(value)
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(Color.dayreadGold)
+            Text(label)
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+        }
+    }
+
+    private var socialProofDivider: some View {
+        Rectangle()
+            .fill(Color.dayreadGold.opacity(0.2))
+            .frame(width: 1, height: 28)
     }
 
     // MARK: - Plan Selection
@@ -99,6 +139,9 @@ struct PaywallView: View {
     private func planButton(title: String, price: String, subtitle: String, plan: SelectedPlan, badge: String?) -> some View {
         Button {
             selectedPlan = plan
+            AnalyticsService.track("paywall_plan_selected", properties: [
+                "plan": plan == .annual ? "annual" : "monthly"
+            ])
         } label: {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
@@ -136,6 +179,8 @@ struct PaywallView: View {
             }
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(title) 구독 \(price), \(subtitle)\(badge.map { ", \($0)" } ?? "")\(selectedPlan == plan ? ", 현재 선택됨" : "")")
+        .accessibilityAddTraits(selectedPlan == plan ? .isSelected : [])
     }
 
     // MARK: - Info Card
@@ -170,9 +215,12 @@ struct PaywallView: View {
 
     private var featureList: some View {
         VStack(spacing: 8) {
+            featureRow("4단계 딥리딩 학습법 (Immersive → Focus → Analysis → Review)")
+            featureRow("3,500+ 문장 정밀 분석 콘텐츠")
+            featureRow("GrammarViz 문법 시각화")
+            featureRow("SRS 간격반복 복습 시스템")
+            featureRow("프리미엄 데일리 레슨")
             featureRow("모든 커리큘럼 세션 잠금 해제")
-            featureRow("프리미엄 데일리 레슨 열람 (활성 기간 내)")
-            featureRow("구독 상태가 대시보드·학습·프로필에 자동 반영")
         }
     }
 
@@ -307,22 +355,38 @@ struct PaywallView: View {
         loadingAction = .purchase
         error = nil
 
+        let planName = selectedPlan == .annual ? "annual" : "monthly"
+
         do {
             let customerInfo = try await subscriptionService.purchase(package: package)
-            try await subscriptionService.syncWithServer(customerInfo: customerInfo, apiClient: apiClient)
+
+            // 구매 성공 — 서버 동기화는 best-effort
+            do {
+                try await subscriptionService.syncWithServer(customerInfo: customerInfo, apiClient: apiClient)
+            } catch {
+                #if DEBUG
+                print("[PaywallView] syncWithServer failed (purchase OK): \(error)")
+                #endif
+            }
 
             async let _ = userService.loadProfile()
             async let _ = libraryService.reloadLibrary()
 
             HapticsService.shared.success()
-            AnalyticsService.track("purchase_completed", properties: [
-                "plan": selectedPlan == .annual ? "annual" : "monthly"
-            ])
+            AnalyticsService.track("purchase_completed", properties: ["plan": planName])
+
+            if customerInfo.entitlements["premium"]?.periodType == .trial {
+                AnalyticsService.track("free_trial_started", properties: ["plan": planName])
+            }
+
             onSuccess?()
             dismiss()
         } catch let err as SubscriptionError where err == .userCancelled {
             // User cancelled — do nothing
         } catch {
+            AnalyticsService.track("purchase_failed", properties: [
+                "plan": planName, "error": error.localizedDescription
+            ])
             self.error = error.localizedDescription
         }
 
@@ -335,7 +399,15 @@ struct PaywallView: View {
 
         do {
             let customerInfo = try await subscriptionService.restorePurchases()
-            try await subscriptionService.syncWithServer(customerInfo: customerInfo, apiClient: apiClient)
+
+            // 복원 성공 — 서버 동기화는 best-effort
+            do {
+                try await subscriptionService.syncWithServer(customerInfo: customerInfo, apiClient: apiClient)
+            } catch {
+                #if DEBUG
+                print("[PaywallView] syncWithServer failed (restore OK): \(error)")
+                #endif
+            }
 
             async let _ = userService.loadProfile()
             async let _ = libraryService.reloadLibrary()
