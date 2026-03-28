@@ -13,6 +13,9 @@ Packages/
 # Artifacts
 .xverify/
 
+# Premium reference sources (copyright-sensitive)
+docs/text/premium/reference/
+
 # macOS
 .DS_Store
 *.swp
