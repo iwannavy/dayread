@@ -106,13 +106,14 @@ final class BundledSessionStore {
         // Check if it's a collection session
         for collection in CollectionContent.collections {
             if collection.sessions.contains(where: { $0.sessionId == sessionId }) {
+                let isFree = CollectionContent.isFreeCollectionSessionId(sessionId)
                 return SessionAccessState(
                     category: .collection,
-                    canOpen: false,
+                    canOpen: isFree,
                     hasAccessHistory: false,
                     weekNumber: nil,
                     releaseDate: nil,
-                    lockedReason: .premiumRequired
+                    lockedReason: isFree ? nil : .premiumRequired
                 )
             }
         }

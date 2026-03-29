@@ -333,15 +333,12 @@ enum CollectionContent {
         return map
     }()
 
+    /// Only the first session of the first collection is free.
     private static let freeCollectionSessionIds: Set<String> = {
-        var ids = Set<String>()
-        for collection in collections {
-            let sessionItems = collection.sessions.filter { $0.status == "session" && $0.sessionId != nil }
-            if let first = sessionItems.first, let sessionId = first.sessionId {
-                ids.insert(sessionId)
-            }
-        }
-        return ids
+        guard let first = collections.first else { return [] }
+        let sessionItems = first.sessions.filter { $0.status == "session" && $0.sessionId != nil }
+        guard let firstItem = sessionItems.first, let sessionId = firstItem.sessionId else { return [] }
+        return [sessionId]
     }()
 
     // MARK: - Helper Functions
