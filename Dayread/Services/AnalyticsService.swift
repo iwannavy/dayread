@@ -26,11 +26,11 @@ enum AnalyticsService {
 
         // Mixpanel
         if !mixpanelToken.isEmpty {
-            #if DEBUG
-            // Skip Mixpanel in debug
-            #else
             Mixpanel.initialize(token: mixpanelToken, trackAutomaticEvents: true)
-            #endif
+            Mixpanel.mainInstance().people.set(properties: ["platform": "iOS"])
+            print("[Analytics] Mixpanel initialized with token: \(mixpanelToken.prefix(8))...")
+        } else {
+            print("[Analytics] Mixpanel token is EMPTY — skipped")
         }
 
         isConfigured = true
@@ -41,10 +41,14 @@ enum AnalyticsService {
     static func identify(userId: String) {
         #if DEBUG
         print("[Analytics] identify: \(userId)")
-        #else
+        #endif
         SentrySDK.setUser(User(userId: userId))
         Mixpanel.mainInstance().identify(distinctId: userId)
-        #endif
+        Mixpanel.mainInstance().people.set(properties: [
+            "$name": userId,
+            "platform": "iOS"
+        ])
+        Mixpanel.mainInstance().flush()
     }
 
     static func reset() {
@@ -79,9 +83,9 @@ enum AnalyticsService {
         } else {
             print("[Analytics] \(event)")
         }
-        #else
+        #endif
         SentrySDK.addBreadcrumb(Breadcrumb(level: .info, category: "analytics"))
         Mixpanel.mainInstance().track(event: event, properties: properties)
-        #endif
+        Mixpanel.mainInstance().flush()
     }
 }
