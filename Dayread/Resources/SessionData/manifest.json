@@ -2610,34 +2610,34 @@
     "hasSummaries": true
   },
   {
-    "id": "premium-2026-03-12-noma",
+    "id": "premium-2026-03-30-language-machine-forgot",
     "overview": {
-      "title": "Noma's Harder Test",
+      "title": "When One Language Succeeds and a Thousand Are Left Behind",
       "source": "데일리딩 Premium",
-      "wordCount": 347,
+      "wordCount": 337,
       "sentenceCount": 14,
       "estimatedLevel": "upper-intermediate",
       "readingTimeMinutes": 2,
       "mainTopics": [
-        "restaurant culture",
-        "labor conditions",
-        "leadership",
-        "fine dining",
-        "accountability"
+        "AI healthcare",
+        "language inequality",
+        "global health",
+        "African languages",
+        "digital divide"
       ],
       "keyVocabularyPreview": [
-        "seasonality",
-        "symbolic",
-        "shaming",
-        "exacting",
-        "prestige",
-        "fermentation",
-        "misconduct",
-        "accountability"
+        "triage",
+        "low-resource",
+        "fine-tuning",
+        "infrastructure",
+        "benchmark",
+        "misdiagnosis",
+        "counterfactual",
+        "linguistic"
       ],
       "difficulty": 3
     },
-    "createdAt": "2026-03-12T00:00:00.000Z",
+    "createdAt": "2026-03-30T00:00:00.000Z",
     "hasSummaries": false
   },
   {
@@ -4158,6 +4158,99 @@
       "difficulty": 3
     },
     "createdAt": "2026-03-27T00:00:00.000Z",
+    "hasSummaries": false
+  },
+  {
+    "id": "premium-2026-03-30-britains-return-to-gravity",
+    "overview": {
+      "title": "The Cost That Doubled",
+      "source": "데일리딩 Premium",
+      "wordCount": 381,
+      "sentenceCount": 17,
+      "estimatedLevel": "upper-intermediate",
+      "readingTimeMinutes": 2,
+      "mainTopics": [
+        "Brexit",
+        "EU alignment",
+        "trade policy",
+        "economic sovereignty",
+        "geopolitics"
+      ],
+      "keyVocabularyPreview": [
+        "alignment",
+        "divergence",
+        "rapprochement",
+        "protectionism",
+        "sovereignty",
+        "untenable",
+        "conspicuous",
+        "referendum"
+      ],
+      "difficulty": 3
+    },
+    "createdAt": "2026-03-30T00:00:00.000Z",
+    "hasSummaries": false
+  },
+  {
+    "id": "premium-2026-03-30-the-last-ten-percent",
+    "overview": {
+      "title": "The Last Ten Percent",
+      "source": "데일리딩 Premium",
+      "wordCount": 464,
+      "sentenceCount": 17,
+      "estimatedLevel": "upper-intermediate",
+      "readingTimeMinutes": 2,
+      "mainTopics": [
+        "energy transition",
+        "natural gas",
+        "grid reliability",
+        "energy storage",
+        "LNG markets"
+      ],
+      "keyVocabularyPreview": [
+        "backstop",
+        "volatility",
+        "intermittency",
+        "liquefied",
+        "iron-air",
+        "kilowatt-hour",
+        "infrastructure",
+        "paradox"
+      ],
+      "difficulty": 3
+    },
+    "createdAt": "2026-03-30T00:00:00.000Z",
+    "hasSummaries": false
+  },
+  {
+    "id": "premium-2026-03-30-the-economy-that-cant-agree",
+    "overview": {
+      "title": "The Economy That Can't Agree With Itself",
+      "source": "데일리딩 Premium",
+      "wordCount": 453,
+      "sentenceCount": 20,
+      "estimatedLevel": "upper-intermediate",
+      "readingTimeMinutes": 2,
+      "mainTopics": [
+        "consumer spending",
+        "economic measurement",
+        "K-shaped economy",
+        "inequality",
+        "market narratives"
+      ],
+      "keyVocabularyPreview": [
+        "expenditure",
+        "methodology",
+        "residual",
+        "inference",
+        "diverge",
+        "quintile",
+        "intuitively",
+        "fragility"
+      ],
+      "difficulty": 3
+    },
+    "createdAt": "2026-03-30T00:00:00.000Z",
     "hasSummaries": false
   }
 ]

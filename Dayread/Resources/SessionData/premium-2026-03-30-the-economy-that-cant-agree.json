@@ -1,0 +1,1884 @@
+{
+  "id": "premium-2026-03-30-the-economy-that-cant-agree",
+  "rawText": "One of the most consequential economic questions in America right now is deceptively simple: who is spending the money? The answer should be straightforward — consumer expenditure is among the most studied phenomena in economics — but competing datasets have produced wildly different pictures. One influential estimate holds that the wealthiest ten percent of American households now account for nearly half of all consumer spending. Another, drawing on direct household surveys, puts the share of the top twenty percent at just over a third. The gap between these figures is not a rounding error; it is the difference between an economy humming on broad-based demand and one resting on a narrow ledge.\n\nThe divergence stems from methodology, not ideology. The higher estimates rely on a chain of inference — taking snapshots of how much wealth each income bracket historically held in certain asset classes, then assuming that subsequent saving patterns follow the same distribution. If the top ten percent held seventy percent of equities in a given year, they are assumed to account for seventy percent of all equity purchases since. Spending is then calculated as the residual between estimated income and estimated saving. Each assumption introduces error; compounding them produces a figure that can diverge sharply from reality. Direct surveys by the Bureau of Labor Statistics, which simply ask households what they spent, show a far more stable picture — one in which spending shares have barely shifted for decades, even through the financial crisis and the pandemic.\n\nYet the narrative of a K-shaped economy has proven remarkably durable. The Minneapolis Federal Reserve, reviewing the evidence in March 2026, found that available measures ranged from a steep K to no obvious K-shape depending on the data source. Bank of America's internal card data prompted its economists to propose an \"E-shaped\" economy — three tiers of consumer behavior rather than two — with middle-income households spending cautiously in ways that fit neither pole. Meanwhile, household wealth data shows the top twenty percent holding nearly seventy-two percent of all assets, a concentration that makes the K narrative feel intuitively right even when spending data does not support it.\n\nThe practical danger is not that one side of this debate is wrong but that neither can be decisively resolved. Markets, executives, and policymakers must act on incomplete information, and the narrative they adopt shapes real outcomes. If corporate boards believe the boom depends on wealthy consumers, they chase luxury margins and neglect mass-market investment. If central bankers see a fragile, top-heavy expansion, they hesitate to raise rates. The K-shaped debate may ultimately say less about who is spending and more about how much uncertainty an economy can absorb before the uncertainty itself becomes the problem.",
+  "overview": {
+    "title": "The Economy That Can't Agree With Itself",
+    "source": "데일리딩 Premium",
+    "wordCount": 453,
+    "sentenceCount": 20,
+    "estimatedLevel": "upper-intermediate",
+    "readingTimeMinutes": 2,
+    "mainTopics": ["consumer spending data", "K-shaped economy", "economic methodology", "wealth inequality", "policy uncertainty"],
+    "keyVocabularyPreview": ["consequential", "expenditure", "divergence", "methodology", "residual", "compounding", "durable", "narrative"],
+    "difficulty": 3
+  },
+  "createdAt": "2026-03-30T00:00:00.000Z",
+  "sentences": [
+    {
+      "id": 0,
+      "original": "One of the most consequential economic questions in America right now is deceptively simple: who is spending the money?",
+      "translation": "지금 미국에서 가장 중대한 경제적 질문 중 하나는 기만적일 정도로 단순하다: 누가 돈을 쓰고 있는가?",
+      "grammarElements": [
+        {
+          "text": "One of the most consequential economic questions in America right now",
+          "role": "subject",
+          "label": "주어 (of 전치사구로 수식)"
+        },
+        {
+          "text": "is",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "deceptively simple",
+          "role": "complement",
+          "label": "보어 (부사 + 형용사)"
+        },
+        {
+          "text": "who is spending the money",
+          "role": "clause",
+          "label": "콜론 뒤 설명절 (질문의 내용)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "consequential",
+          "pos": "adjective",
+          "meaning": "중대한, 결과를 초래하는",
+          "example": "The court's ruling proved to be the most consequential decision of the decade for digital privacy.",
+          "collocations": ["consequential decision", "highly consequential", "consequential impact"],
+          "difficulty": 3
+        },
+        {
+          "word": "deceptively",
+          "pos": "adverb",
+          "meaning": "기만적으로, 겉보기와 달리",
+          "example": "The proposal looked deceptively straightforward, but its implementation required years of regulatory changes.",
+          "collocations": ["deceptively simple", "deceptively easy", "deceptively complex"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "deceptively simple",
+          "meaning": "겉보기에는 단순하지만 실제로는 복잡한",
+          "usage": "표면적으로 쉬워 보이지만 깊이 들어가면 복잡한 문제를 소개할 때 사용하는 저널리즘 도입부 표현",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "One of the most [adjective] [noun] is deceptively simple: [question]",
+          "explanation": "중대한 주제를 단순한 질문 형태로 제시하여 독자의 관심을 끄는 기사 도입 패턴",
+          "examples": [
+            "One of the most pressing questions in climate science is deceptively simple: where does the heat go?",
+            "One of the most debated issues in education is deceptively simple: what should children learn first?"
+          ],
+          "drillQuestions": [
+            {
+              "question": "One of the most _______ economic questions in America right now is deceptively simple.",
+              "answer": "consequential",
+              "options": ["consequential", "controversial", "conventional", "consecutive"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "기사의 첫 문장으로, 'deceptively simple'이라는 표현을 통해 독자에게 겉보기와 다른 복잡성을 예고한다. 콜론 뒤의 직접 질문이 독자를 즉시 핵심 논점으로 끌어들인다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "One of the most consequential economic questions",
+          "ko": "가장 중대한 경제적 질문 중 하나"
+        },
+        {
+          "en": "is deceptively simple",
+          "ko": "기만적일 정도로 단순하다"
+        },
+        {
+          "en": "who is spending the money",
+          "ko": "누가 돈을 쓰고 있는가"
+        }
+      ],
+      "pronunciationNotes": ["consequential은 '칸시퀜셜'로 세 번째 음절에 강세", "deceptively는 '디셉티블리'로 두 번째 음절에 강세"],
+      "rhetoricalDevice": "thesis statement"
+    },
+    {
+      "id": 1,
+      "original": "The answer should be straightforward — consumer expenditure is among the most studied phenomena in economics — but competing datasets have produced wildly different pictures.",
+      "translation": "그 답은 명확해야 한다 — 소비 지출은 경제학에서 가장 많이 연구된 현상 중 하나이니까 — 그러나 경쟁하는 데이터셋들이 극적으로 다른 그림을 만들어냈다.",
+      "grammarElements": [
+        {
+          "text": "The answer",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "should be",
+          "role": "verb",
+          "label": "조동사 + 동사 (당위)"
+        },
+        {
+          "text": "straightforward",
+          "role": "complement",
+          "label": "보어"
+        },
+        {
+          "text": "consumer expenditure is among the most studied phenomena in economics",
+          "role": "clause",
+          "label": "대시 삽입절 (이유 설명)"
+        },
+        {
+          "text": "but competing datasets have produced wildly different pictures",
+          "role": "clause",
+          "label": "등위절 (역접)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "expenditure",
+          "pos": "noun",
+          "meaning": "지출, 비용",
+          "example": "Government expenditure on healthcare has doubled in the past fifteen years.",
+          "collocations": ["consumer expenditure", "public expenditure", "capital expenditure"],
+          "difficulty": 3
+        },
+        {
+          "word": "phenomena",
+          "pos": "noun",
+          "meaning": "현상들 (phenomenon의 복수형)",
+          "example": "Researchers identified several phenomena that could not be explained by existing theories.",
+          "collocations": ["natural phenomena", "social phenomena", "economic phenomena"],
+          "difficulty": 3
+        },
+        {
+          "word": "wildly",
+          "pos": "adverb",
+          "meaning": "극적으로, 크게",
+          "example": "Estimates of the project's cost varied wildly among the consulting firms.",
+          "collocations": ["wildly different", "wildly inaccurate", "vary wildly"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "competing datasets",
+          "meaning": "서로 상충하는 데이터셋들",
+          "usage": "동일 주제에 대해 서로 다른 결론을 내는 데이터 소스들을 의인화하여 묘사할 때 사용",
+          "register": "analytical"
+        },
+        {
+          "phrase": "wildly different pictures",
+          "meaning": "극적으로 다른 그림(결론)",
+          "usage": "데이터 분석 결과가 크게 엇갈릴 때 시각적 비유로 사용하는 표현",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Answer] should be [straightforward] — [reason] — but [contradicting reality]",
+          "explanation": "대시 삽입절로 이유를 제시한 뒤 but으로 기대를 뒤집는 역접 구조",
+          "examples": [
+            "The diagnosis should be obvious — the symptoms are textbook — but three specialists reached three different conclusions.",
+            "The calculation should be routine — the formula has been used for decades — but tiny measurement errors produced vastly different outputs."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The answer should be straightforward — consumer _______ is among the most studied phenomena in economics.",
+              "answer": "expenditure",
+              "options": ["expenditure", "experience", "expansion", "exposure"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "대시를 활용한 삽입절이 '당연히 답이 있어야 하는 이유'를 설명하고, but으로 역접하여 현실의 불일치를 드러낸다. 기대와 현실의 괴리가 기사의 핵심 긴장을 설정한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "The answer should be straightforward",
+          "ko": "그 답은 명확해야 한다"
+        },
+        {
+          "en": "consumer expenditure is among the most studied phenomena",
+          "ko": "소비 지출은 가장 많이 연구된 현상 중 하나이다"
+        },
+        {
+          "en": "competing datasets have produced wildly different pictures",
+          "ko": "경쟁하는 데이터셋들이 극적으로 다른 그림을 만들어냈다"
+        }
+      ],
+      "pronunciationNotes": ["expenditure는 '익스펜디처'로 두 번째 음절에 강세", "phenomena는 '피나미나'로 두 번째 음절에 강세, phenomenon의 복수형"],
+      "rhetoricalDevice": "contrast"
+    },
+    {
+      "id": 2,
+      "original": "One influential estimate holds that the wealthiest ten percent of American households now account for nearly half of all consumer spending.",
+      "translation": "한 영향력 있는 추정에 따르면, 가장 부유한 미국 가구 상위 10퍼센트가 현재 전체 소비 지출의 거의 절반을 차지한다.",
+      "grammarElements": [
+        {
+          "text": "One influential estimate",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "holds",
+          "role": "verb",
+          "label": "동사 (주장하다)"
+        },
+        {
+          "text": "that the wealthiest ten percent of American households now account for nearly half of all consumer spending",
+          "role": "clause",
+          "label": "that 명사절 (목적어)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "influential",
+          "pos": "adjective",
+          "meaning": "영향력 있는",
+          "example": "The influential report reshaped how policymakers approached urban housing.",
+          "collocations": ["influential figure", "highly influential", "influential study"],
+          "difficulty": 2
+        },
+        {
+          "word": "account for",
+          "pos": "phrasal verb",
+          "meaning": "차지하다, 설명하다",
+          "example": "Emerging markets now account for more than forty percent of global GDP.",
+          "collocations": ["account for a share", "account for the difference", "account for growth"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "One influential estimate holds that",
+          "meaning": "한 영향력 있는 추정에 따르면 ~이다",
+          "usage": "특정 연구나 분석의 주장을 간접적으로 소개할 때 사용. 'holds'는 '주장하다'의 격식적 표현",
+          "register": "academic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "One [adjective] estimate holds that [subject] account for [proportion] of [total]",
+          "explanation": "특정 추정치를 비율과 함께 소개하는 학술/저널리즘 보도 패턴",
+          "examples": [
+            "One widely cited estimate holds that the technology sector accounts for nearly a quarter of all corporate profits.",
+            "One recent estimate holds that remote workers account for roughly thirty percent of the total labor force."
+          ],
+          "drillQuestions": [
+            {
+              "question": "One influential estimate _______ that the wealthiest ten percent of American households now account for nearly half of all consumer spending.",
+              "answer": "holds",
+              "options": ["holds", "hears", "helps", "hides"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "첫 번째 데이터 관점을 소개하는 문장. 'One influential estimate'라는 표현으로 이것이 하나의 견해일 뿐임을 암시하며, 다음 문장의 대비를 준비한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "One influential estimate holds that",
+          "ko": "한 영향력 있는 추정에 따르면"
+        },
+        {
+          "en": "the wealthiest ten percent of American households",
+          "ko": "가장 부유한 미국 가구 상위 10퍼센트가"
+        },
+        {
+          "en": "account for nearly half of all consumer spending",
+          "ko": "전체 소비 지출의 거의 절반을 차지한다"
+        }
+      ],
+      "pronunciationNotes": ["influential은 '인플루엔셜'로 세 번째 음절에 강세", "wealthiest는 '웰시이스트'로 첫 음절에 강세"],
+      "rhetoricalDevice": "evidence"
+    },
+    {
+      "id": 3,
+      "original": "Another, drawing on direct household surveys, puts the share of the top twenty percent at just over a third.",
+      "translation": "또 다른 추정은 가구 직접 조사에 기반하여 상위 20퍼센트의 비중을 겨우 3분의 1 조금 넘는 수준으로 제시한다.",
+      "grammarElements": [
+        {
+          "text": "Another",
+          "role": "subject",
+          "label": "주어 (= another estimate)"
+        },
+        {
+          "text": "drawing on direct household surveys",
+          "role": "modifier",
+          "label": "분사구문 (방법/근거)"
+        },
+        {
+          "text": "puts",
+          "role": "verb",
+          "label": "동사 (제시하다)"
+        },
+        {
+          "text": "the share of the top twenty percent",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "at just over a third",
+          "role": "modifier",
+          "label": "전치사구 (수치)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "drawing on",
+          "pos": "phrasal verb",
+          "meaning": "~에 의거하여, ~을 활용하여",
+          "example": "Drawing on decades of clinical data, the researchers proposed a new treatment protocol.",
+          "collocations": ["drawing on experience", "drawing on evidence", "drawing on research"],
+          "difficulty": 2
+        },
+        {
+          "word": "puts ... at",
+          "pos": "verb phrase",
+          "meaning": "~을 ~로 제시하다/추산하다",
+          "example": "The latest census puts the country's population at just under fifty million.",
+          "collocations": ["puts the figure at", "puts the number at", "puts the total at"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "just over a third",
+          "meaning": "3분의 1을 약간 넘는",
+          "usage": "정확한 수치 대신 근사치를 사용하여 비율을 표현할 때 사용. just over/under로 미세한 차이를 나타냄",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "Another, [participle phrase], puts [measure] at [value]",
+          "explanation": "앞서 소개한 추정과 대비되는 다른 추정을 분사구문으로 근거를 밝히며 제시하는 패턴",
+          "examples": [
+            "Another, relying on satellite imagery, puts the deforestation rate at nearly double the official figure.",
+            "Another, based on anonymized tax returns, puts median household income at roughly ten percent lower."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Another, _______ on direct household surveys, puts the share of the top twenty percent at just over a third.",
+              "answer": "drawing",
+              "options": ["drawing", "driving", "draining", "drafting"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "앞 문장과의 대비를 통해 데이터 불일치를 구체적으로 보여준다. 'Another'만으로 주어를 대체하는 간결한 문체가 두 추정의 병렬 구조를 강화한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "Another, drawing on direct household surveys",
+          "ko": "또 다른 추정은 가구 직접 조사에 기반하여"
+        },
+        {
+          "en": "puts the share of the top twenty percent",
+          "ko": "상위 20퍼센트의 비중을"
+        },
+        {
+          "en": "at just over a third",
+          "ko": "겨우 3분의 1 조금 넘는 수준으로 제시한다"
+        }
+      ],
+      "pronunciationNotes": ["surveys는 '서베이즈'로 첫 음절에 강세 (명사일 때)"],
+      "rhetoricalDevice": "counter-evidence"
+    },
+    {
+      "id": 4,
+      "original": "The gap between these figures is not a rounding error; it is the difference between an economy humming on broad-based demand and one resting on a narrow ledge.",
+      "translation": "이 수치들 사이의 격차는 반올림 오차가 아니다; 그것은 광범위한 수요 위에서 순조롭게 돌아가는 경제와 좁은 난간 위에 놓인 경제 사이의 차이이다.",
+      "grammarElements": [
+        {
+          "text": "The gap between these figures",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "is not",
+          "role": "verb",
+          "label": "부정 동사"
+        },
+        {
+          "text": "a rounding error",
+          "role": "complement",
+          "label": "보어 (부정되는 것)"
+        },
+        {
+          "text": "it is the difference between an economy humming on broad-based demand and one resting on a narrow ledge",
+          "role": "clause",
+          "label": "세미콜론 뒤 긍정절 (실제 의미)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "rounding error",
+          "pos": "noun phrase",
+          "meaning": "반올림 오차",
+          "example": "What they dismissed as a rounding error turned out to be a systematic flaw in the model.",
+          "collocations": ["rounding error", "margin of error", "statistical error"],
+          "difficulty": 2
+        },
+        {
+          "word": "humming",
+          "pos": "verb (participle)",
+          "meaning": "활기차게 돌아가는, 윙윙거리는",
+          "example": "The factory floor was humming with activity as orders poured in from overseas.",
+          "collocations": ["humming along", "humming with activity", "economy humming"],
+          "difficulty": 2
+        },
+        {
+          "word": "ledge",
+          "pos": "noun",
+          "meaning": "난간, 좁은 턱",
+          "example": "The company's finances were balanced on a precarious ledge after the failed acquisition.",
+          "collocations": ["narrow ledge", "on a ledge", "window ledge"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "not a rounding error",
+          "meaning": "반올림 오차가 아니다 (사소한 차이가 아니다)",
+          "usage": "수치 차이의 심각성을 강조할 때 사용. 기술적 용어를 비유적으로 활용하는 수사법",
+          "register": "analytical"
+        },
+        {
+          "phrase": "resting on a narrow ledge",
+          "meaning": "좁은 난간 위에 놓인 (불안정한 상태)",
+          "usage": "경제나 상황의 취약성을 공간적 비유로 표현할 때 사용",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Gap/difference] is not [trivial explanation]; it is the difference between [positive scenario] and [negative scenario]",
+          "explanation": "세미콜론으로 부정과 긍정을 대비시켜 격차의 실질적 의미를 드라마틱하게 제시하는 패턴",
+          "examples": [
+            "The gap between the two forecasts is not academic; it is the difference between a soft landing and a prolonged recession.",
+            "The divergence in test scores is not statistical noise; it is the difference between a school system that works and one that fails its students."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The gap between these figures is not a rounding error; it is the difference between an economy _______ on broad-based demand and one resting on a narrow ledge.",
+              "answer": "humming",
+              "options": ["humming", "hanging", "hoping", "hunting"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "첫 문단의 마무리 문장으로, 세미콜론을 사용하여 '아닌 것'과 '실제로 의미하는 것'을 극적으로 대비시킨다. 'humming'과 'ledge'의 비유가 두 경제 시나리오를 감각적으로 전달한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "The gap between these figures is not a rounding error",
+          "ko": "이 수치들 사이의 격차는 반올림 오차가 아니다"
+        },
+        {
+          "en": "an economy humming on broad-based demand",
+          "ko": "광범위한 수요 위에서 순조롭게 돌아가는 경제"
+        },
+        {
+          "en": "one resting on a narrow ledge",
+          "ko": "좁은 난간 위에 놓인 경제"
+        }
+      ],
+      "pronunciationNotes": ["ledge는 '레지'로 짧게 발음, edge와 운율이 같다"],
+      "rhetoricalDevice": "synthesis"
+    },
+    {
+      "id": 5,
+      "original": "The divergence stems from methodology, not ideology.",
+      "translation": "이 괴리는 이념이 아니라 방법론에서 비롯된다.",
+      "grammarElements": [
+        {
+          "text": "The divergence",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "stems from",
+          "role": "verb",
+          "label": "구동사 (기원하다)"
+        },
+        {
+          "text": "methodology, not ideology",
+          "role": "object",
+          "label": "목적어 (대비 구조)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "divergence",
+          "pos": "noun",
+          "meaning": "괴리, 차이, 분기",
+          "example": "The divergence between official statistics and on-the-ground reality frustrated humanitarian workers.",
+          "collocations": ["divergence between", "growing divergence", "sharp divergence"],
+          "difficulty": 3
+        },
+        {
+          "word": "stems from",
+          "pos": "phrasal verb",
+          "meaning": "~에서 비롯되다",
+          "example": "Much of the public distrust stems from a series of broken promises by previous administrations.",
+          "collocations": ["stems from", "stemming from", "the problem stems from"],
+          "difficulty": 2
+        },
+        {
+          "word": "methodology",
+          "pos": "noun",
+          "meaning": "방법론",
+          "example": "Critics questioned the methodology behind the study's headline-grabbing conclusions.",
+          "collocations": ["research methodology", "flawed methodology", "sound methodology"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "stems from methodology, not ideology",
+          "meaning": "이념이 아닌 방법론에서 비롯된다",
+          "usage": "문제의 원인이 정치적이 아닌 기술적임을 명확히 구분할 때 사용하는 간결한 대비 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Problem] stems from [technical cause], not [political/emotional cause]",
+          "explanation": "문제의 원인을 감정적·정치적 해석에서 분리하여 기술적 원인으로 재정의하는 패턴",
+          "examples": [
+            "The disagreement stems from measurement, not malice.",
+            "The confusion stems from ambiguity in the contract language, not bad faith."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The divergence _______ from methodology, not ideology.",
+              "answer": "stems",
+              "options": ["stems", "steams", "storms", "stalls"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "두 번째 문단의 주제문. 짧고 선언적인 문장으로 논쟁의 성격을 재정의한다. 'not ideology'라는 부정을 통해 독자의 정치적 편향을 미리 차단한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "The divergence stems from",
+          "ko": "이 괴리는 ~에서 비롯된다"
+        },
+        {
+          "en": "methodology, not ideology",
+          "ko": "이념이 아니라 방법론"
+        }
+      ],
+      "pronunciationNotes": ["divergence는 '다이버전스'로 두 번째 음절에 강세", "methodology는 '메쏘돌로지'로 세 번째 음절에 강세", "ideology는 '아이디올로지'로 세 번째 음절에 강세"],
+      "rhetoricalDevice": "thesis statement"
+    },
+    {
+      "id": 6,
+      "original": "The higher estimates rely on a chain of inference — taking snapshots of how much wealth each income bracket historically held in certain asset classes, then assuming that subsequent saving patterns follow the same distribution.",
+      "translation": "더 높은 추정치는 추론의 연쇄에 의존한다 — 각 소득 구간이 역사적으로 특정 자산 유형에서 얼마나 많은 부를 보유했는지 스냅샷을 찍은 다음, 이후의 저축 패턴이 동일한 분포를 따른다고 가정하는 것이다.",
+      "grammarElements": [
+        {
+          "text": "The higher estimates",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "rely on",
+          "role": "verb",
+          "label": "구동사 (의존하다)"
+        },
+        {
+          "text": "a chain of inference",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "taking snapshots ... then assuming that ...",
+          "role": "modifier",
+          "label": "대시 뒤 분사구문 (추론 과정 설명)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "inference",
+          "pos": "noun",
+          "meaning": "추론, 추정",
+          "example": "The conclusion rested on a long chain of inference, each link of which introduced uncertainty.",
+          "collocations": ["chain of inference", "draw an inference", "statistical inference"],
+          "difficulty": 3
+        },
+        {
+          "word": "bracket",
+          "pos": "noun",
+          "meaning": "구간, 계층 (소득 등)",
+          "example": "Households in the middle-income bracket felt the squeeze most acutely during the downturn.",
+          "collocations": ["income bracket", "tax bracket", "age bracket"],
+          "difficulty": 2
+        },
+        {
+          "word": "subsequent",
+          "pos": "adjective",
+          "meaning": "이후의, 후속의",
+          "example": "The initial findings were confirmed by three subsequent studies.",
+          "collocations": ["subsequent years", "subsequent analysis", "subsequent events"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "a chain of inference",
+          "meaning": "추론의 연쇄",
+          "usage": "여러 단계의 가정이 순차적으로 쌓이는 분석 과정을 묘사할 때 사용. 각 단계가 오류를 축적할 수 있음을 암시",
+          "register": "academic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Method] relies on [process] — [step 1], then [step 2]",
+          "explanation": "대시 뒤에서 분석 방법의 단계를 순차적으로 풀어 설명하는 패턴",
+          "examples": [
+            "The forecast relies on a sequence of projections — estimating current trends, then extrapolating them into the next decade.",
+            "The model relies on layered assumptions — measuring baseline activity, then adjusting for seasonal fluctuations."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The higher estimates rely on a chain of _______ — taking snapshots of how much wealth each income bracket historically held.",
+              "answer": "inference",
+              "options": ["inference", "influence", "insurance", "inheritance"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "복잡한 방법론을 대시 뒤의 분사구문으로 단계적으로 풀어낸다. 'chain of inference'라는 비유가 오류 축적의 위험성을 함축적으로 전달한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "The higher estimates rely on a chain of inference",
+          "ko": "더 높은 추정치는 추론의 연쇄에 의존한다"
+        },
+        {
+          "en": "taking snapshots of how much wealth each income bracket historically held",
+          "ko": "각 소득 구간이 역사적으로 얼마나 많은 부를 보유했는지 스냅샷을 찍고"
+        },
+        {
+          "en": "then assuming that subsequent saving patterns follow the same distribution",
+          "ko": "이후의 저축 패턴이 동일한 분포를 따른다고 가정하는 것이다"
+        }
+      ],
+      "pronunciationNotes": ["inference는 '인퍼런스'로 첫 음절에 강세", "subsequent는 '섭시퀀트'로 첫 음절에 강세"],
+      "rhetoricalDevice": "explanation"
+    },
+    {
+      "id": 7,
+      "original": "If the top ten percent held seventy percent of equities in a given year, they are assumed to account for seventy percent of all equity purchases since.",
+      "translation": "만약 상위 10퍼센트가 특정 해에 주식의 70퍼센트를 보유했다면, 그 이후의 모든 주식 매입의 70퍼센트도 그들이 차지했다고 가정된다.",
+      "grammarElements": [
+        {
+          "text": "If the top ten percent held seventy percent of equities in a given year",
+          "role": "clause",
+          "label": "조건절 (과거 가정)"
+        },
+        {
+          "text": "they",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "are assumed to account for",
+          "role": "verb",
+          "label": "수동태 동사 (가정되다)"
+        },
+        {
+          "text": "seventy percent of all equity purchases since",
+          "role": "object",
+          "label": "목적어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "equities",
+          "pos": "noun",
+          "meaning": "주식, 지분",
+          "example": "Investors shifted their portfolios away from equities and into safer government bonds.",
+          "collocations": ["equity markets", "private equity", "equity purchases"],
+          "difficulty": 3
+        },
+        {
+          "word": "a given year",
+          "pos": "noun phrase",
+          "meaning": "특정 연도, 주어진 해",
+          "example": "In any given year, the fund's returns could swing from positive to negative by twenty points.",
+          "collocations": ["in a given year", "at any given time", "a given period"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "are assumed to account for",
+          "meaning": "~을 차지하는 것으로 가정되다",
+          "usage": "방법론에서 검증되지 않은 가정을 수동태로 묘사하여 그 가정의 임의성을 부각할 때 사용",
+          "register": "academic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "If [subject] [past action] in a given [period], they are assumed to [same pattern] since",
+          "explanation": "과거 데이터에서 현재로의 외삽(extrapolation)을 가정법으로 설명하는 패턴",
+          "examples": [
+            "If a country consumed thirty percent of global oil in a given decade, it is assumed to have maintained that share ever since.",
+            "If a firm held the largest market share in a given quarter, it is assumed to dominate all subsequent quarters."
+          ],
+          "drillQuestions": [
+            {
+              "question": "If the top ten percent held seventy percent of _______ in a given year, they are assumed to account for seventy percent of all equity purchases since.",
+              "answer": "equities",
+              "options": ["equities", "entities", "equations", "equipment"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "구체적 예시를 통해 방법론의 핵심 가정을 명확히 보여준다. 수동태 'are assumed'가 이 가정이 얼마나 무비판적으로 적용되는지를 암시한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "If the top ten percent held seventy percent of equities",
+          "ko": "상위 10퍼센트가 주식의 70퍼센트를 보유했다면"
+        },
+        {
+          "en": "they are assumed to account for",
+          "ko": "그들이 차지했다고 가정된다"
+        },
+        {
+          "en": "seventy percent of all equity purchases since",
+          "ko": "그 이후의 모든 주식 매입의 70퍼센트"
+        }
+      ],
+      "pronunciationNotes": ["equities는 '에퀴티즈'로 첫 음절에 강세"],
+      "rhetoricalDevice": "illustration"
+    },
+    {
+      "id": 8,
+      "original": "Spending is then calculated as the residual between estimated income and estimated saving.",
+      "translation": "그러면 지출은 추정 소득과 추정 저축 사이의 잔차로 계산된다.",
+      "grammarElements": [
+        {
+          "text": "Spending",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "is then calculated",
+          "role": "verb",
+          "label": "수동태 동사"
+        },
+        {
+          "text": "as the residual between estimated income and estimated saving",
+          "role": "complement",
+          "label": "보어 (as 전치사구)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "residual",
+          "pos": "noun",
+          "meaning": "잔차, 나머지",
+          "example": "The residual after subtracting costs from revenue determines the firm's actual profit margin.",
+          "collocations": ["residual value", "residual income", "residual effect"],
+          "difficulty": 4
+        },
+        {
+          "word": "estimated",
+          "pos": "adjective",
+          "meaning": "추정된",
+          "example": "The estimated cost of the infrastructure project exceeded the original budget by forty percent.",
+          "collocations": ["estimated value", "estimated time", "estimated cost"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "calculated as the residual between",
+          "meaning": "~사이의 잔차로 계산된다",
+          "usage": "경제학에서 직접 측정이 아닌 간접 계산(다른 변수들의 차이)으로 값을 도출할 때 사용하는 기술적 표현",
+          "register": "technical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Variable] is calculated as the residual between [A] and [B]",
+          "explanation": "직접 측정 대신 두 추정값의 차이로 변수를 도출하는 간접 계산 방법을 설명하는 패턴",
+          "examples": [
+            "Profit is then calculated as the residual between total revenue and total expenditure.",
+            "Net migration is calculated as the residual between population growth and natural increase."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Spending is then calculated as the _______ between estimated income and estimated saving.",
+              "answer": "residual",
+              "options": ["residual", "result", "remainder", "residue"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "짧지만 핵심적인 문장으로, 방법론의 약점을 드러낸다. '추정 소득'과 '추정 저축' 모두 추정치이므로 그 차이인 '지출'도 불확실하다는 점을 암시한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "Spending is then calculated",
+          "ko": "그러면 지출은 계산된다"
+        },
+        {
+          "en": "as the residual between estimated income and estimated saving",
+          "ko": "추정 소득과 추정 저축 사이의 잔차로"
+        }
+      ],
+      "pronunciationNotes": ["residual은 '리지듀얼'로 두 번째 음절에 강세"],
+      "rhetoricalDevice": "explanation"
+    },
+    {
+      "id": 9,
+      "original": "Each assumption introduces error; compounding them produces a figure that can diverge sharply from reality.",
+      "translation": "각각의 가정이 오차를 도입하고, 그것들을 복합적으로 쌓으면 현실과 크게 괴리될 수 있는 수치가 만들어진다.",
+      "grammarElements": [
+        {
+          "text": "Each assumption",
+          "role": "subject",
+          "label": "주어 (첫 번째 절)"
+        },
+        {
+          "text": "introduces",
+          "role": "verb",
+          "label": "동사 (첫 번째 절)"
+        },
+        {
+          "text": "error",
+          "role": "object",
+          "label": "목적어 (첫 번째 절)"
+        },
+        {
+          "text": "compounding them",
+          "role": "subject",
+          "label": "동명사구 주어 (두 번째 절)"
+        },
+        {
+          "text": "produces",
+          "role": "verb",
+          "label": "동사 (두 번째 절)"
+        },
+        {
+          "text": "a figure that can diverge sharply from reality",
+          "role": "object",
+          "label": "목적어 + 관계절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "compounding",
+          "pos": "verb (gerund)",
+          "meaning": "복합적으로 쌓다, 합성하다",
+          "example": "Compounding small errors over many iterations transformed a minor miscalculation into a catastrophic failure.",
+          "collocations": ["compounding effect", "compounding interest", "compounding errors"],
+          "difficulty": 3
+        },
+        {
+          "word": "diverge",
+          "pos": "verb",
+          "meaning": "괴리되다, 갈라지다",
+          "example": "The two countries' economic trajectories began to diverge sharply after the trade agreement collapsed.",
+          "collocations": ["diverge from", "diverge sharply", "paths diverge"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "diverge sharply from reality",
+          "meaning": "현실과 크게 괴리되다",
+          "usage": "모델이나 추정치가 실제 상황과 현저히 다를 때 사용하는 분석적 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "Each [element] introduces [problem]; compounding them produces [worse outcome]",
+          "explanation": "세미콜론으로 개별 문제와 누적 효과를 연결하여 오류 축적의 논리를 보여주는 패턴",
+          "examples": [
+            "Each approximation introduces bias; compounding them produces a model that no longer resembles the original system.",
+            "Each delay introduces risk; compounding them produces a timeline that virtually guarantees failure."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Each assumption introduces error; _______ them produces a figure that can diverge sharply from reality.",
+              "answer": "compounding",
+              "options": ["compounding", "combining", "comparing", "completing"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "세미콜론이 인과관계를 압축적으로 연결한다. 'compounding'이라는 금융 용어를 오류 축적에 적용하여, 각 가정의 오차가 복리처럼 증폭된다는 점을 효과적으로 전달한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "Each assumption introduces error",
+          "ko": "각각의 가정이 오차를 도입하고"
+        },
+        {
+          "en": "compounding them produces a figure",
+          "ko": "그것들을 복합적으로 쌓으면 수치가 만들어진다"
+        },
+        {
+          "en": "that can diverge sharply from reality",
+          "ko": "현실과 크게 괴리될 수 있는"
+        }
+      ],
+      "pronunciationNotes": ["compounding은 '컴파운딩'으로 두 번째 음절에 강세", "diverge는 '다이버지'로 두 번째 음절에 강세"],
+      "rhetoricalDevice": "synthesis"
+    },
+    {
+      "id": 10,
+      "original": "Direct surveys by the Bureau of Labor Statistics, which simply ask households what they spent, show a far more stable picture — one in which spending shares have barely shifted for decades, even through the financial crisis and the pandemic.",
+      "translation": "노동통계국의 직접 조사는 가구에게 단순히 얼마를 썼는지 물어보는 것인데, 금융 위기와 팬데믹을 겪는 동안에도 수십 년간 소비 비중이 거의 변하지 않은 훨씬 더 안정적인 그림을 보여준다.",
+      "grammarElements": [
+        {
+          "text": "Direct surveys by the Bureau of Labor Statistics",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "which simply ask households what they spent",
+          "role": "clause",
+          "label": "비제한 관계절 (방법 설명)"
+        },
+        {
+          "text": "show",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "a far more stable picture",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "one in which spending shares have barely shifted for decades, even through the financial crisis and the pandemic",
+          "role": "modifier",
+          "label": "대시 뒤 동격절 (구체화)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "barely",
+          "pos": "adverb",
+          "meaning": "거의 ~않다, 간신히",
+          "example": "Consumer confidence had barely recovered from the last shock when a new one arrived.",
+          "collocations": ["barely shifted", "barely changed", "barely enough"],
+          "difficulty": 1
+        },
+        {
+          "word": "shifted",
+          "pos": "verb (past participle)",
+          "meaning": "변동하다, 이동하다",
+          "example": "Public opinion on the issue has shifted dramatically over the past five years.",
+          "collocations": ["shifted focus", "shifted away from", "barely shifted"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "a far more stable picture",
+          "meaning": "훨씬 더 안정적인 그림(결과)",
+          "usage": "비교급을 강조하여 두 데이터 소스의 결과 차이를 시각적 비유로 전달할 때 사용",
+          "register": "journalistic"
+        },
+        {
+          "phrase": "even through the financial crisis and the pandemic",
+          "meaning": "금융 위기와 팬데믹을 겪는 동안에도",
+          "usage": "극단적 상황에서도 변하지 않는 안정성을 강조할 때 사용. 'even'이 기대 위반을 표시",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Direct method], which simply [does X], shows [stable result] — one in which [measure] has barely [changed] for [period]",
+          "explanation": "간단한 방법이 복잡한 방법보다 안정적 결과를 낸다는 대비를 대시로 구체화하는 패턴",
+          "examples": [
+            "Direct observation, which simply tracks how patients behave, shows a far more consistent pattern — one in which outcomes have barely varied across demographic groups.",
+            "Straightforward polling, which simply asks voters their preference, shows a far steadier trend — one in which party allegiance has barely moved in a generation."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Direct surveys by the Bureau of Labor Statistics show a far more stable picture — one in which spending shares have _______ shifted for decades.",
+              "answer": "barely",
+              "options": ["barely", "broadly", "briefly", "badly"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "앞서 설명한 복잡한 추론 방법과 대비되는 직접 조사의 단순함과 안정성을 강조한다. 'simply ask'라는 표현이 방법론의 투명성을 부각하고, 'even through'가 결과의 견고함을 강화한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "Direct surveys by the Bureau of Labor Statistics",
+          "ko": "노동통계국의 직접 조사는"
+        },
+        {
+          "en": "show a far more stable picture",
+          "ko": "훨씬 더 안정적인 그림을 보여준다"
+        },
+        {
+          "en": "spending shares have barely shifted for decades",
+          "ko": "소비 비중이 수십 년간 거의 변하지 않았다"
+        }
+      ],
+      "pronunciationNotes": ["Bureau는 '뷰로'로 두 번째 음절에 강세", "Statistics는 '스터티스틱스'로 두 번째 음절에 강세"],
+      "rhetoricalDevice": "counter-evidence"
+    },
+    {
+      "id": 11,
+      "original": "Yet the narrative of a K-shaped economy has proven remarkably durable.",
+      "translation": "그러나 K자형 경제라는 내러티브는 놀라울 정도로 지속력이 강했다.",
+      "grammarElements": [
+        {
+          "text": "Yet",
+          "role": "modifier",
+          "label": "접속부사 (역접)"
+        },
+        {
+          "text": "the narrative of a K-shaped economy",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "has proven",
+          "role": "verb",
+          "label": "현재완료 동사"
+        },
+        {
+          "text": "remarkably durable",
+          "role": "complement",
+          "label": "보어 (부사 + 형용사)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "narrative",
+          "pos": "noun",
+          "meaning": "내러티브, 서사, 담론",
+          "example": "The dominant narrative around remote work has shifted from skepticism to cautious acceptance.",
+          "collocations": ["dominant narrative", "shift the narrative", "narrative around"],
+          "difficulty": 2
+        },
+        {
+          "word": "durable",
+          "pos": "adjective",
+          "meaning": "지속적인, 내구성 있는",
+          "example": "Despite repeated debunking, the myth has proven surprisingly durable in public discourse.",
+          "collocations": ["remarkably durable", "durable goods", "durable solution"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "has proven remarkably durable",
+          "meaning": "놀라울 정도로 지속력이 있음이 증명되었다",
+          "usage": "증거와 무관하게 특정 관점이나 해석이 살아남는 현상을 묘사할 때 사용",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "Yet the narrative of [concept] has proven remarkably [adjective]",
+          "explanation": "앞선 반증에도 불구하고 특정 담론이 살아남는 역설을 제시하는 전환 패턴",
+          "examples": [
+            "Yet the narrative of inevitable automation has proven remarkably persistent despite mixed evidence.",
+            "Yet the narrative of a declining middle class has proven remarkably resilient across political cycles."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Yet the narrative of a K-shaped economy has proven remarkably _______.",
+              "answer": "durable",
+              "options": ["durable", "dubious", "dynamic", "dramatic"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "세 번째 문단의 전환문. 'Yet'으로 앞 문단의 방법론적 비판에도 불구하고 K자형 내러티브가 살아남았다는 역설을 제시한다. 짧은 문장이 전환의 힘을 극대화한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "Yet the narrative of a K-shaped economy",
+          "ko": "그러나 K자형 경제라는 내러티브는"
+        },
+        {
+          "en": "has proven remarkably durable",
+          "ko": "놀라울 정도로 지속력이 강했다"
+        }
+      ],
+      "pronunciationNotes": ["narrative는 '내러티브'로 첫 음절에 강세", "durable은 '듀러블'로 첫 음절에 강세"],
+      "rhetoricalDevice": "transition"
+    },
+    {
+      "id": 12,
+      "original": "The Minneapolis Federal Reserve, reviewing the evidence in March 2026, found that available measures ranged from a steep K to no obvious K-shape depending on the data source.",
+      "translation": "미니애폴리스 연방준비은행은 2026년 3월 증거를 검토한 결과, 이용 가능한 지표들이 데이터 소스에 따라 가파른 K자부터 명확한 K자형이 없는 것까지 범위가 넓다는 것을 발견했다.",
+      "grammarElements": [
+        {
+          "text": "The Minneapolis Federal Reserve",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "reviewing the evidence in March 2026",
+          "role": "modifier",
+          "label": "분사구문 (배경)"
+        },
+        {
+          "text": "found",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "that available measures ranged from a steep K to no obvious K-shape depending on the data source",
+          "role": "clause",
+          "label": "that 명사절 (목적어)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "steep",
+          "pos": "adjective",
+          "meaning": "가파른, 급격한",
+          "example": "The steep decline in manufacturing jobs reshaped the political landscape of several states.",
+          "collocations": ["steep decline", "steep rise", "steep curve"],
+          "difficulty": 2
+        },
+        {
+          "word": "ranged from ... to",
+          "pos": "verb phrase",
+          "meaning": "~에서 ~까지 범위가 걸치다",
+          "example": "Opinions among the panelists ranged from cautious optimism to outright alarm.",
+          "collocations": ["ranged from A to B", "ranging widely", "range of outcomes"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "ranged from a steep K to no obvious K-shape",
+          "meaning": "가파른 K자부터 명확한 K자형이 없는 것까지 범위가 넓었다",
+          "usage": "전문 기관의 검토 결과에서 데이터 해석의 극단적 불확실성을 전달할 때 사용",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Institution], reviewing [evidence], found that [measures] ranged from [extreme A] to [extreme B] depending on [variable]",
+          "explanation": "권위 있는 기관의 검토 결과를 인용하되 결론의 불확정성을 강조하는 보도 패턴",
+          "examples": [
+            "The World Bank, reviewing country-level data, found that growth estimates ranged from robust expansion to mild contraction depending on the metric used.",
+            "The health ministry, reviewing clinical trials, found that efficacy ranged from highly promising to statistically insignificant depending on the age group."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The Minneapolis Federal Reserve found that available measures _______ from a steep K to no obvious K-shape.",
+              "answer": "ranged",
+              "options": ["ranged", "ranked", "raised", "reached"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "권위 있는 기관(연준)의 검토를 인용하면서도 결론이 불확정적이라는 점을 강조한다. 'ranged from ... to'가 데이터 해석의 스펙트럼을 효과적으로 보여준다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "The Minneapolis Federal Reserve, reviewing the evidence",
+          "ko": "미니애폴리스 연방준비은행은 증거를 검토한 결과"
+        },
+        {
+          "en": "available measures ranged from a steep K to no obvious K-shape",
+          "ko": "이용 가능한 지표들이 가파른 K자부터 명확한 K자형이 없는 것까지 범위가 넓었다"
+        },
+        {
+          "en": "depending on the data source",
+          "ko": "데이터 소스에 따라"
+        }
+      ],
+      "pronunciationNotes": ["Minneapolis는 '미니애폴리스'로 세 번째 음절에 강세", "measures는 '메저즈'로 첫 음절에 강세"],
+      "rhetoricalDevice": "evidence"
+    },
+    {
+      "id": 13,
+      "original": "Bank of America's internal card data prompted its economists to propose an \"E-shaped\" economy — three tiers of consumer behavior rather than two — with middle-income households spending cautiously in ways that fit neither pole.",
+      "translation": "뱅크오브아메리카의 내부 카드 데이터는 소속 경제학자들로 하여금 \"E자형\" 경제를 제안하게 했다 — 두 계층이 아닌 세 계층의 소비 행태 — 중산층 가구가 양 극단 어느 쪽에도 맞지 않는 방식으로 신중하게 소비하는 구조이다.",
+      "grammarElements": [
+        {
+          "text": "Bank of America's internal card data",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "prompted",
+          "role": "verb",
+          "label": "동사 (촉구하다)"
+        },
+        {
+          "text": "its economists",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "to propose an \"E-shaped\" economy",
+          "role": "complement",
+          "label": "목적보어 (to 부정사)"
+        },
+        {
+          "text": "three tiers of consumer behavior rather than two",
+          "role": "modifier",
+          "label": "대시 삽입 동격어 (설명)"
+        },
+        {
+          "text": "with middle-income households spending cautiously in ways that fit neither pole",
+          "role": "modifier",
+          "label": "with 분사구문 (부대상황)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "prompted",
+          "pos": "verb",
+          "meaning": "촉구하다, ~하게 만들다",
+          "example": "Rising customer complaints prompted the company to overhaul its return policy.",
+          "collocations": ["prompted by", "prompted a review", "prompted action"],
+          "difficulty": 2
+        },
+        {
+          "word": "tiers",
+          "pos": "noun",
+          "meaning": "계층, 단계",
+          "example": "The new pricing model introduced three tiers of service, each with different feature sets.",
+          "collocations": ["three tiers", "tier system", "top tier"],
+          "difficulty": 2
+        },
+        {
+          "word": "cautiously",
+          "pos": "adverb",
+          "meaning": "신중하게, 조심스럽게",
+          "example": "Investors moved cautiously as trade negotiations entered their final phase.",
+          "collocations": ["cautiously optimistic", "spend cautiously", "proceed cautiously"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "fit neither pole",
+          "meaning": "양 극단 어느 쪽에도 맞지 않다",
+          "usage": "이분법적 분류에 속하지 않는 중간 집단의 특성을 묘사할 때 사용",
+          "register": "analytical"
+        },
+        {
+          "phrase": "prompted ... to propose",
+          "meaning": "~으로 하여금 ~을 제안하게 하다",
+          "usage": "데이터가 새로운 해석을 이끌어낸 과정을 설명할 때 사용. 사물 주어 + prompt 구문",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Data/evidence] prompted [experts] to propose [new framework] — [explanation] — with [nuance]",
+          "explanation": "데이터가 전문가들의 새로운 이론을 이끌어낸 과정을 대시 삽입 설명과 함께 제시하는 패턴",
+          "examples": [
+            "Satellite imagery prompted climate scientists to propose a \"mosaic\" model of deforestation — patchy loss rather than uniform retreat — with some areas regenerating in unexpected ways.",
+            "Patient outcome data prompted the medical team to propose a three-stage treatment protocol — a slower escalation than previous approaches — with dosage adjusted for age-related factors."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Bank of America's internal card data _______ its economists to propose an \"E-shaped\" economy.",
+              "answer": "prompted",
+              "options": ["prompted", "promoted", "permitted", "prevented"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "K자형의 이분법을 넘어서는 E자형이라는 새 프레임을 소개한다. 대시 삽입과 with 분사구문의 중첩이 복잡한 정보를 계층적으로 전달한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "Bank of America's internal card data prompted its economists to propose",
+          "ko": "뱅크오브아메리카의 내부 카드 데이터가 경제학자들로 하여금 제안하게 했다"
+        },
+        {
+          "en": "an \"E-shaped\" economy — three tiers of consumer behavior rather than two",
+          "ko": "\"E자형\" 경제 — 두 계층이 아닌 세 계층의 소비 행태"
+        },
+        {
+          "en": "with middle-income households spending cautiously in ways that fit neither pole",
+          "ko": "중산층 가구가 양 극단에 맞지 않는 방식으로 신중하게 소비하는"
+        }
+      ],
+      "pronunciationNotes": ["tiers는 '티어즈'로 발음, tears(눈물)와 동음이의어", "cautiously는 '코셔슬리'로 첫 음절에 강세"],
+      "rhetoricalDevice": "evidence"
+    },
+    {
+      "id": 14,
+      "original": "Meanwhile, household wealth data shows the top twenty percent holding nearly seventy-two percent of all assets, a concentration that makes the K narrative feel intuitively right even when spending data does not support it.",
+      "translation": "한편, 가구 자산 데이터는 상위 20퍼센트가 전체 자산의 거의 72퍼센트를 보유하고 있음을 보여주는데, 이는 소비 데이터가 뒷받침하지 않을 때조차 K자형 내러티브가 직관적으로 맞다고 느끼게 만드는 집중도이다.",
+      "grammarElements": [
+        {
+          "text": "Meanwhile",
+          "role": "modifier",
+          "label": "접속부사 (병렬적 전환)"
+        },
+        {
+          "text": "household wealth data",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "shows",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "the top twenty percent holding nearly seventy-two percent of all assets",
+          "role": "object",
+          "label": "목적어 + 분사 구문"
+        },
+        {
+          "text": "a concentration that makes the K narrative feel intuitively right even when spending data does not support it",
+          "role": "modifier",
+          "label": "동격어구 + 관계절 + even when 양보절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "concentration",
+          "pos": "noun",
+          "meaning": "집중, 편중",
+          "example": "The concentration of media ownership in a handful of corporations raised concerns about editorial independence.",
+          "collocations": ["wealth concentration", "market concentration", "concentration of power"],
+          "difficulty": 2
+        },
+        {
+          "word": "intuitively",
+          "pos": "adverb",
+          "meaning": "직관적으로",
+          "example": "The explanation felt intuitively correct, even though the data told a more nuanced story.",
+          "collocations": ["intuitively right", "intuitively obvious", "intuitively understand"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "feel intuitively right even when",
+          "meaning": "~일 때조차 직관적으로 맞다고 느끼게 하다",
+          "usage": "데이터와 직관 사이의 괴리를 묘사할 때 사용. 인간의 인지 편향을 간접적으로 지적",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Data] shows [fact], a [noun] that makes [narrative] feel [adjective] even when [counter-evidence]",
+          "explanation": "데이터가 특정 내러티브를 직관적으로 지지하지만 실제 증거와는 다를 수 있음을 동격어구로 설명하는 패턴",
+          "examples": [
+            "Crime statistics show a declining trend, a fact that makes the safety narrative feel credible even when individual incidents dominate headlines.",
+            "GDP figures show steady growth, a headline number that makes the recovery narrative feel real even when wage data paints a bleaker picture."
+          ],
+          "drillQuestions": [
+            {
+              "question": "A concentration that makes the K narrative feel _______ right even when spending data does not support it.",
+              "answer": "intuitively",
+              "options": ["intuitively", "initially", "inevitably", "intentionally"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "자산 집중과 소비 패턴 사이의 괴리를 지적하는 핵심 문장. 'intuitively right'이라는 표현이 데이터가 아닌 직관이 내러티브를 지탱한다는 아이러니를 포착한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "household wealth data shows the top twenty percent holding nearly seventy-two percent",
+          "ko": "가구 자산 데이터는 상위 20퍼센트가 거의 72퍼센트를 보유하고 있음을 보여준다"
+        },
+        {
+          "en": "a concentration that makes the K narrative feel intuitively right",
+          "ko": "K자형 내러티브가 직관적으로 맞다고 느끼게 만드는 집중도"
+        },
+        {
+          "en": "even when spending data does not support it",
+          "ko": "소비 데이터가 뒷받침하지 않을 때조차"
+        }
+      ],
+      "pronunciationNotes": ["intuitively는 '인투이티블리'로 두 번째 음절에 강세", "concentration은 '칸센트레이션'으로 세 번째 음절에 강세"],
+      "rhetoricalDevice": "contrast"
+    },
+    {
+      "id": 15,
+      "original": "The practical danger is not that one side of this debate is wrong but that neither can be decisively resolved.",
+      "translation": "실질적 위험은 이 논쟁의 한 쪽이 틀렸다는 것이 아니라, 어느 쪽도 결정적으로 해결될 수 없다는 것이다.",
+      "grammarElements": [
+        {
+          "text": "The practical danger",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "is",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "not that one side of this debate is wrong",
+          "role": "complement",
+          "label": "보어 (부정되는 that절)"
+        },
+        {
+          "text": "but that neither can be decisively resolved",
+          "role": "complement",
+          "label": "보어 (실제 위험을 나타내는 that절)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "practical",
+          "pos": "adjective",
+          "meaning": "실질적인, 실용적인",
+          "example": "Beyond the theoretical implications, the practical impact on households was immediate and severe.",
+          "collocations": ["practical danger", "practical application", "practical implications"],
+          "difficulty": 1
+        },
+        {
+          "word": "decisively",
+          "pos": "adverb",
+          "meaning": "결정적으로, 확정적으로",
+          "example": "The election did not decisively settle the question of immigration reform.",
+          "collocations": ["decisively resolved", "act decisively", "decisively defeated"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "not that ... but that",
+          "meaning": "~라는 것이 아니라 ~라는 것이다",
+          "usage": "기대되는 위험을 부정하고 더 근본적인 위험을 제시할 때 사용하는 수사적 대비 구문",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "The [real/practical] danger is not that [expected problem] but that [deeper problem]",
+          "explanation": "표면적 위험을 넘어 더 근본적인 위험을 제시하는 역접 패턴",
+          "examples": [
+            "The real danger is not that the technology fails but that it succeeds in ways no one anticipated.",
+            "The practical danger is not that the policy is unpopular but that its effects cannot be measured until it is too late."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The practical danger is not that one side of this debate is wrong but that neither can be _______ resolved.",
+              "answer": "decisively",
+              "options": ["decisively", "desperately", "deliberately", "defensively"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "마지막 문단의 주제문. 'not that ... but that' 구조가 논쟁의 본질을 재정의한다 — 문제는 누가 맞느냐가 아니라 확인 자체가 불가능하다는 것이다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "The practical danger is not that one side of this debate is wrong",
+          "ko": "실질적 위험은 이 논쟁의 한 쪽이 틀렸다는 것이 아니라"
+        },
+        {
+          "en": "but that neither can be decisively resolved",
+          "ko": "어느 쪽도 결정적으로 해결될 수 없다는 것이다"
+        }
+      ],
+      "pronunciationNotes": ["decisively는 '디사이시블리'로 두 번째 음절에 강세"],
+      "rhetoricalDevice": "thesis statement"
+    },
+    {
+      "id": 16,
+      "original": "Markets, executives, and policymakers must act on incomplete information, and the narrative they adopt shapes real outcomes.",
+      "translation": "시장, 경영자, 정책입안자들은 불완전한 정보에 기반하여 행동해야 하며, 그들이 채택하는 내러티브가 실제 결과를 형성한다.",
+      "grammarElements": [
+        {
+          "text": "Markets, executives, and policymakers",
+          "role": "subject",
+          "label": "주어 (삼중 병렬)"
+        },
+        {
+          "text": "must act on",
+          "role": "verb",
+          "label": "조동사 + 구동사"
+        },
+        {
+          "text": "incomplete information",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "the narrative they adopt shapes real outcomes",
+          "role": "clause",
+          "label": "등위절 (결과)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "policymakers",
+          "pos": "noun",
+          "meaning": "정책입안자",
+          "example": "Policymakers struggled to design relief programs that reached the most vulnerable households.",
+          "collocations": ["policymakers and regulators", "senior policymakers", "policymakers must"],
+          "difficulty": 2
+        },
+        {
+          "word": "adopt",
+          "pos": "verb",
+          "meaning": "채택하다, 받아들이다",
+          "example": "Companies that adopt a long-term perspective tend to outperform those focused on quarterly earnings.",
+          "collocations": ["adopt a strategy", "adopt a narrative", "widely adopted"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "act on incomplete information",
+          "meaning": "불완전한 정보에 기반하여 행동하다",
+          "usage": "의사결정자가 불확실성 속에서 행동해야 하는 상황을 묘사할 때 사용",
+          "register": "analytical"
+        },
+        {
+          "phrase": "shapes real outcomes",
+          "meaning": "실제 결과를 형성하다",
+          "usage": "내러티브나 믿음이 단순한 해석을 넘어 실질적 결과에 영향을 미침을 강조할 때 사용",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Actors] must act on incomplete [information/data], and the [framework] they adopt shapes [real consequences]",
+          "explanation": "불확실성 속에서의 의사결정과 그 자기실현적 성격을 연결하는 패턴",
+          "examples": [
+            "Doctors must act on incomplete diagnoses, and the treatment path they choose determines whether the patient recovers.",
+            "Generals must act on incomplete intelligence, and the strategy they adopt shapes the course of the conflict."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Markets, executives, and policymakers must act on _______ information, and the narrative they adopt shapes real outcomes.",
+              "answer": "incomplete",
+              "options": ["incomplete", "incorrect", "informal", "inconsistent"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "내러티브의 자기실현적 성격을 지적하는 문장. 정보가 불완전할 때 채택된 내러티브가 현실을 만들어낸다는 핵심 통찰을 간결하게 전달한다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Markets, executives, and policymakers must act on incomplete information",
+          "ko": "시장, 경영자, 정책입안자들은 불완전한 정보에 기반하여 행동해야 한다"
+        },
+        {
+          "en": "the narrative they adopt shapes real outcomes",
+          "ko": "그들이 채택하는 내러티브가 실제 결과를 형성한다"
+        }
+      ],
+      "pronunciationNotes": ["policymakers는 '팔러시메이커즈'로 첫 음절에 강세"],
+      "rhetoricalDevice": "explanation"
+    },
+    {
+      "id": 17,
+      "original": "If corporate boards believe the boom depends on wealthy consumers, they chase luxury margins and neglect mass-market investment.",
+      "translation": "만약 기업 이사회가 호황이 부유한 소비자에게 달려 있다고 믿는다면, 그들은 럭셔리 마진을 추구하고 대중 시장 투자를 소홀히 한다.",
+      "grammarElements": [
+        {
+          "text": "If corporate boards believe the boom depends on wealthy consumers",
+          "role": "clause",
+          "label": "조건절"
+        },
+        {
+          "text": "they",
+          "role": "subject",
+          "label": "주어 (= corporate boards)"
+        },
+        {
+          "text": "chase ... and neglect",
+          "role": "verb",
+          "label": "병렬 동사"
+        },
+        {
+          "text": "luxury margins",
+          "role": "object",
+          "label": "목적어 1"
+        },
+        {
+          "text": "mass-market investment",
+          "role": "object",
+          "label": "목적어 2"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "margins",
+          "pos": "noun",
+          "meaning": "마진, 이익률",
+          "example": "Retailers squeezed their margins to compete with online platforms offering lower prices.",
+          "collocations": ["profit margins", "luxury margins", "thin margins"],
+          "difficulty": 2
+        },
+        {
+          "word": "neglect",
+          "pos": "verb",
+          "meaning": "소홀히 하다, 무시하다",
+          "example": "Companies that neglect employee training eventually pay the price in declining productivity.",
+          "collocations": ["neglect investment", "neglect infrastructure", "neglect responsibilities"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "chase luxury margins",
+          "meaning": "럭셔리 마진을 추구하다",
+          "usage": "기업이 고급 시장의 높은 이익률을 좇는 전략적 행태를 묘사할 때 사용. 'chase'가 맹목적 추구를 암시",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "If [decision-makers] believe [assumption], they [action A] and neglect [action B]",
+          "explanation": "잘못된 가정이 왜곡된 의사결정으로 이어지는 인과관계를 조건절로 보여주는 패턴",
+          "examples": [
+            "If fund managers believe inflation is transitory, they hold equities and neglect hedging strategies.",
+            "If school administrators believe standardized tests measure learning, they prioritize test prep and neglect creative instruction."
+          ],
+          "drillQuestions": [
+            {
+              "question": "If corporate boards believe the boom depends on wealthy consumers, they chase luxury _______ and neglect mass-market investment.",
+              "answer": "margins",
+              "options": ["margins", "markets", "mergers", "models"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "가정이 행동으로 이어지는 첫 번째 구체적 시나리오. 'chase'와 'neglect'의 대비가 내러티브가 자원 배분을 왜곡하는 과정을 선명하게 보여준다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "If corporate boards believe the boom depends on wealthy consumers",
+          "ko": "기업 이사회가 호황이 부유한 소비자에게 달려 있다고 믿는다면"
+        },
+        {
+          "en": "they chase luxury margins and neglect mass-market investment",
+          "ko": "럭셔리 마진을 추구하고 대중 시장 투자를 소홀히 한다"
+        }
+      ],
+      "pronunciationNotes": ["margins는 '마진즈'로 첫 음절에 강세"],
+      "rhetoricalDevice": "illustration"
+    },
+    {
+      "id": 18,
+      "original": "If central bankers see a fragile, top-heavy expansion, they hesitate to raise rates.",
+      "translation": "만약 중앙은행가들이 취약하고 상층 편중된 확장을 본다면, 그들은 금리를 올리기를 주저한다.",
+      "grammarElements": [
+        {
+          "text": "If central bankers see a fragile, top-heavy expansion",
+          "role": "clause",
+          "label": "조건절"
+        },
+        {
+          "text": "they",
+          "role": "subject",
+          "label": "주어 (= central bankers)"
+        },
+        {
+          "text": "hesitate to raise",
+          "role": "verb",
+          "label": "동사 + to 부정사"
+        },
+        {
+          "text": "rates",
+          "role": "object",
+          "label": "목적어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "fragile",
+          "pos": "adjective",
+          "meaning": "취약한, 깨지기 쉬운",
+          "example": "The ceasefire remained fragile, with sporadic violations reported along the border.",
+          "collocations": ["fragile recovery", "fragile economy", "fragile balance"],
+          "difficulty": 2
+        },
+        {
+          "word": "top-heavy",
+          "pos": "adjective",
+          "meaning": "상층 편중된, 머리가 무거운",
+          "example": "A top-heavy corporate structure with too many managers and too few frontline workers reduces agility.",
+          "collocations": ["top-heavy expansion", "top-heavy organization", "top-heavy market"],
+          "difficulty": 3
+        },
+        {
+          "word": "hesitate",
+          "pos": "verb",
+          "meaning": "주저하다, 망설이다",
+          "example": "Investors hesitated to commit capital amid uncertainty about the regulatory environment.",
+          "collocations": ["hesitate to act", "hesitate to raise", "don't hesitate"],
+          "difficulty": 1
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "top-heavy expansion",
+          "meaning": "상층 편중된 확장",
+          "usage": "경제 성장이 소수 상위층에 편중되어 구조적으로 불안정한 상태를 묘사할 때 사용",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "If [authority figures] see [characterization], they hesitate to [policy action]",
+          "explanation": "정책결정자의 인식이 정책적 주저로 이어지는 두 번째 시나리오를 제시하는 패턴",
+          "examples": [
+            "If regulators see a volatile housing market, they hesitate to loosen lending standards.",
+            "If health officials see an uncertain pandemic trajectory, they hesitate to lift restrictions."
+          ],
+          "drillQuestions": [
+            {
+              "question": "If central bankers see a fragile, _______ expansion, they hesitate to raise rates.",
+              "answer": "top-heavy",
+              "options": ["top-heavy", "top-down", "top-notch", "top-level"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "두 번째 시나리오로, 내러티브가 중앙은행의 금리 정책에 미치는 영향을 보여준다. 앞 문장과 병렬 구조(If ... they ...)를 유지하여 리듬감을 만든다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "If central bankers see a fragile, top-heavy expansion",
+          "ko": "중앙은행가들이 취약하고 상층 편중된 확장을 본다면"
+        },
+        {
+          "en": "they hesitate to raise rates",
+          "ko": "금리를 올리기를 주저한다"
+        }
+      ],
+      "pronunciationNotes": ["fragile은 '프래절'로 첫 음절에 강세", "hesitate는 '헤지테이트'로 첫 음절에 강세"],
+      "rhetoricalDevice": "illustration"
+    },
+    {
+      "id": 19,
+      "original": "The K-shaped debate may ultimately say less about who is spending and more about how much uncertainty an economy can absorb before the uncertainty itself becomes the problem.",
+      "translation": "K자형 논쟁은 궁극적으로 누가 소비하는가에 대해서는 덜 말하고, 불확실성 자체가 문제가 되기 전에 경제가 얼마나 많은 불확실성을 흡수할 수 있는가에 대해 더 많이 말하는 것일 수 있다.",
+      "grammarElements": [
+        {
+          "text": "The K-shaped debate",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "may ultimately say",
+          "role": "verb",
+          "label": "조동사 + 부사 + 동사"
+        },
+        {
+          "text": "less about who is spending",
+          "role": "object",
+          "label": "목적어 1 (비교급)"
+        },
+        {
+          "text": "more about how much uncertainty an economy can absorb before the uncertainty itself becomes the problem",
+          "role": "object",
+          "label": "목적어 2 (비교급 + before 시간절)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "ultimately",
+          "pos": "adverb",
+          "meaning": "궁극적으로, 결국",
+          "example": "The negotiations dragged on for months but ultimately produced a deal both sides could accept.",
+          "collocations": ["ultimately say", "ultimately depends", "ultimately responsible"],
+          "difficulty": 2
+        },
+        {
+          "word": "absorb",
+          "pos": "verb",
+          "meaning": "흡수하다, 감당하다",
+          "example": "Small businesses lack the reserves to absorb a prolonged downturn in consumer demand.",
+          "collocations": ["absorb losses", "absorb uncertainty", "absorb shocks"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "say less about ... and more about",
+          "meaning": "~에 대해서는 덜 말하고 ~에 대해 더 말하다",
+          "usage": "논쟁의 본질을 재정의할 때 사용하는 수사적 전환 표현. 표면적 주제에서 근본 문제로 시선을 이동시킴",
+          "register": "journalistic"
+        },
+        {
+          "phrase": "the uncertainty itself becomes the problem",
+          "meaning": "불확실성 자체가 문제가 된다",
+          "usage": "불확실성이 단순한 배경이 아니라 그 자체로 경제적 해악이 됨을 표현하는 자기지시적 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Debate] may ultimately say less about [apparent topic] and more about [deeper question] before [self-referential consequence]",
+          "explanation": "논쟁의 표면적 주제를 넘어 더 근본적인 질문으로 재프레이밍하는 결론 패턴",
+          "examples": [
+            "The AI safety debate may ultimately say less about the technology's capabilities and more about how much control societies are willing to surrender before the loss of control itself becomes irreversible.",
+            "The trade war may ultimately say less about tariffs and more about how much disruption global supply chains can endure before the disruption itself reshapes production permanently."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The K-shaped debate may ultimately say less about who is spending and more about how much uncertainty an economy can _______ before the uncertainty itself becomes the problem.",
+              "answer": "absorb",
+              "options": ["absorb", "achieve", "abandon", "address"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 5,
+      "notes": "기사의 마지막 문장이자 핵심 결론. 'less about ... more about' 구조로 논쟁의 본질을 재정의한다. '불확실성이 그 자체로 문제가 된다'는 자기지시적 결론이 기사 전체의 방법론적 불확실성을 존재론적 위험으로 승격시킨다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "The K-shaped debate may ultimately say less about who is spending",
+          "ko": "K자형 논쟁은 궁극적으로 누가 소비하는가에 대해서는 덜 말하고"
+        },
+        {
+          "en": "more about how much uncertainty an economy can absorb",
+          "ko": "경제가 얼마나 많은 불확실성을 흡수할 수 있는가에 대해 더 말한다"
+        },
+        {
+          "en": "before the uncertainty itself becomes the problem",
+          "ko": "불확실성 자체가 문제가 되기 전에"
+        }
+      ],
+      "pronunciationNotes": ["ultimately는 '얼티미틀리'로 첫 음절에 강세", "absorb는 '앱소브'로 두 번째 음절에 강세"],
+      "rhetoricalDevice": "conclusion"
+    }
+  ]
+}

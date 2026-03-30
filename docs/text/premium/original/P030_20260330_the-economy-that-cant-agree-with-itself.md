@@ -1,0 +1,16 @@
+# The Economy That Can't Agree With Itself
+
+One of the most consequential economic questions in America right now is deceptively simple: who is spending the money? The answer should be straightforward — consumer expenditure is among the most studied phenomena in economics — but competing datasets have produced wildly different pictures. One influential estimate holds that the wealthiest ten percent of American households now account for nearly half of all consumer spending. Another, drawing on direct household surveys, puts the share of the top twenty percent at just over a third. The gap between these figures is not a rounding error; it is the difference between an economy humming on broad-based demand and one resting on a narrow ledge.
+
+The divergence stems from methodology, not ideology. The higher estimates rely on a chain of inference — taking snapshots of how much wealth each income bracket historically held in certain asset classes, then assuming that subsequent saving patterns follow the same distribution. If the top ten percent held seventy percent of equities in a given year, they are assumed to account for seventy percent of all equity purchases since. Spending is then calculated as the residual between estimated income and estimated saving. Each assumption introduces error; compounding them produces a figure that can diverge sharply from reality. Direct surveys by the Bureau of Labor Statistics, which simply ask households what they spent, show a far more stable picture — one in which spending shares have barely shifted for decades, even through the financial crisis and the pandemic.
+
+Yet the narrative of a K-shaped economy has proven remarkably durable. The Minneapolis Federal Reserve, reviewing the evidence in March 2026, found that available measures ranged from a steep K to no obvious K-shape depending on the data source. Bank of America's internal card data prompted its economists to propose an "E-shaped" economy — three tiers of consumer behavior rather than two — with middle-income households spending cautiously in ways that fit neither pole. Meanwhile, household wealth data shows the top twenty percent holding nearly seventy-two percent of all assets, a concentration that makes the K narrative feel intuitively right even when spending data does not support it.
+
+The practical danger is not that one side of this debate is wrong but that neither can be decisively resolved. Markets, executives, and policymakers must act on incomplete information, and the narrative they adopt shapes real outcomes. If corporate boards believe the boom depends on wealthy consumers, they chase luxury margins and neglect mass-market investment. If central bankers see a fragile, top-heavy expansion, they hesitate to raise rates. The K-shaped debate may ultimately say less about who is spending and more about how much uncertainty an economy can absorb before the uncertainty itself becomes the problem.
+
+## Sources
+- The Economist (2026-03-08): "Would America be in recession without the super-rich?"
+- Minneapolis Federal Reserve (2026-03): "Have U.S. consumers gone 'K-shaped'? A review of the data"
+- Bank of America / CNBC (2026-02): "E-shaped economy" analysis
+- BLS Consumer Expenditure Survey 2024: Spending by income quintile
+- CNBC (2026-01): Wealth inequality and the K-shaped economy data

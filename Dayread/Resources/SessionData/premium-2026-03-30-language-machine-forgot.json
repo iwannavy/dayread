@@ -1,0 +1,1201 @@
+{
+  "id": "premium-2026-03-30-language-machine-forgot",
+  "rawText": "In four rural districts of Rwanda, a recent study offered a rare piece of good news for AI in global health. Researchers tested five leading models on 5,609 clinical questions submitted by community health workers, and found that GPT-4o and Gemini scored above four out of five for accuracy — even when queries arrived in Kinyarwanda, the language most patients actually speak. The result suggested that AI-assisted triage could genuinely improve frontline care in low-resource settings.\n\nBut Rwanda's success is the exception that illuminates the rule. Kinyarwanda is one of fewer than fifty African languages that current AI models support at any meaningful level; UNESCO counts between fifteen hundred and three thousand distinct languages on the continent. Independent benchmarks show accuracy in most non-English languages running twelve to twenty-nine percentage points below English baselines — a gap wide enough to turn a useful diagnostic tool into a dangerous one. A study in Malawi found that when clinic staff and patients do not share a language, the result is measurable harm: higher rates of misdiagnosis, lower treatment adherence, and eroded patient trust.\n\nThe scale of investment is growing faster than the infrastructure to support it. The Gates Foundation and OpenAI have committed fifty million dollars to place AI triage tools in a thousand primary health clinics across the continent, yet Africa accounts for just 0.31 percent of global healthcare AI research. When a South African startup called Lelapa AI built a symptom-description tool in several African languages, it had to construct much of the underlying language infrastructure from scratch, because none of the major model providers had done so.\n\nFine-tuning models with small amounts of high-quality local data has shown accuracy gains of roughly five percentage points. But these are patches applied to systems whose fundamental architecture was built for English speakers by English-speaking institutions. Rwanda proved that the technology can work when the linguistic groundwork exists. For the vast majority of Africa's patients, that groundwork has not yet been laid — and the tools are arriving anyway.",
+  "overview": {
+    "title": "When One Language Succeeds and a Thousand Are Left Behind",
+    "source": "데일리딩 Premium",
+    "wordCount": 337,
+    "sentenceCount": 14,
+    "estimatedLevel": "upper-intermediate",
+    "readingTimeMinutes": 2,
+    "mainTopics": ["AI in healthcare", "language inequality", "African languages", "low-resource settings", "digital divide"],
+    "keyVocabularyPreview": ["triage", "Kinyarwanda", "benchmark", "misdiagnosis", "infrastructure", "fine-tuning", "diagnostic", "adherence"],
+    "difficulty": 3
+  },
+  "createdAt": "2026-03-30T00:00:00.000Z",
+  "sentences": [
+    {
+      "id": 0,
+      "original": "In four rural districts of Rwanda, a recent study offered a rare piece of good news for AI in global health.",
+      "translation": "르완다의 4개 농촌 지역에서, 최근 한 연구가 글로벌 보건 분야의 AI에 대해 드문 희소식을 전했다.",
+      "grammarElements": [
+        {
+          "text": "In four rural districts of Rwanda",
+          "role": "modifier",
+          "label": "장소 부사구"
+        },
+        {
+          "text": "a recent study",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "offered",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "a rare piece of good news for AI in global health",
+          "role": "object",
+          "label": "목적어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "rural",
+          "pos": "adjective",
+          "meaning": "농촌의, 시골의",
+          "example": "Access to healthcare remains limited in many rural areas.",
+          "collocations": ["rural districts", "rural communities", "rural areas"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "a rare piece of good news",
+          "meaning": "드문 희소식",
+          "usage": "대체로 부정적인 상황에서 예외적으로 긍정적인 결과가 나왔을 때 사용하는 표현",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "In [location], a recent study offered a rare piece of [good/bad] news for [field]",
+          "explanation": "특정 지역의 연구 결과를 소개하며, 해당 분야의 전반적 추세와 대비되는 결과를 예고하는 도입 패턴",
+          "examples": [
+            "In three coastal provinces of Vietnam, a recent study offered a rare piece of good news for climate adaptation.",
+            "In five urban hospitals in Brazil, a recent study offered a rare piece of encouraging news for antibiotic resistance research."
+          ],
+          "drillQuestions": [
+            {
+              "question": "A recent study offered a rare _______ of good news for AI in global health.",
+              "answer": "piece",
+              "options": ["piece", "peace", "place", "price"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "기사의 첫 문장으로, 르완다라는 구체적 지역을 제시하며 독자의 관심을 끈다. 'rare piece of good news'라는 표현이 긍정적 결과를 전하면서도 이것이 예외적임을 암시하여, 뒤에 이어질 부정적 현실에 대한 복선을 깔아놓는다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "four rural districts of Rwanda",
+          "ko": "르완다의 4개 농촌 지역"
+        },
+        {
+          "en": "a rare piece of good news",
+          "ko": "드문 희소식"
+        },
+        {
+          "en": "AI in global health",
+          "ko": "글로벌 보건 분야의 AI"
+        }
+      ],
+      "pronunciationNotes": ["Rwanda는 '르완다'로 발음, 첫 음절에 강세"],
+      "rhetoricalDevice": "narrative opening"
+    },
+    {
+      "id": 1,
+      "original": "Researchers tested five leading models on 5,609 clinical questions submitted by community health workers, and found that GPT-4o and Gemini scored above four out of five for accuracy — even when queries arrived in Kinyarwanda, the language most patients actually speak.",
+      "translation": "연구자들은 지역사회 보건 요원이 제출한 5,609개의 임상 질문에 대해 5개 주요 모델을 테스트했고, GPT-4o와 Gemini가 정확도에서 5점 만점에 4점 이상을 기록했음을 발견했다 — 질의가 대부분의 환자가 실제로 사용하는 언어인 키냐르완다어로 도착했을 때조차도.",
+      "grammarElements": [
+        {
+          "text": "Researchers",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "tested ... and found",
+          "role": "verb",
+          "label": "동사 2개 병렬 구조"
+        },
+        {
+          "text": "five leading models on 5,609 clinical questions submitted by community health workers",
+          "role": "object",
+          "label": "목적어 + 과거분사 수식"
+        },
+        {
+          "text": "that GPT-4o and Gemini scored above four out of five for accuracy",
+          "role": "clause",
+          "label": "that 명사절 (목적어)"
+        },
+        {
+          "text": "even when queries arrived in Kinyarwanda, the language most patients actually speak",
+          "role": "clause",
+          "label": "양보 부사절 + 동격 수식어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "clinical",
+          "pos": "adjective",
+          "meaning": "임상의, 진료와 관련된",
+          "example": "The hospital conducted a series of clinical trials for the new treatment.",
+          "collocations": ["clinical questions", "clinical trials", "clinical setting"],
+          "difficulty": 3
+        },
+        {
+          "word": "query",
+          "pos": "noun",
+          "meaning": "질의, 문의",
+          "example": "The database can process thousands of queries per second.",
+          "collocations": ["search query", "submit a query", "respond to a query"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "scored above four out of five",
+          "meaning": "5점 만점에 4점 이상을 기록하다",
+          "usage": "정량적 평가에서 높은 점수를 얻었음을 나타낼 때 사용",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Researchers] tested [number] [models/methods] on [dataset], and found that [top performers] scored [metric] — even when [challenging condition]",
+          "explanation": "연구 방법과 결과를 요약한 뒤, 대시 뒤에 양보절을 붙여 결과의 의외성을 강조하는 과학 저널리즘 패턴",
+          "examples": [
+            "Researchers tested three diagnostic algorithms on twelve thousand patient records, and found that the neural network scored ninety-two percent accuracy — even when images were taken with low-resolution cameras.",
+            "Analysts tested four forecasting models on a decade of economic data, and found that the ensemble method scored highest for reliability — even when input variables were incomplete."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Researchers tested five leading models on 5,609 _______ questions submitted by community health workers.",
+              "answer": "clinical",
+              "options": ["clinical", "clerical", "classical", "critical"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "구체적인 숫자(5개 모델, 5,609개 질문)를 나열하여 연구의 규모와 신뢰성을 드러낸다. 대시(—) 뒤의 'even when' 구문이 키냐르완다어에서도 성과가 유지되었다는 의외의 결과를 강조하며, 동격구 'the language most patients actually speak'이 이 언어의 실질적 중요성을 부각한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "community health workers",
+          "ko": "지역사회 보건 요원"
+        },
+        {
+          "en": "scored above four out of five for accuracy",
+          "ko": "정확도에서 5점 만점에 4점 이상을 기록했다"
+        },
+        {
+          "en": "the language most patients actually speak",
+          "ko": "대부분의 환자가 실제로 사용하는 언어"
+        }
+      ],
+      "pronunciationNotes": ["Kinyarwanda는 '키냐르완다'로 발음, 세 번째 음절에 강세", "Gemini는 '제미나이'로 발음"],
+      "rhetoricalDevice": "evidence presentation"
+    },
+    {
+      "id": 2,
+      "original": "The result suggested that AI-assisted triage could genuinely improve frontline care in low-resource settings.",
+      "translation": "이 결과는 AI 보조 환자 분류가 저자원 환경에서 일선 진료를 진정으로 개선할 수 있음을 시사했다.",
+      "grammarElements": [
+        {
+          "text": "The result",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "suggested",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "that AI-assisted triage could genuinely improve frontline care in low-resource settings",
+          "role": "clause",
+          "label": "that 명사절 (목적어)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "triage",
+          "pos": "noun",
+          "meaning": "환자 분류 (긴급도에 따라 치료 우선순위를 결정하는 과정)",
+          "example": "The emergency room nurse performed triage on the incoming patients.",
+          "collocations": ["patient triage", "triage system", "AI-assisted triage"],
+          "difficulty": 4
+        },
+        {
+          "word": "frontline",
+          "pos": "adjective",
+          "meaning": "일선의, 최전방의",
+          "example": "Frontline workers bore the brunt of the pandemic response.",
+          "collocations": ["frontline care", "frontline workers", "frontline services"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "low-resource settings",
+          "meaning": "저자원 환경 (인력·자금·인프라가 부족한 환경)",
+          "usage": "의료·교육 등에서 자원이 부족한 지역이나 환경을 지칭할 때 사용하는 기술적 표현",
+          "register": "technical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "The result suggested that [intervention] could genuinely improve [outcome] in [context]",
+          "explanation": "연구 결과를 요약하며, 'genuinely'를 통해 개선이 실질적임을 강조하는 학술 보도 패턴",
+          "examples": [
+            "The result suggested that early screening could genuinely improve survival rates in underserved communities.",
+            "The result suggested that mobile banking could genuinely improve financial inclusion in rural economies."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The result suggested that AI-assisted _______ could genuinely improve frontline care.",
+              "answer": "triage",
+              "options": ["triage", "trial", "tribute", "trigger"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "첫 단락의 마무리 문장으로, 르완다 연구의 긍정적 함의를 간결하게 요약한다. 'suggested'와 'could'가 단정을 피하는 학술적 어조를 유지하면서, 'genuinely'가 그 가능성이 실재함을 강조한다. 이 낙관적 결론이 바로 다음 단락에서 뒤집히는 구조적 대비를 형성한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "AI-assisted triage",
+          "ko": "AI 보조 환자 분류"
+        },
+        {
+          "en": "frontline care",
+          "ko": "일선 진료"
+        },
+        {
+          "en": "low-resource settings",
+          "ko": "저자원 환경"
+        }
+      ],
+      "pronunciationNotes": ["triage는 '트리아쥬' 또는 '트리이지'로 발음, 프랑스어 유래"],
+      "rhetoricalDevice": "hopeful conclusion"
+    },
+    {
+      "id": 3,
+      "original": "But Rwanda's success is the exception that illuminates the rule.",
+      "translation": "그러나 르완다의 성공은 규칙을 비추어 보여주는 예외이다.",
+      "grammarElements": [
+        {
+          "text": "But",
+          "role": "modifier",
+          "label": "접속 부사 (전환)"
+        },
+        {
+          "text": "Rwanda's success",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "is",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "the exception that illuminates the rule",
+          "role": "object",
+          "label": "보어 + 관계절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "illuminate",
+          "pos": "verb",
+          "meaning": "비추다, 밝히다, 조명하다",
+          "example": "The investigation illuminated the extent of corruption within the organization.",
+          "collocations": ["illuminate the rule", "illuminate the problem", "illuminate the truth"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "the exception that illuminates the rule",
+          "meaning": "규칙을 비추어 보여주는 예외 ('예외가 규칙을 증명한다'의 변형)",
+          "usage": "하나의 성공 사례가 오히려 전반적인 실패를 더욱 분명하게 드러낼 때 사용하는 수사적 표현",
+          "register": "literary"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "But [success case] is the exception that [verb]s the rule",
+          "explanation": "성공 사례가 예외임을 밝혀 전체적 패턴의 부정적 현실을 부각하는 전환 패턴",
+          "examples": [
+            "But Estonia's digital governance is the exception that confirms the rule in Eastern European reform.",
+            "But Singapore's housing policy is the exception that underscores the rule in Asian urban planning."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Rwanda's success is the exception that _______ the rule.",
+              "answer": "illuminates",
+              "options": ["illuminates", "illustrates", "eliminates", "illuminates"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "두 번째 단락의 주제문으로, 첫 단락의 희망적 톤을 단칼에 뒤집는 전환 문장이다. 'the exception proves the rule'이라는 영어 관용구를 'illuminates'로 변형하여, 르완다의 성공이 오히려 대다수의 실패를 더 선명하게 드러냄을 함축한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "Rwanda's success",
+          "ko": "르완다의 성공"
+        },
+        {
+          "en": "the exception that illuminates the rule",
+          "ko": "규칙을 비추어 보여주는 예외"
+        }
+      ],
+      "pronunciationNotes": ["illuminate는 '일루미네이트'로 발음, 두 번째 음절에 강세"],
+      "rhetoricalDevice": "thesis statement"
+    },
+    {
+      "id": 4,
+      "original": "Kinyarwanda is one of fewer than fifty African languages that current AI models support at any meaningful level; UNESCO counts between fifteen hundred and three thousand distinct languages on the continent.",
+      "translation": "키냐르완다어는 현재 AI 모델이 의미 있는 수준에서 지원하는 50개 미만의 아프리카 언어 중 하나에 불과하다; 유네스코는 아프리카 대륙에 1,500개에서 3,000개의 서로 다른 언어가 존재한다고 집계한다.",
+      "grammarElements": [
+        {
+          "text": "Kinyarwanda",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "is",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "one of fewer than fifty African languages that current AI models support at any meaningful level",
+          "role": "object",
+          "label": "보어 + 관계절"
+        },
+        {
+          "text": "UNESCO counts between fifteen hundred and three thousand distinct languages on the continent",
+          "role": "clause",
+          "label": "세미콜론 뒤 대조 절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "distinct",
+          "pos": "adjective",
+          "meaning": "별개의, 서로 다른",
+          "example": "The region is home to over two hundred distinct ethnic groups.",
+          "collocations": ["distinct languages", "distinct categories", "distinct features"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "at any meaningful level",
+          "meaning": "의미 있는 수준에서",
+          "usage": "형식적으로가 아니라 실질적으로 기능할 수 있는 정도를 나타낼 때 사용하는 한정 표현",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[X] is one of fewer than [number] [category] that [system] supports at any meaningful level; [authority] counts [much larger number] [in scope]",
+          "explanation": "지원 범위와 실제 수요 사이의 극적 격차를 세미콜론으로 연결하여 보여주는 대비 패턴",
+          "examples": [
+            "Zulu is one of fewer than twenty African languages that voice assistants support at any meaningful level; linguists count over five hundred Bantu languages in the region.",
+            "Mandarin is one of fewer than ten Asian languages that medical AI handles at any meaningful level; the continent is home to over two thousand distinct languages."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Kinyarwanda is one of fewer than fifty African languages that current AI models support at any _______ level.",
+              "answer": "meaningful",
+              "options": ["meaningful", "measurable", "manageable", "moderate"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "50 미만 대 1,500~3,000이라는 숫자 대비가 핵심이다. 세미콜론이 두 사실을 병치하여 독자가 스스로 격차의 규모를 계산하도록 유도한다. 'at any meaningful level'이라는 한정어가 표면적 지원과 실질적 성능의 차이를 날카롭게 구분한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "fewer than fifty African languages",
+          "ko": "50개 미만의 아프리카 언어"
+        },
+        {
+          "en": "at any meaningful level",
+          "ko": "의미 있는 수준에서"
+        },
+        {
+          "en": "fifteen hundred and three thousand distinct languages",
+          "ko": "1,500개에서 3,000개의 서로 다른 언어"
+        }
+      ],
+      "pronunciationNotes": ["UNESCO는 '유네스코'로 발음, 약어를 단어처럼 읽는다"],
+      "rhetoricalDevice": "statistical contrast"
+    },
+    {
+      "id": 5,
+      "original": "Independent benchmarks show accuracy in most non-English languages running twelve to twenty-nine percentage points below English baselines — a gap wide enough to turn a useful diagnostic tool into a dangerous one.",
+      "translation": "독립적인 벤치마크는 대부분의 비영어 언어에서 정확도가 영어 기준선보다 12~29 퍼센트포인트 낮게 나타남을 보여준다 — 유용한 진단 도구를 위험한 도구로 바꿔놓기에 충분한 격차이다.",
+      "grammarElements": [
+        {
+          "text": "Independent benchmarks",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "show",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "accuracy in most non-English languages running twelve to twenty-nine percentage points below English baselines",
+          "role": "object",
+          "label": "목적어 + 현재분사 수식"
+        },
+        {
+          "text": "a gap wide enough to turn a useful diagnostic tool into a dangerous one",
+          "role": "modifier",
+          "label": "동격 명사구 + enough to 부정사"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "benchmark",
+          "pos": "noun",
+          "meaning": "벤치마크, 기준점 (성능 비교의 표준)",
+          "example": "The new processor set a benchmark for speed in its category.",
+          "collocations": ["independent benchmark", "benchmark test", "benchmark performance"],
+          "difficulty": 3
+        },
+        {
+          "word": "diagnostic",
+          "pos": "adjective",
+          "meaning": "진단의, 진단용의",
+          "example": "The hospital invested in new diagnostic equipment for early cancer detection.",
+          "collocations": ["diagnostic tool", "diagnostic test", "diagnostic accuracy"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "wide enough to turn A into B",
+          "meaning": "A를 B로 바꿔놓기에 충분히 큰",
+          "usage": "격차나 차이의 실질적 영향을 극적으로 표현할 때 사용하는 수사적 구문",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[benchmarks/data] show [metric] running [number] points below [baseline] — a gap wide enough to [dramatic consequence]",
+          "explanation": "정량적 데이터를 제시한 뒤 대시로 그 수치의 실질적 의미를 해석하는 과학 저널리즘 패턴",
+          "examples": [
+            "National assessments show literacy rates running fifteen points below the target — a gap wide enough to compromise an entire generation's economic prospects.",
+            "Hospital records show survival rates running twenty points below the national average — a gap wide enough to turn a routine procedure into a high-risk one."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Independent _______ show accuracy in most non-English languages running twelve to twenty-nine percentage points below English baselines.",
+              "answer": "benchmarks",
+              "options": ["benchmarks", "baselines", "boundaries", "breakdowns"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "대시(—) 뒤의 동격구 'a gap wide enough to turn...'이 추상적 수치를 구체적 위험으로 변환한다. 'useful'과 'dangerous'의 대비가 같은 도구가 언어에 따라 정반대의 효과를 낼 수 있음을 날카롭게 보여준다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "independent benchmarks",
+          "ko": "독립적인 벤치마크"
+        },
+        {
+          "en": "twelve to twenty-nine percentage points below",
+          "ko": "12~29 퍼센트포인트 낮게"
+        },
+        {
+          "en": "turn a useful diagnostic tool into a dangerous one",
+          "ko": "유용한 진단 도구를 위험한 도구로 바꿔놓다"
+        }
+      ],
+      "pronunciationNotes": ["diagnostic는 '다이어그노스틱'으로 발음, 세 번째 음절에 강세", "benchmark는 '벤치마크'로 발음"],
+      "rhetoricalDevice": "evidence with consequence"
+    },
+    {
+      "id": 6,
+      "original": "A study in Malawi found that when clinic staff and patients do not share a language, the result is measurable harm: higher rates of misdiagnosis, lower treatment adherence, and eroded patient trust.",
+      "translation": "말라위에서의 한 연구에 따르면 진료소 직원과 환자가 언어를 공유하지 않을 때, 그 결과는 측정 가능한 피해이다: 더 높은 오진율, 더 낮은 치료 순응도, 그리고 훼손된 환자 신뢰.",
+      "grammarElements": [
+        {
+          "text": "A study in Malawi",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "found",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "that when clinic staff and patients do not share a language, the result is measurable harm",
+          "role": "clause",
+          "label": "that 명사절 + when 조건절"
+        },
+        {
+          "text": "higher rates of misdiagnosis, lower treatment adherence, and eroded patient trust",
+          "role": "modifier",
+          "label": "콜론 뒤 부연 (3항 병렬)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "misdiagnosis",
+          "pos": "noun",
+          "meaning": "오진, 잘못된 진단",
+          "example": "The misdiagnosis delayed the patient's access to proper treatment by several months.",
+          "collocations": ["rates of misdiagnosis", "risk of misdiagnosis", "prevent misdiagnosis"],
+          "difficulty": 3
+        },
+        {
+          "word": "adherence",
+          "pos": "noun",
+          "meaning": "순응, 준수 (지시나 규정을 따르는 것)",
+          "example": "Patient adherence to the medication schedule improved with regular follow-ups.",
+          "collocations": ["treatment adherence", "medication adherence", "adherence rate"],
+          "difficulty": 4
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "measurable harm",
+          "meaning": "측정 가능한 피해",
+          "usage": "추상적이 아니라 데이터로 입증할 수 있는 실질적 피해를 지칭할 때 사용",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "A study in [location] found that when [condition], the result is [outcome]: [specific consequence 1], [consequence 2], and [consequence 3]",
+          "explanation": "연구 결과를 인용하며, 콜론 뒤에 3항 병렬로 구체적 결과를 나열하는 학술 보도 패턴",
+          "examples": [
+            "A study in Kenya found that when schools lack clean water, the result is measurable harm: higher rates of absenteeism, lower test scores, and increased disease transmission.",
+            "A study in India found that when air quality drops below safety thresholds, the result is measurable harm: higher hospitalization rates, lower worker productivity, and shortened life expectancy."
+          ],
+          "drillQuestions": [
+            {
+              "question": "When clinic staff and patients do not share a language, the result is measurable harm: higher rates of misdiagnosis, lower treatment _______, and eroded patient trust.",
+              "answer": "adherence",
+              "options": ["adherence", "attendance", "assistance", "accordance"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "콜론(:)이 'measurable harm'이라는 추상적 주장을 세 가지 구체적 결과(오진, 순응도 저하, 신뢰 훼손)로 풀어낸다. 3항 병렬 구조가 피해의 다면성을 보여주며, 각 항목이 점점 더 근본적인 문제(의료 오류 → 치료 실패 → 관계 파괴)로 심화된다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "clinic staff and patients do not share a language",
+          "ko": "진료소 직원과 환자가 언어를 공유하지 않다"
+        },
+        {
+          "en": "measurable harm",
+          "ko": "측정 가능한 피해"
+        },
+        {
+          "en": "eroded patient trust",
+          "ko": "훼손된 환자 신뢰"
+        }
+      ],
+      "pronunciationNotes": ["Malawi는 '말라위'로 발음", "adherence는 '어드히어런스'로 발음, 두 번째 음절에 강세"],
+      "rhetoricalDevice": "evidence with enumeration"
+    },
+    {
+      "id": 7,
+      "original": "The scale of investment is growing faster than the infrastructure to support it.",
+      "translation": "투자의 규모는 이를 뒷받침할 인프라보다 더 빠르게 증가하고 있다.",
+      "grammarElements": [
+        {
+          "text": "The scale of investment",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "is growing",
+          "role": "verb",
+          "label": "동사 (현재진행)"
+        },
+        {
+          "text": "faster than the infrastructure to support it",
+          "role": "modifier",
+          "label": "비교 부사구"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "infrastructure",
+          "pos": "noun",
+          "meaning": "기반 시설, 인프라 (여기서는 언어 데이터·도구 등의 기술적 기반)",
+          "example": "The country's digital infrastructure lagged behind its economic ambitions.",
+          "collocations": ["language infrastructure", "digital infrastructure", "build infrastructure"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "growing faster than",
+          "meaning": "~보다 더 빠르게 성장하는",
+          "usage": "두 요소의 성장 속도 불균형을 나타낼 때 사용하는 비교 표현",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "The [scale/pace] of [X] is growing faster than the [Y] to support it",
+          "explanation": "성장과 기반 사이의 불균형을 간결하게 표현하는 주제문 패턴",
+          "examples": [
+            "The pace of urbanization is growing faster than the housing supply to support it.",
+            "The scale of data collection is growing faster than the privacy regulations to govern it."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The scale of investment is growing faster than the _______ to support it.",
+              "answer": "infrastructure",
+              "options": ["infrastructure", "information", "institution", "instrument"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "세 번째 단락의 주제문으로, 투자(돈)와 인프라(기술적 기반)의 속도 불균형을 단 한 문장으로 포착한다. 비교급 구조가 이 불균형을 명쾌하게 전달하며, 'to support it'이 인프라의 존재 이유가 투자를 뒷받침하는 데 있음을 명시한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "the scale of investment",
+          "ko": "투자의 규모"
+        },
+        {
+          "en": "growing faster than",
+          "ko": "~보다 더 빠르게 증가하는"
+        },
+        {
+          "en": "the infrastructure to support it",
+          "ko": "이를 뒷받침할 인프라"
+        }
+      ],
+      "pronunciationNotes": ["infrastructure는 '인프라스트럭처'로 발음, 첫 음절에 강세"],
+      "rhetoricalDevice": "thesis statement"
+    },
+    {
+      "id": 8,
+      "original": "The Gates Foundation and OpenAI have committed fifty million dollars to place AI triage tools in a thousand primary health clinics across the continent, yet Africa accounts for just 0.31 percent of global healthcare AI research.",
+      "translation": "게이츠 재단과 OpenAI는 아프리카 대륙 전역 1,000개 일차 의료 클리닉에 AI 환자 분류 도구를 배치하기 위해 5,000만 달러를 투입하기로 했지만, 아프리카는 전 세계 의료 AI 연구의 단 0.31%만을 차지한다.",
+      "grammarElements": [
+        {
+          "text": "The Gates Foundation and OpenAI",
+          "role": "subject",
+          "label": "주어 (복합)"
+        },
+        {
+          "text": "have committed",
+          "role": "verb",
+          "label": "동사 (현재완료)"
+        },
+        {
+          "text": "fifty million dollars",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "to place AI triage tools in a thousand primary health clinics across the continent",
+          "role": "modifier",
+          "label": "부정사 목적 부사구"
+        },
+        {
+          "text": "yet Africa accounts for just 0.31 percent of global healthcare AI research",
+          "role": "clause",
+          "label": "역접 등위절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "account for",
+          "pos": "phrasal verb",
+          "meaning": "차지하다, ~의 비율을 이루다",
+          "example": "Renewable energy accounts for roughly thirty percent of the country's electricity generation.",
+          "collocations": ["account for a share", "account for a percentage", "account for the majority"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "have committed [amount] to",
+          "meaning": "~에 [금액]을 투입하기로 약속하다",
+          "usage": "기관이나 정부가 특정 프로젝트에 재정 지원을 공식적으로 약속할 때 사용",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Organization] have committed [amount] to [action], yet [the same region] accounts for just [tiny percentage] of [global total]",
+          "explanation": "대규모 투자와 현지 연구 역량의 극적 불균형을 yet으로 연결하여 모순을 드러내는 패턴",
+          "examples": [
+            "The World Bank has committed two hundred million dollars to expand digital education across Southeast Asia, yet the region accounts for just four percent of global EdTech research.",
+            "UNICEF has committed eighty million dollars to deploy water purification systems in sub-Saharan Africa, yet the region accounts for just one percent of global water technology patents."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Africa _______ for just 0.31 percent of global healthcare AI research.",
+              "answer": "accounts",
+              "options": ["accounts", "amounts", "accumulates", "achieves"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "5,000만 달러라는 거대한 투자와 0.31%라는 미미한 연구 비중을 'yet'이라는 한 단어로 충돌시킨다. 이 대비는 외부 투자가 현지 연구 역량 없이 도착하는 구조적 문제를 압축적으로 보여준다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "have committed fifty million dollars",
+          "ko": "5,000만 달러를 투입하기로 했다"
+        },
+        {
+          "en": "primary health clinics",
+          "ko": "일차 의료 클리닉"
+        },
+        {
+          "en": "accounts for just 0.31 percent",
+          "ko": "단 0.31%만을 차지한다"
+        }
+      ],
+      "pronunciationNotes": [],
+      "rhetoricalDevice": "ironic juxtaposition"
+    },
+    {
+      "id": 9,
+      "original": "When a South African startup called Lelapa AI built a symptom-description tool in several African languages, it had to construct much of the underlying language infrastructure from scratch, because none of the major model providers had done so.",
+      "translation": "남아프리카의 스타트업인 Lelapa AI가 여러 아프리카 언어로 증상 기술 도구를 구축했을 때, 주요 모델 제공업체 중 누구도 그렇게 하지 않았기 때문에 기반 언어 인프라의 상당 부분을 처음부터 직접 구축해야 했다.",
+      "grammarElements": [
+        {
+          "text": "When a South African startup called Lelapa AI built a symptom-description tool in several African languages",
+          "role": "clause",
+          "label": "시간 부사절"
+        },
+        {
+          "text": "it",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "had to construct",
+          "role": "verb",
+          "label": "동사구 (의무)"
+        },
+        {
+          "text": "much of the underlying language infrastructure",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "because none of the major model providers had done so",
+          "role": "clause",
+          "label": "이유 부사절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "from scratch",
+          "pos": "adverb phrase",
+          "meaning": "처음부터, 맨 바닥에서",
+          "example": "The team had to rebuild the entire database from scratch after the crash.",
+          "collocations": ["build from scratch", "start from scratch", "create from scratch"],
+          "difficulty": 2
+        },
+        {
+          "word": "underlying",
+          "pos": "adjective",
+          "meaning": "기반의, 근본적인, 기저의",
+          "example": "The underlying cause of the failure was poor data quality.",
+          "collocations": ["underlying infrastructure", "underlying cause", "underlying problem"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "none of the major model providers had done so",
+          "meaning": "주요 모델 제공업체 중 누구도 그렇게 하지 않았다",
+          "usage": "기존 주류 기업의 무관심이나 태만을 지적할 때 사용하는 비판적 표현",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "When [small actor] built [tool] in [underserved context], it had to construct [foundational element] from scratch, because none of [major players] had done so",
+          "explanation": "소규모 행위자가 대형 업체의 공백을 메워야 하는 구조적 불균형을 서사적으로 보여주는 패턴",
+          "examples": [
+            "When a Kenyan NGO built a crop advisory app in local dialects, it had to construct the agronomic vocabulary database from scratch, because none of the global tech firms had done so.",
+            "When a Brazilian collective built a legal aid chatbot in indigenous languages, it had to construct the legal terminology corpus from scratch, because none of the major AI labs had done so."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Lelapa AI had to construct much of the underlying language infrastructure from _______, because none of the major model providers had done so.",
+              "answer": "scratch",
+              "options": ["scratch", "sketch", "stretch", "snatch"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "구체적인 사례(Lelapa AI)를 통해 추상적인 인프라 부재를 실감 나게 전달한다. 'from scratch'가 기반의 완전한 부재를, 'because none of the major model providers had done so'가 이 부재의 책임 소재를 명확히 한다. 과거완료 시제가 대형 업체의 오랜 무관심을 강조한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "a South African startup called Lelapa AI",
+          "ko": "남아프리카의 스타트업인 Lelapa AI"
+        },
+        {
+          "en": "the underlying language infrastructure",
+          "ko": "기반 언어 인프라"
+        },
+        {
+          "en": "from scratch",
+          "ko": "처음부터"
+        }
+      ],
+      "pronunciationNotes": ["Lelapa는 '렐라파'로 발음, 남아프리카 현지어 유래"],
+      "rhetoricalDevice": "case study"
+    },
+    {
+      "id": 10,
+      "original": "Fine-tuning models with small amounts of high-quality local data has shown accuracy gains of roughly five percentage points.",
+      "translation": "고품질 현지 데이터를 소량 활용하여 모델을 미세조정하면 약 5 퍼센트포인트의 정확도 향상을 보여주었다.",
+      "grammarElements": [
+        {
+          "text": "Fine-tuning models with small amounts of high-quality local data",
+          "role": "subject",
+          "label": "주어 (동명사구)"
+        },
+        {
+          "text": "has shown",
+          "role": "verb",
+          "label": "동사 (현재완료)"
+        },
+        {
+          "text": "accuracy gains of roughly five percentage points",
+          "role": "object",
+          "label": "목적어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "fine-tuning",
+          "pos": "noun",
+          "meaning": "미세조정 (사전 훈련된 모델을 특정 목적에 맞게 추가 훈련하는 과정)",
+          "example": "Fine-tuning the model on domain-specific data improved its performance dramatically.",
+          "collocations": ["fine-tuning a model", "fine-tuning with data", "fine-tuning process"],
+          "difficulty": 4
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "accuracy gains of roughly",
+          "meaning": "대략 ~의 정확도 향상",
+          "usage": "정량적 개선을 보고하되 정밀한 단정을 피할 때 사용하는 학술적 표현",
+          "register": "technical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Intervention] with small amounts of [high-quality data] has shown [metric] gains of roughly [number]",
+          "explanation": "제한된 자원으로도 측정 가능한 성과를 낼 수 있음을 보여주는 데이터 보고 패턴",
+          "examples": [
+            "Supplementing the curriculum with small amounts of locally adapted material has shown test score gains of roughly eight points.",
+            "Training nurses with small amounts of simulation-based practice has shown diagnostic accuracy gains of roughly twelve percent."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Fine-tuning models with small amounts of high-quality local data has shown accuracy _______ of roughly five percentage points.",
+              "answer": "gains",
+              "options": ["gains", "gaps", "grades", "goals"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "마지막 단락의 도입부로, 해결 가능성을 인정하면서도 'roughly'와 'five percentage points'라는 겸손한 수치가 이 개선이 제한적임을 솔직하게 보여준다. 동명사 주어가 기술적 과정을 자연스럽게 주어 위치에 놓는다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "fine-tuning models",
+          "ko": "모델을 미세조정하다"
+        },
+        {
+          "en": "high-quality local data",
+          "ko": "고품질 현지 데이터"
+        },
+        {
+          "en": "roughly five percentage points",
+          "ko": "약 5 퍼센트포인트"
+        }
+      ],
+      "pronunciationNotes": [],
+      "rhetoricalDevice": "solution framing"
+    },
+    {
+      "id": 11,
+      "original": "But these are patches applied to systems whose fundamental architecture was built for English speakers by English-speaking institutions.",
+      "translation": "그러나 이것들은 영어 사용자를 위해 영어권 기관이 구축한 근본적 아키텍처를 가진 시스템에 적용된 패치에 불과하다.",
+      "grammarElements": [
+        {
+          "text": "But",
+          "role": "modifier",
+          "label": "접속 부사 (역접)"
+        },
+        {
+          "text": "these",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "are",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "patches applied to systems",
+          "role": "object",
+          "label": "보어 + 과거분사 수식"
+        },
+        {
+          "text": "whose fundamental architecture was built for English speakers by English-speaking institutions",
+          "role": "clause",
+          "label": "관계절 (whose + 수동태)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "patch",
+          "pos": "noun",
+          "meaning": "패치, 임시 수정 (근본적 해결이 아닌 부분적 보수)",
+          "example": "The software patch fixed the security vulnerability but did not address the underlying design flaw.",
+          "collocations": ["apply a patch", "security patch", "temporary patch"],
+          "difficulty": 2
+        },
+        {
+          "word": "architecture",
+          "pos": "noun",
+          "meaning": "아키텍처, 설계 구조 (시스템의 근본적 구조)",
+          "example": "The architecture of the neural network determines how efficiently it processes data.",
+          "collocations": ["fundamental architecture", "system architecture", "model architecture"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "patches applied to systems",
+          "meaning": "시스템에 적용된 패치",
+          "usage": "근본적 해결이 아닌 표면적 수정임을 비판적으로 나타낼 때 사용하는 은유적 표현",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "But these are patches applied to [systems] whose [fundamental aspect] was built for [dominant group] by [dominant institutions]",
+          "explanation": "개선 노력을 인정하면서도 근본적 구조가 특정 집단을 위해 설계되었음을 지적하는 비판 패턴",
+          "examples": [
+            "But these are patches applied to curricula whose fundamental content was designed for Western students by Western publishers.",
+            "But these are patches applied to financial systems whose fundamental regulations were written for wealthy nations by wealthy-nation policymakers."
+          ],
+          "drillQuestions": [
+            {
+              "question": "These are _______ applied to systems whose fundamental architecture was built for English speakers.",
+              "answer": "patches",
+              "options": ["patches", "matches", "catches", "batches"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "'patches'라는 소프트웨어 은유가 미세조정의 한계를 직관적으로 전달한다. 패치는 근본적 재설계가 아니라 기존 구조 위의 임시 보수이다. 'for English speakers by English-speaking institutions'의 반복이 영어 중심 설계의 의도성을 강조한다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "patches applied to systems",
+          "ko": "시스템에 적용된 패치"
+        },
+        {
+          "en": "fundamental architecture",
+          "ko": "근본적 아키텍처"
+        },
+        {
+          "en": "built for English speakers by English-speaking institutions",
+          "ko": "영어 사용자를 위해 영어권 기관이 구축한"
+        }
+      ],
+      "pronunciationNotes": ["architecture는 '아키텍처'로 발음, 첫 음절에 강세"],
+      "rhetoricalDevice": "critical reframing"
+    },
+    {
+      "id": 12,
+      "original": "Rwanda proved that the technology can work when the linguistic groundwork exists.",
+      "translation": "르완다는 언어적 기반 작업이 존재할 때 그 기술이 작동할 수 있음을 증명했다.",
+      "grammarElements": [
+        {
+          "text": "Rwanda",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "proved",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "that the technology can work",
+          "role": "clause",
+          "label": "that 명사절 (목적어)"
+        },
+        {
+          "text": "when the linguistic groundwork exists",
+          "role": "clause",
+          "label": "조건 부사절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "groundwork",
+          "pos": "noun",
+          "meaning": "기반 작업, 기초, 토대",
+          "example": "Years of diplomatic groundwork preceded the peace agreement.",
+          "collocations": ["lay the groundwork", "linguistic groundwork", "do the groundwork"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "proved that ... can work when",
+          "meaning": "~할 때 작동할 수 있음을 증명했다",
+          "usage": "조건부 성공을 인정하며 그 조건의 중요성을 강조할 때 사용",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Example] proved that [technology/policy] can work when [necessary condition] exists",
+          "explanation": "성공 사례를 인정하되 그 성공의 전제 조건을 명시하여, 해당 조건이 없는 곳의 한계를 암시하는 패턴",
+          "examples": [
+            "South Korea proved that contact tracing can work when the digital infrastructure exists.",
+            "Finland proved that inclusive education can work when the teacher training system exists."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Rwanda proved that the technology can work when the linguistic _______ exists.",
+              "answer": "groundwork",
+              "options": ["groundwork", "framework", "network", "homework"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "첫 단락의 르완다 사례를 다시 호출하여 기사의 원형 구조를 완성한다. 'when the linguistic groundwork exists'라는 조건절이 핵심으로, 기술 자체의 결함이 아니라 기반 부재가 문제임을 명확히 한다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Rwanda proved",
+          "ko": "르완다는 증명했다"
+        },
+        {
+          "en": "the technology can work",
+          "ko": "기술이 작동할 수 있다"
+        },
+        {
+          "en": "the linguistic groundwork",
+          "ko": "언어적 기반 작업"
+        }
+      ],
+      "pronunciationNotes": ["linguistic는 '링귀스틱'으로 발음, 두 번째 음절에 강세"],
+      "rhetoricalDevice": "callback"
+    },
+    {
+      "id": 13,
+      "original": "For the vast majority of Africa's patients, that groundwork has not yet been laid — and the tools are arriving anyway.",
+      "translation": "아프리카 환자의 대다수에게 그 기반 작업은 아직 이루어지지 않았다 — 그리고 도구들은 어쨌든 도착하고 있다.",
+      "grammarElements": [
+        {
+          "text": "For the vast majority of Africa's patients",
+          "role": "modifier",
+          "label": "대상 부사구"
+        },
+        {
+          "text": "that groundwork",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "has not yet been laid",
+          "role": "verb",
+          "label": "동사 (현재완료 수동태 부정)"
+        },
+        {
+          "text": "and the tools are arriving anyway",
+          "role": "clause",
+          "label": "등위절 (역접적 의미)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "lay",
+          "pos": "verb",
+          "meaning": "(기반을) 마련하다, 놓다",
+          "example": "The engineers laid the groundwork for the bridge before winter arrived.",
+          "collocations": ["lay the groundwork", "lay the foundation", "lay the basis"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "arriving anyway",
+          "meaning": "어쨌든 도착하고 있는",
+          "usage": "준비가 되지 않았음에도 불가피하게 다가오는 상황을 나타낼 때 사용하는 비판적 표현",
+          "register": "literary"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "For the vast majority of [affected group], [prerequisite] has not yet been [completed] — and [change/tool] is arriving anyway",
+          "explanation": "전제 조건의 미비와 변화의 불가피한 도래를 대시로 충돌시켜 긴장을 만드는 마무리 패턴",
+          "examples": [
+            "For the vast majority of rural schools, the digital training has not yet been delivered — and the laptops are arriving anyway.",
+            "For the vast majority of developing nations, the regulatory framework has not yet been established — and the autonomous vehicles are arriving anyway."
+          ],
+          "drillQuestions": [
+            {
+              "question": "For the vast majority of Africa's patients, that groundwork has not yet been _______ — and the tools are arriving anyway.",
+              "answer": "laid",
+              "options": ["laid", "lain", "led", "left"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "기사의 마지막 문장으로, 대시(—) 뒤의 'and the tools are arriving anyway'가 기사 전체의 긴장을 한 구절로 응축한다. 'anyway'라는 일상적 단어가 기반 없이 배치되는 기술의 무심함을 역설적으로 전달한다. 첫 문장의 르완다 희소식에서 시작하여 마지막 문장의 비판적 경고로 마무리되는 기사의 구조가 완성된다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "the vast majority of Africa's patients",
+          "ko": "아프리카 환자의 대다수"
+        },
+        {
+          "en": "has not yet been laid",
+          "ko": "아직 이루어지지 않았다"
+        },
+        {
+          "en": "arriving anyway",
+          "ko": "어쨌든 도착하고 있다"
+        }
+      ],
+      "pronunciationNotes": [],
+      "rhetoricalDevice": "closing indictment"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ enum PremiumContent {
     // MARK: - Free Daily Access
 
     /// Free users can access exactly one daily item that is 7+ days old.
-    static let freeDailyItemId = "premium-20260312-noma"
+    static let freeDailyItemId = "premium-20260330-language-machine-forgot"
 
     static func isFreeDailyItem(_ itemId: String) -> Bool {
         itemId == freeDailyItemId
@@ -38,7 +38,7 @@ enum PremiumContent {
 
     static let items: [PremiumContentItem] = [
         // ── 3/12 (2) ──
-        PremiumContentItem(id: "premium-20260312-noma", title: "Noma's Harder Test", date: "2026-03-12", difficulty: 3, textFilePath: "docs/text/premium/original/P001_20260312_noma.md"),
+        PremiumContentItem(id: "premium-20260330-language-machine-forgot", title: "When One Language Succeeds and a Thousand Are Left Behind", date: "2026-03-12", difficulty: 3, textFilePath: "docs/text/premium/original/P027_20260330_the-language-the-machine-forgot.md", sessionId: "premium-2026-03-30-language-machine-forgot"),
         PremiumContentItem(id: "premium-20260324-social-modern-discontent", title: "Modern Discontent: Why the Western World Feels Adrift", date: "2026-03-12", difficulty: 4, textFilePath: "docs/text/premium/original/20260324_social-modern-discontent_4.md"),
 
         // ── 3/13 (2) ──
@@ -54,7 +54,7 @@ enum PremiumContent {
         PremiumContentItem(id: "premium-20260324-china-new-money", title: "New Money, Old Problems: Wealth and Power in Modern China", date: "2026-03-15", difficulty: 4, textFilePath: "docs/text/premium/original/20260324_china-new-money_4.md"),
 
         // ── 3/16 (2) ──
-        PremiumContentItem(id: "premium-20260316-chinas-shifting-calculus", title: "China's Shifting Calculus: Pollution, Power, and Public Opinion", date: "2026-03-16", difficulty: 4, textFilePath: "docs/text/premium/original/P005_20260316_chinas-shifting-calculus-4.md"),
+        PremiumContentItem(id: "premium-20260316-chinas-shifting-calculus", title: "The Hawk and the Tourist", date: "2026-03-16", difficulty: 4, textFilePath: "docs/text/premium/original/P005_20260316_chinas-shifting-calculus-4.md"),
         PremiumContentItem(id: "premium-20260324-europe-economic-identity", title: "Europe's Search for a New Economic Identity", date: "2026-03-16", difficulty: 4, textFilePath: "docs/text/premium/original/20260324_europe-economic-identity_4.md"),
 
         // ── 3/17 (2) ──
@@ -135,12 +135,15 @@ enum PremiumContent {
 
         // ── 4/5 (1) ──
         PremiumContentItem(id: "premium-20260327-scientific-frontiers", title: "How Music Rebuilds Your Brain", date: "2026-04-05", difficulty: 3, textFilePath: "docs/text/premium/original/P025_20260327_scientific-frontiers-brain-fusion-and-batteries_3.md"),
+        PremiumContentItem(id: "premium-20260330-last-ten-percent", title: "The Last Ten Percent", date: "2026-04-05", difficulty: 3, textFilePath: "docs/text/premium/original/P029_20260330_the-last-ten-percent.md", sessionId: "premium-2026-03-30-the-last-ten-percent"),
 
-        // ── 4/6 (1) ──
+        // ── 4/6 (2) ──
         PremiumContentItem(id: "premium-20260329-chinas-hawkish-turn", title: "The Hardening of Chinese Public Opinion \u{2014} And Its Hidden Cracks", date: "2026-04-06", difficulty: 4, textFilePath: "docs/text/premium/original/P026_20260329_chinas-hawkish-turn-hidden-cracks.md"),
+        PremiumContentItem(id: "premium-20260330-economy-cant-agree", title: "The Economy That Can't Agree With Itself", date: "2026-04-06", difficulty: 3, textFilePath: "docs/text/premium/original/P030_20260330_the-economy-that-cant-agree-with-itself.md", sessionId: "premium-2026-03-30-the-economy-that-cant-agree"),
 
-        // ── 4/7 (1) ──
+        // ── 4/7 (2) ──
         PremiumContentItem(id: "premium-20260324-russia-war-economy", title: "Russia's War Economy: Resilience or Illusion?", date: "2026-04-07", difficulty: 4, textFilePath: "docs/text/premium/original/20260324_russia-war-economy_4.md"),
+        PremiumContentItem(id: "premium-20260330-britains-return-to-gravity", title: "The Cost That Doubled", date: "2026-04-07", difficulty: 3, textFilePath: "docs/text/premium/original/P028_20260330_britains-quiet-return-to-gravity.md", sessionId: "premium-2026-03-30-britains-return-to-gravity"),
     ]
 
     // MARK: - Grouped by date (newest first)

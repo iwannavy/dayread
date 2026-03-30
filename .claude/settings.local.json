@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bash ~/.claude/skills/ai-cross-verify/references/cleanup_agents.sh \"/Users/heo/dev_project/dayread/.xverify/20260328_211725\")"
+      "Bash(bash ~/.claude/skills/ai-cross-verify/references/cleanup_agents.sh \"/Users/heo/dev_project/dayread/.xverify/20260328_211725\")",
+      "WebFetch(domain:www.nature.com)"
     ]
   }
 }

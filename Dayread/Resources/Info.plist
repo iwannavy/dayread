@@ -33,8 +33,16 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MIXPANEL_TOKEN</key>
+	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>발음 연습과 쉐도잉을 위해 마이크 접근이 필요합니다.</string>
+	<key>REVENUECAT_API_KEY</key>
+	<string>appl_TaiSCQKgQloWYtCwVhWUNVeZKCa</string>
+	<key>SENTRY_DSN</key>
+	<string></string>
+	<key>SUPABASE_ANON_KEY</key>
+	<string>sb_publishable_t-n6fMVyzFRCZO067tyx6w_B244ewmq</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

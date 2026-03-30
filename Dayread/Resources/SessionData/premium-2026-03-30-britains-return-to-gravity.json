@@ -1,0 +1,1499 @@
+{
+  "id": "premium-2026-03-30-britains-return-to-gravity",
+  "rawText": "When Britain voted to leave the European Union in 2016, the Office for Budget Responsibility projected that Brexit would reduce long-run productivity by roughly four percent — painful but manageable, the kind of drag a growing economy could absorb over time. A decade later, the damage appears to have exceeded even cautious forecasts. An NBER study led by Bloom estimated the actual GDP reduction at six to eight percent, with firm-level investment running about twelve percent below counterfactual levels and employment three to four percent lower. The gap between early projections and observed outcomes is not a rounding error; it is the difference between a calculated risk and a miscalculation.\n\nThat gap explains why Rachel Reeves, Britain's chancellor, used her annual Mais lecture in March to declare that regulatory alignment with the EU should be the norm rather than the exception. The statement was less a philosophical conversion than an arithmetic one. Britain's post-Brexit trade deals with non-European partners have collectively generated less growth than a single agricultural agreement with the EU would deliver. Rather than the sudden shock that economists initially feared, the damage has been cumulative and diffuse — higher paperwork costs, lost trading relationships, businesses quietly giving up on European markets altogether.\n\nThe political arithmetic has shifted in parallel. Polls now show fifty-two percent of Britons would vote to rejoin, and Labour is losing progressive voters to the Greens and Liberal Democrats in part because its earlier caution on Europe no longer serves any electoral purpose. What was once a third rail in British politics — admitting that Brexit had been a mistake — has become something closer to a political requirement. Reeves acknowledged as much when she said the country risked being stranded between powerful trading blocs if it failed to choose a side.\n\nYet acknowledgment is not the same as reversal. Labour still refuses to rejoin the single market, restore free movement, or hold a new referendum. EU negotiators, who watched a similar alignment pitch from Theresa May collapse into Boris Johnson's hard exit, remain skeptical. Their position, as one analyst characterized it, is unchanged: welcome the sentiment, but show us the specifics. Britain has conceded the principle that gravity pulls toward Europe; whether it is willing to pay the full fare remains an open question.",
+  "overview": {
+    "title": "The Cost That Doubled",
+    "source": "데일리딩 Premium",
+    "wordCount": 381,
+    "sentenceCount": 17,
+    "estimatedLevel": "upper-intermediate",
+    "readingTimeMinutes": 2,
+    "mainTopics": ["Brexit", "EU alignment", "trade policy", "economic sovereignty", "geopolitics"],
+    "keyVocabularyPreview": ["alignment", "counterfactual", "cumulative", "protectionism", "sovereignty", "skeptical", "miscalculation", "referendum"],
+    "difficulty": 3
+  },
+  "createdAt": "2026-03-30T00:00:00.000Z",
+  "sentences": [
+    {
+      "id": 0,
+      "original": "When Britain voted to leave the European Union in 2016, the Office for Budget Responsibility projected that Brexit would reduce long-run productivity by roughly four percent — painful but manageable, the kind of drag a growing economy could absorb over time.",
+      "translation": "2016년 영국이 유럽연합 탈퇴를 투표했을 때, 예산책임처(OBR)는 브렉시트가 장기 생산성을 대략 4퍼센트 감소시킬 것으로 전망했다 — 고통스럽지만 감당할 수 있는, 성장하는 경제가 시간이 지나면 흡수할 수 있는 종류의 부담이었다.",
+      "grammarElements": [
+        {
+          "text": "When Britain voted to leave the European Union in 2016",
+          "role": "modifier",
+          "label": "시간 부사절"
+        },
+        {
+          "text": "the Office for Budget Responsibility",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "projected",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "that Brexit would reduce long-run productivity by roughly four percent",
+          "role": "object",
+          "label": "that 명사절 (목적어)"
+        },
+        {
+          "text": "painful but manageable, the kind of drag a growing economy could absorb over time",
+          "role": "modifier",
+          "label": "동격 형용사구 + 동격 명사구 (부연)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "projected",
+          "pos": "verb",
+          "meaning": "전망하다, 예측하다",
+          "example": "The central bank projected steady growth for the next fiscal year.",
+          "collocations": ["projected growth", "projected decline", "project that"],
+          "difficulty": 2
+        },
+        {
+          "word": "productivity",
+          "pos": "noun",
+          "meaning": "생산성",
+          "example": "Investments in technology have significantly boosted worker productivity.",
+          "collocations": ["long-run productivity", "labour productivity", "productivity growth"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "painful but manageable",
+          "meaning": "고통스럽지만 감당할 수 있는",
+          "usage": "부정적 영향이 존재하지만 치명적이지는 않다는 균형 잡힌 평가를 내릴 때 사용",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Institution] projected that [X] would [reduce/increase] [Y] by [amount]",
+          "explanation": "기관의 공식 전망을 인용할 때 사용하는 경제 보도 패턴",
+          "examples": [
+            "The IMF projected that inflation would decline by two percentage points over the next quarter.",
+            "The World Bank projected that poverty would increase by three percent in the affected region."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The Office for Budget Responsibility ______ that Brexit would reduce long-run productivity by roughly four percent.",
+              "answer": "projected",
+              "options": ["projected", "projected", "objected", "rejected"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "기사의 서두로, OBR의 초기 전망을 제시하여 이후 등장할 실제 결과와의 격차를 위한 무대를 설정한다. 대시 뒤의 동격 표현이 전망의 낙관적 톤을 강조한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "When Britain voted to leave the European Union in 2016",
+          "ko": "2016년 영국이 유럽연합 탈퇴를 투표했을 때"
+        },
+        {
+          "en": "the Office for Budget Responsibility projected",
+          "ko": "예산책임처가 전망했다"
+        },
+        {
+          "en": "painful but manageable, the kind of drag a growing economy could absorb",
+          "ko": "고통스럽지만 감당할 수 있는, 성장하는 경제가 흡수할 수 있는 부담"
+        }
+      ],
+      "pronunciationNotes": ["Responsibility는 '리스판서빌리티'로 네 번째 음절 강세"],
+      "rhetoricalDevice": "narrative opening"
+    },
+    {
+      "id": 1,
+      "original": "A decade later, the damage appears to have exceeded even cautious forecasts.",
+      "translation": "10년이 지난 지금, 피해는 심지어 신중한 예측마저 초과한 것으로 보인다.",
+      "grammarElements": [
+        {
+          "text": "A decade later",
+          "role": "modifier",
+          "label": "시간 부사구"
+        },
+        {
+          "text": "the damage",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "appears to have exceeded",
+          "role": "verb",
+          "label": "동사 (appear + 완료 부정사)"
+        },
+        {
+          "text": "even cautious forecasts",
+          "role": "object",
+          "label": "목적어 (even으로 강조)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "exceeded",
+          "pos": "verb",
+          "meaning": "초과하다, 넘어서다",
+          "example": "The final cost exceeded the original budget by thirty percent.",
+          "collocations": ["exceed expectations", "exceed forecasts", "exceed limits"],
+          "difficulty": 2
+        },
+        {
+          "word": "cautious",
+          "pos": "adjective",
+          "meaning": "신중한, 조심스러운",
+          "example": "Even the most cautious analysts were surprised by the severity of the downturn.",
+          "collocations": ["cautious forecast", "cautious optimism", "cautious approach"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "appears to have exceeded",
+          "meaning": "초과한 것으로 보인다",
+          "usage": "확정적 단언을 피하면서 현재 시점에서의 과거 결과를 평가할 때 사용하는 헤징 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Time phrase], [subject] appears to have [past participle] even [qualifier]",
+          "explanation": "시간 경과 후 결과가 예상을 넘어섰음을 신중하게 평가하는 패턴",
+          "examples": [
+            "Five years on, the policy appears to have worsened even the problems it was meant to solve.",
+            "Two quarters later, the recession appears to have deepened even beyond pessimistic projections."
+          ],
+          "drillQuestions": [
+            {
+              "question": "A decade later, the damage appears to have ______ even cautious forecasts.",
+              "answer": "exceeded",
+              "options": ["exceeded", "excelled", "excluded", "exempted"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "짧고 단정적인 문장으로, 앞 문장의 낙관적 전망과 날카로운 대비를 이룬다. appear to have + 과거분사가 저자의 신중한 헤징을 보여준다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "A decade later",
+          "ko": "10년이 지난 지금"
+        },
+        {
+          "en": "the damage appears to have exceeded",
+          "ko": "피해는 초과한 것으로 보인다"
+        },
+        {
+          "en": "even cautious forecasts",
+          "ko": "심지어 신중한 예측마저"
+        }
+      ],
+      "pronunciationNotes": ["decade는 '데케이드'로 두 번째 음절 강세"],
+      "rhetoricalDevice": "contrast"
+    },
+    {
+      "id": 2,
+      "original": "An NBER study led by Bloom estimated the actual GDP reduction at six to eight percent, with firm-level investment running about twelve percent below counterfactual levels and employment three to four percent lower.",
+      "translation": "블룸이 이끈 NBER 연구는 실제 GDP 감소를 6~8퍼센트로 추산했으며, 기업 수준 투자는 반사실적 수준보다 약 12퍼센트 낮게 운영되고 고용은 3~4퍼센트 낮았다.",
+      "grammarElements": [
+        {
+          "text": "An NBER study led by Bloom",
+          "role": "subject",
+          "label": "주어 + 과거분사 수식"
+        },
+        {
+          "text": "estimated",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "the actual GDP reduction at six to eight percent",
+          "role": "object",
+          "label": "목적어 + 전치사구 보어"
+        },
+        {
+          "text": "with firm-level investment running about twelve percent below counterfactual levels and employment three to four percent lower",
+          "role": "modifier",
+          "label": "with + 독립분사구문 (부대상황)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "counterfactual",
+          "pos": "adjective",
+          "meaning": "반사실적인 (실제로 일어나지 않은 가정적 상황의)",
+          "example": "Economists constructed a counterfactual model to estimate what GDP would have been without the policy change.",
+          "collocations": ["counterfactual levels", "counterfactual analysis", "counterfactual scenario"],
+          "difficulty": 4
+        },
+        {
+          "word": "firm-level",
+          "pos": "adjective",
+          "meaning": "기업 수준의, 개별 기업 단위의",
+          "example": "Firm-level data revealed significant variation in how companies responded to the new regulation.",
+          "collocations": ["firm-level investment", "firm-level data", "firm-level analysis"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "estimated X at Y percent",
+          "meaning": "X를 Y퍼센트로 추산했다",
+          "usage": "연구 결과를 구체적 수치로 보고할 때 사용하는 학술/보도 표현",
+          "register": "academic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Study] estimated [metric] at [figure], with [additional metric] running [figure] below [benchmark]",
+          "explanation": "핵심 연구 결과를 제시한 뒤 with 구문으로 추가 데이터를 병렬 제시하는 학술 보도 패턴",
+          "examples": [
+            "The WHO study estimated excess mortality at fifteen percent, with hospital admissions running twenty percent above pre-pandemic levels.",
+            "The audit estimated revenue losses at eight million, with operational costs running thirty percent above industry averages."
+          ],
+          "drillQuestions": [
+            {
+              "question": "An NBER study estimated the actual GDP reduction at six to eight percent, with firm-level investment running about twelve percent below ______ levels.",
+              "answer": "counterfactual",
+              "options": ["counterfactual", "controversial", "continental", "conventional"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "데이터 밀도가 높은 문장으로, 세 가지 지표(GDP, 투자, 고용)를 하나의 문장에 압축한다. with 독립분사구문이 핵심 수치를 경제적으로 나열한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "An NBER study led by Bloom estimated",
+          "ko": "블룸이 이끈 NBER 연구는 추산했다"
+        },
+        {
+          "en": "the actual GDP reduction at six to eight percent",
+          "ko": "실제 GDP 감소를 6~8퍼센트로"
+        },
+        {
+          "en": "with firm-level investment running about twelve percent below counterfactual levels",
+          "ko": "기업 수준 투자가 반사실적 수준보다 약 12퍼센트 낮게 운영되며"
+        }
+      ],
+      "pronunciationNotes": ["NBER은 각 글자를 따로 '엔비이알'로 발음", "counterfactual은 '카운터팩추얼'로 세 번째 음절 강세"],
+      "rhetoricalDevice": "evidence"
+    },
+    {
+      "id": 3,
+      "original": "The gap between early projections and observed outcomes is not a rounding error; it is the difference between a calculated risk and a miscalculation.",
+      "translation": "초기 전망과 관측된 결과 사이의 격차는 반올림 오차가 아니다; 이는 계산된 위험과 오산 사이의 차이이다.",
+      "grammarElements": [
+        {
+          "text": "The gap between early projections and observed outcomes",
+          "role": "subject",
+          "label": "주어 (전치사구 수식)"
+        },
+        {
+          "text": "is not",
+          "role": "verb",
+          "label": "부정 동사"
+        },
+        {
+          "text": "a rounding error",
+          "role": "complement",
+          "label": "보어 (부정된 것)"
+        },
+        {
+          "text": "it is the difference between a calculated risk and a miscalculation",
+          "role": "clause",
+          "label": "세미콜론 뒤 등위절 (실제 정의)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "rounding error",
+          "pos": "noun",
+          "meaning": "반올림 오차",
+          "example": "The discrepancy was too large to be dismissed as a rounding error.",
+          "collocations": ["rounding error", "margin of error", "statistical error"],
+          "difficulty": 3
+        },
+        {
+          "word": "miscalculation",
+          "pos": "noun",
+          "meaning": "오산, 잘못된 계산",
+          "example": "The invasion proved to be a strategic miscalculation of historic proportions.",
+          "collocations": ["strategic miscalculation", "political miscalculation", "costly miscalculation"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "the difference between a calculated risk and a miscalculation",
+          "meaning": "계산된 위험과 오산 사이의 차이",
+          "usage": "의도적 선택과 순수한 실수를 구분할 때 사용하는 날카로운 수사적 대비",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[X] is not [minor thing]; it is the difference between [A] and [B]",
+          "explanation": "사안을 축소하는 해석을 거부하고 세미콜론 뒤에 진짜 의미를 재정의하는 패턴",
+          "examples": [
+            "The funding gap is not a technicality; it is the difference between a functioning system and a collapsed one.",
+            "The delay is not an inconvenience; it is the difference between life and death in emergency care."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The gap is not a rounding error; it is the difference between a calculated risk and a ______.",
+              "answer": "miscalculation",
+              "options": ["miscalculation", "misunderstanding", "misinformation", "misallocation"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "첫 단락의 마무리 문장으로, 세미콜론이 부정과 재정의를 병치한다. calculated와 miscalculation의 어근 반복이 의도적 판단과 실패를 언어적으로 연결한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "The gap between early projections and observed outcomes",
+          "ko": "초기 전망과 관측된 결과 사이의 격차"
+        },
+        {
+          "en": "is not a rounding error",
+          "ko": "반올림 오차가 아니다"
+        },
+        {
+          "en": "the difference between a calculated risk and a miscalculation",
+          "ko": "계산된 위험과 오산 사이의 차이"
+        }
+      ],
+      "pronunciationNotes": ["miscalculation은 '미스캘큘레이션'으로 네 번째 음절 강세"],
+      "rhetoricalDevice": "thesis statement"
+    },
+    {
+      "id": 4,
+      "original": "That gap explains why Rachel Reeves, Britain's chancellor, used her annual Mais lecture in March to declare that regulatory alignment with the EU should be the norm rather than the exception.",
+      "translation": "그 격차가 영국 재무장관 레이첼 리브스가 3월 연례 메이스 강연에서 EU와의 규제 정렬이 예외가 아닌 기본이 되어야 한다고 선언한 이유를 설명한다.",
+      "grammarElements": [
+        {
+          "text": "That gap",
+          "role": "subject",
+          "label": "주어 (앞 단락과 연결하는 지시어)"
+        },
+        {
+          "text": "explains",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "why Rachel Reeves, Britain's chancellor, used her annual Mais lecture in March to declare that regulatory alignment with the EU should be the norm rather than the exception",
+          "role": "object",
+          "label": "why 간접의문절 (목적어)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "alignment",
+          "pos": "noun",
+          "meaning": "정렬, 조율, 일치",
+          "example": "The new policy aims for closer alignment with international standards.",
+          "collocations": ["alignment with", "regulatory alignment", "policy alignment"],
+          "difficulty": 3
+        },
+        {
+          "word": "chancellor",
+          "pos": "noun",
+          "meaning": "재무장관 (영국); 수상 (독일)",
+          "example": "The chancellor unveiled the government's new fiscal strategy in Parliament.",
+          "collocations": ["chancellor of the exchequer", "the chancellor announced", "shadow chancellor"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "the norm rather than the exception",
+          "meaning": "예외가 아닌 기본",
+          "usage": "특정 관행이 기본값이 되어야 한다는 원칙적 입장을 밝힐 때 사용",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Fact/Gap] explains why [person] [action]",
+          "explanation": "객관적 사실이 특정 행동의 원인을 설명하는 인과 연결 패턴",
+          "examples": [
+            "That deficit explains why the finance minister called for emergency budget cuts.",
+            "The demographic shift explains why the government reversed its immigration stance."
+          ],
+          "drillQuestions": [
+            {
+              "question": "That gap explains why Rachel Reeves used her annual Mais lecture to declare that regulatory ______ with the EU should be the norm.",
+              "answer": "alignment",
+              "options": ["alignment", "alliance", "assignment", "arrangement"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "두 번째 단락의 주제문으로, 'That gap'이 첫 단락에서 제시한 수치적 격차를 정치적 행동의 원인으로 직접 연결한다. 인과 구조가 논증을 추동한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "That gap explains why",
+          "ko": "그 격차가 ~인 이유를 설명한다"
+        },
+        {
+          "en": "Rachel Reeves, Britain's chancellor",
+          "ko": "영국 재무장관 레이첼 리브스"
+        },
+        {
+          "en": "regulatory alignment with the EU should be the norm rather than the exception",
+          "ko": "EU와의 규제 정렬이 예외가 아닌 기본이 되어야 한다"
+        }
+      ],
+      "pronunciationNotes": ["Mais는 '메이스'로 발음 (영국 경제학 강연 시리즈명)"],
+      "rhetoricalDevice": "causal link"
+    },
+    {
+      "id": 5,
+      "original": "The statement was less a philosophical conversion than an arithmetic one.",
+      "translation": "그 발언은 철학적 전향이라기보다 산술적 전향이었다.",
+      "grammarElements": [
+        {
+          "text": "The statement",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "was",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "less a philosophical conversion than an arithmetic one",
+          "role": "complement",
+          "label": "less A than B 비교 보어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "conversion",
+          "pos": "noun",
+          "meaning": "전향, 전환, 개종",
+          "example": "His conversion to the cause was sudden and surprised even his closest allies.",
+          "collocations": ["philosophical conversion", "political conversion", "religious conversion"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "less a philosophical conversion than an arithmetic one",
+          "meaning": "철학적 전향이라기보다 산술적 전향",
+          "usage": "변화의 동기가 이념이 아닌 실용적 계산에 있음을 꼬집을 때 사용하는 분석적 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Action] was less [A] than [B]",
+          "explanation": "표면적 해석(A)을 거부하고 진짜 성격(B)을 지적하는 재정의 패턴",
+          "examples": [
+            "The resignation was less a protest than a tactical retreat.",
+            "The merger was less a partnership than a takeover."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The statement was less a philosophical ______ than an arithmetic one.",
+              "answer": "conversion",
+              "options": ["conversion", "convention", "conviction", "conversation"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "간결하고 날카로운 문장으로, philosophical과 arithmetic의 대비가 리브스의 전환이 신념이 아닌 숫자에 의한 것임을 꼬집는다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "The statement was",
+          "ko": "그 발언은 ~이었다"
+        },
+        {
+          "en": "less a philosophical conversion",
+          "ko": "철학적 전향이라기보다"
+        },
+        {
+          "en": "than an arithmetic one",
+          "ko": "산술적 전향"
+        }
+      ],
+      "pronunciationNotes": ["philosophical은 '필러소피컬'로 세 번째 음절 강세", "arithmetic은 '애리스메틱'으로 세 번째 음절 강세"],
+      "rhetoricalDevice": "contrast"
+    },
+    {
+      "id": 6,
+      "original": "Britain's post-Brexit trade deals with non-European partners have collectively generated less growth than a single agricultural agreement with the EU would deliver.",
+      "translation": "영국의 브렉시트 이후 비유럽 파트너들과의 무역 협정들은 합산해도 EU와의 단일 농업 협정이 제공할 성장에 미치지 못했다.",
+      "grammarElements": [
+        {
+          "text": "Britain's post-Brexit trade deals with non-European partners",
+          "role": "subject",
+          "label": "주어 (복합 명사구)"
+        },
+        {
+          "text": "have collectively generated",
+          "role": "verb",
+          "label": "현재완료 동사 + 부사"
+        },
+        {
+          "text": "less growth",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "than a single agricultural agreement with the EU would deliver",
+          "role": "modifier",
+          "label": "비교절 (가정법)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "collectively",
+          "pos": "adverb",
+          "meaning": "합산하여, 전체적으로",
+          "example": "The three programmes collectively served over a million beneficiaries.",
+          "collocations": ["collectively generated", "collectively responsible", "collectively agreed"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "have collectively generated less growth than",
+          "meaning": "합산해도 ~보다 적은 성장을 가져왔다",
+          "usage": "여러 노력의 총합이 단일 대안보다 못하다는 점을 부각할 때 사용",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Multiple efforts] have collectively [verb] less [result] than [a single alternative] would [verb]",
+          "explanation": "다수의 시도를 합산해도 하나의 대안보다 못하다는 비효율을 대비시키는 패턴",
+          "examples": [
+            "All the pilot programmes have collectively produced less impact than a single national rollout would achieve.",
+            "The company's acquisitions have collectively returned less value than a single organic expansion would deliver."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Britain's post-Brexit trade deals have ______ generated less growth than a single agricultural agreement with the EU would deliver.",
+              "answer": "collectively",
+              "options": ["collectively", "consecutively", "constructively", "conclusively"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "다수 대 단일의 대비가 핵심 수사법으로, collectively라는 부사가 브렉시트 후 무역 전략의 총체적 비효율을 압축한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "Britain's post-Brexit trade deals with non-European partners",
+          "ko": "영국의 브렉시트 이후 비유럽 파트너들과의 무역 협정들"
+        },
+        {
+          "en": "have collectively generated less growth",
+          "ko": "합산해도 더 적은 성장을 가져왔다"
+        },
+        {
+          "en": "than a single agricultural agreement with the EU would deliver",
+          "ko": "EU와의 단일 농업 협정이 제공할 것보다"
+        }
+      ],
+      "pronunciationNotes": ["agricultural은 '애그리컬처럴'로 세 번째 음절 강세"],
+      "rhetoricalDevice": "evidence"
+    },
+    {
+      "id": 7,
+      "original": "Rather than the sudden shock that economists initially feared, the damage has been cumulative and diffuse — higher paperwork costs, lost trading relationships, businesses quietly giving up on European markets altogether.",
+      "translation": "경제학자들이 처음에 우려했던 갑작스러운 충격이 아니라, 피해는 누적적이고 분산적이었다 — 더 높은 서류 비용, 상실된 무역 관계, 유럽 시장을 아예 조용히 포기하는 기업들.",
+      "grammarElements": [
+        {
+          "text": "Rather than the sudden shock that economists initially feared",
+          "role": "modifier",
+          "label": "rather than 대비 부사구"
+        },
+        {
+          "text": "the damage",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "has been",
+          "role": "verb",
+          "label": "현재완료 동사"
+        },
+        {
+          "text": "cumulative and diffuse",
+          "role": "complement",
+          "label": "보어 (형용사 병렬)"
+        },
+        {
+          "text": "higher paperwork costs, lost trading relationships, businesses quietly giving up on European markets altogether",
+          "role": "modifier",
+          "label": "대시 뒤 구체적 예시 나열"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "cumulative",
+          "pos": "adjective",
+          "meaning": "누적적인, 점증하는",
+          "example": "The cumulative effect of small policy changes can be transformative over time.",
+          "collocations": ["cumulative effect", "cumulative damage", "cumulative impact"],
+          "difficulty": 3
+        },
+        {
+          "word": "diffuse",
+          "pos": "adjective",
+          "meaning": "분산된, 광범위하게 퍼진",
+          "example": "The benefits of the programme were too diffuse to measure in any single metric.",
+          "collocations": ["diffuse damage", "diffuse impact", "diffuse and gradual"],
+          "difficulty": 4
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "giving up on European markets altogether",
+          "meaning": "유럽 시장을 아예 포기하다",
+          "usage": "점진적 단절이 최종적 포기로 이어진 과정을 표현할 때 사용",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "Rather than [expected outcome], [subject] has been [actual outcome] — [list of specifics]",
+          "explanation": "예상과 실제의 차이를 제시한 뒤 대시로 구체적 사례를 나열하는 패턴",
+          "examples": [
+            "Rather than the dramatic collapse that critics predicted, the transition has been slow and uneven — delays in permits, confusion over standards, firms relocating quietly.",
+            "Rather than the boom that advocates promised, the result has been modest and unequal — stagnant wages, rising costs, a hollowed-out middle class."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Rather than the sudden shock, the damage has been ______ and diffuse.",
+              "answer": "cumulative",
+              "options": ["cumulative", "communicative", "cumulus", "culminative"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "대시 뒤의 세 가지 구체적 예시가 추상적 형용사(cumulative, diffuse)를 현실적 장면으로 변환한다. quietly라는 부사가 피해의 비가시적 성격을 강조한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "Rather than the sudden shock that economists initially feared",
+          "ko": "경제학자들이 처음에 우려했던 갑작스러운 충격이 아니라"
+        },
+        {
+          "en": "the damage has been cumulative and diffuse",
+          "ko": "피해는 누적적이고 분산적이었다"
+        },
+        {
+          "en": "businesses quietly giving up on European markets altogether",
+          "ko": "유럽 시장을 아예 조용히 포기하는 기업들"
+        }
+      ],
+      "pronunciationNotes": ["cumulative는 '큐뮬러티브'로 첫 번째 음절 강세", "diffuse는 형용사일 때 '디퓨스'(두 번째 음절 강세)로 발음"],
+      "rhetoricalDevice": "contrast with enumeration"
+    },
+    {
+      "id": 8,
+      "original": "The political arithmetic has shifted in parallel.",
+      "translation": "정치적 산술도 이에 병행하여 변화했다.",
+      "grammarElements": [
+        {
+          "text": "The political arithmetic",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "has shifted",
+          "role": "verb",
+          "label": "현재완료 동사"
+        },
+        {
+          "text": "in parallel",
+          "role": "modifier",
+          "label": "부사구"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "arithmetic",
+          "pos": "noun",
+          "meaning": "산술, 셈법; (비유) 계산, 손익",
+          "example": "The electoral arithmetic simply did not add up for the opposition party.",
+          "collocations": ["political arithmetic", "electoral arithmetic", "the arithmetic of"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "in parallel",
+          "meaning": "병행하여, 나란히",
+          "usage": "두 가지 변화가 동시에 진행됨을 표현할 때 사용",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "The [adjective] [noun] has shifted in parallel",
+          "explanation": "앞서 논의된 변화와 동시에 다른 영역의 변화를 도입하는 단락 전환 패턴",
+          "examples": [
+            "The diplomatic calculus has shifted in parallel.",
+            "The public mood has shifted in parallel."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The political ______ has shifted in parallel.",
+              "answer": "arithmetic",
+              "options": ["arithmetic", "architecture", "aristocracy", "arbitration"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "세 번째 단락의 주제문으로, 경제에서 정치로 논점을 전환한다. 앞 단락의 arithmetic(산술적)이란 비유를 political arithmetic으로 확장한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "The political arithmetic",
+          "ko": "정치적 산술"
+        },
+        {
+          "en": "has shifted",
+          "ko": "변화했다"
+        },
+        {
+          "en": "in parallel",
+          "ko": "병행하여"
+        }
+      ],
+      "pronunciationNotes": ["parallel은 '패럴렐'로 첫 번째 음절 강세"],
+      "rhetoricalDevice": "topic sentence"
+    },
+    {
+      "id": 9,
+      "original": "Polls now show fifty-two percent of Britons would vote to rejoin, and Labour is losing progressive voters to the Greens and Liberal Democrats in part because its earlier caution on Europe no longer serves any electoral purpose.",
+      "translation": "현재 여론조사는 영국인의 52퍼센트가 재가입에 투표할 것이라고 보여주며, 노동당은 유럽에 대한 초기의 신중함이 더 이상 어떤 선거적 목적에도 기여하지 않기 때문에 부분적으로 진보 유권자들을 녹색당과 자유민주당에 빼앗기고 있다.",
+      "grammarElements": [
+        {
+          "text": "Polls",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "now show",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "fifty-two percent of Britons would vote to rejoin",
+          "role": "object",
+          "label": "that절 목적어 (that 생략)"
+        },
+        {
+          "text": "Labour is losing progressive voters to the Greens and Liberal Democrats",
+          "role": "clause",
+          "label": "등위절"
+        },
+        {
+          "text": "in part because its earlier caution on Europe no longer serves any electoral purpose",
+          "role": "modifier",
+          "label": "이유 부사절 (in part because)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "progressive",
+          "pos": "adjective",
+          "meaning": "진보적인",
+          "example": "The party struggled to retain progressive voters who demanded bolder climate policies.",
+          "collocations": ["progressive voters", "progressive agenda", "progressive wing"],
+          "difficulty": 2
+        },
+        {
+          "word": "electoral",
+          "pos": "adjective",
+          "meaning": "선거의, 선거에 관한",
+          "example": "The party's electoral strategy focused on swing districts in the Midlands.",
+          "collocations": ["electoral purpose", "electoral advantage", "electoral calculus"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "no longer serves any electoral purpose",
+          "meaning": "더 이상 어떤 선거적 목적에도 기여하지 않다",
+          "usage": "한때 전략적이었던 입장이 이제는 득이 되지 않음을 지적할 때 사용",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Party] is losing [voters] to [rivals] in part because [reason]",
+          "explanation": "정당의 유권자 이탈 현상과 그 부분적 원인을 연결하는 정치 분석 패턴",
+          "examples": [
+            "The Democrats are losing younger voters to independents in part because their messaging feels outdated.",
+            "The ruling party is losing rural support to populists in part because its farm subsidies were cut."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Labour is losing progressive voters to the Greens and Liberal Democrats in part because its earlier caution on Europe no longer serves any ______ purpose.",
+              "answer": "electoral",
+              "options": ["electoral", "electrical", "elemental", "eloquent"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "52퍼센트라는 숫자가 2016년 브렉시트 찬성 비율과 동일하여 역사적 아이러니를 내포한다. 복합문이 여론 데이터와 정치적 역학을 한 문장에 압축한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "Polls now show fifty-two percent of Britons would vote to rejoin",
+          "ko": "여론조사는 영국인의 52퍼센트가 재가입에 투표할 것이라고 보여준다"
+        },
+        {
+          "en": "Labour is losing progressive voters to the Greens and Liberal Democrats",
+          "ko": "노동당은 진보 유권자들을 녹색당과 자유민주당에 빼앗기고 있다"
+        },
+        {
+          "en": "its earlier caution on Europe no longer serves any electoral purpose",
+          "ko": "유럽에 대한 초기 신중함이 더 이상 선거적 목적에 기여하지 않는다"
+        }
+      ],
+      "pronunciationNotes": ["Liberal Democrats는 '리버럴 데모크래츠'로 발음"],
+      "rhetoricalDevice": "evidence"
+    },
+    {
+      "id": 10,
+      "original": "What was once a third rail in British politics — admitting that Brexit had been a mistake — has become something closer to a political requirement.",
+      "translation": "한때 영국 정치에서 금기 사항이었던 것 — 브렉시트가 실수였다고 인정하는 것 — 이 정치적 요건에 더 가까운 무언가가 되었다.",
+      "grammarElements": [
+        {
+          "text": "What was once a third rail in British politics",
+          "role": "subject",
+          "label": "관계대명사 what절 (주어)"
+        },
+        {
+          "text": "admitting that Brexit had been a mistake",
+          "role": "modifier",
+          "label": "동격 삽입구 (대시 사이)"
+        },
+        {
+          "text": "has become",
+          "role": "verb",
+          "label": "현재완료 동사"
+        },
+        {
+          "text": "something closer to a political requirement",
+          "role": "complement",
+          "label": "보어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "third rail",
+          "pos": "noun",
+          "meaning": "금기 사항, 건드리면 위험한 주제 (전철의 제3궤조에서 유래)",
+          "example": "Social security reform has long been considered the third rail of American politics.",
+          "collocations": ["political third rail", "touch the third rail", "a third rail issue"],
+          "difficulty": 4
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "has become something closer to a political requirement",
+          "meaning": "정치적 요건에 더 가까운 무언가가 되었다",
+          "usage": "한때 불가능했던 것이 이제는 거의 필수가 되었음을 표현할 때 사용하는 신중한 서술",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "What was once [taboo] — [specific action] — has become [new reality]",
+          "explanation": "과거의 금기가 현재의 상식으로 전환되었음을 대시 삽입구로 구체화하는 패턴",
+          "examples": [
+            "What was once heresy in central banking — negative interest rates — has become standard practice.",
+            "What was once a career-ending admission — acknowledging mental health struggles — has become a mark of leadership."
+          ],
+          "drillQuestions": [
+            {
+              "question": "What was once a ______ in British politics has become something closer to a political requirement.",
+              "answer": "third rail",
+              "options": ["third rail", "third party", "third way", "third world"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "대시 사이의 동격 삽입구가 '금기'의 구체적 내용을 밝힌다. third rail이라는 비유가 정치적 위험을 물리적 위험에 빗대어 생생하게 전달한다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "What was once a third rail in British politics",
+          "ko": "한때 영국 정치에서 금기 사항이었던 것"
+        },
+        {
+          "en": "admitting that Brexit had been a mistake",
+          "ko": "브렉시트가 실수였다고 인정하는 것"
+        },
+        {
+          "en": "has become something closer to a political requirement",
+          "ko": "정치적 요건에 더 가까운 무언가가 되었다"
+        }
+      ],
+      "pronunciationNotes": ["third rail은 '써드 레일'로 발음 (미국 정치 관용어)"],
+      "rhetoricalDevice": "metaphor"
+    },
+    {
+      "id": 11,
+      "original": "Reeves acknowledged as much when she said the country risked being stranded between powerful trading blocs if it failed to choose a side.",
+      "translation": "리브스는 영국이 한쪽을 선택하지 못하면 강력한 무역 블록 사이에 고립될 위험이 있다고 말했을 때 이를 사실상 인정했다.",
+      "grammarElements": [
+        {
+          "text": "Reeves",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "acknowledged",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "as much",
+          "role": "object",
+          "label": "목적어 (앞 내용 전체를 가리킴)"
+        },
+        {
+          "text": "when she said the country risked being stranded between powerful trading blocs if it failed to choose a side",
+          "role": "modifier",
+          "label": "시간 부사절 + 간접 인용 + 조건절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "stranded",
+          "pos": "adjective",
+          "meaning": "고립된, 오도 가도 못하는",
+          "example": "Thousands of travellers were left stranded when the airline cancelled all flights.",
+          "collocations": ["stranded between", "left stranded", "stranded passengers"],
+          "difficulty": 3
+        },
+        {
+          "word": "acknowledged",
+          "pos": "verb",
+          "meaning": "인정하다, 시인하다",
+          "example": "The minister acknowledged that the programme had fallen short of expectations.",
+          "collocations": ["acknowledged as much", "widely acknowledged", "publicly acknowledged"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "acknowledged as much",
+          "meaning": "그만큼을 인정했다, 사실상 인정했다",
+          "usage": "명시적으로 말하지 않았지만 발언의 함의가 인정에 해당함을 지적할 때 사용",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Person] acknowledged as much when [he/she] said [paraphrase]",
+          "explanation": "발언의 함의를 저자가 해석하여 '사실상 인정'으로 규정하는 패턴",
+          "examples": [
+            "The CEO acknowledged as much when he said the company needed a fundamentally different strategy.",
+            "The general acknowledged as much when she said the situation on the ground had deteriorated beyond initial assessments."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Reeves acknowledged as much when she said the country risked being ______ between powerful trading blocs.",
+              "answer": "stranded",
+              "options": ["stranded", "strengthened", "structured", "strangled"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "acknowledged as much라는 표현이 리브스의 발언을 저자가 재해석하여 정치적 함의를 부여한다. 기자적 해석과 직접 인용의 경계에 있는 서술이다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "Reeves acknowledged as much",
+          "ko": "리브스는 이를 사실상 인정했다"
+        },
+        {
+          "en": "the country risked being stranded",
+          "ko": "나라가 고립될 위험이 있다"
+        },
+        {
+          "en": "between powerful trading blocs if it failed to choose a side",
+          "ko": "한쪽을 선택하지 못하면 강력한 무역 블록 사이에"
+        }
+      ],
+      "pronunciationNotes": ["acknowledged는 '억날리지드'로 두 번째 음절 강세"],
+      "rhetoricalDevice": "interpretive paraphrase"
+    },
+    {
+      "id": 12,
+      "original": "Yet acknowledgment is not the same as reversal.",
+      "translation": "그러나 인정이 곧 번복은 아니다.",
+      "grammarElements": [
+        {
+          "text": "Yet",
+          "role": "modifier",
+          "label": "역접 접속부사"
+        },
+        {
+          "text": "acknowledgment",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "is not",
+          "role": "verb",
+          "label": "부정 동사"
+        },
+        {
+          "text": "the same as reversal",
+          "role": "complement",
+          "label": "보어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "reversal",
+          "pos": "noun",
+          "meaning": "번복, 반전, 역전",
+          "example": "The court's reversal of the lower ruling sent shockwaves through the legal community.",
+          "collocations": ["policy reversal", "complete reversal", "reversal of fortune"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "is not the same as",
+          "meaning": "~과 같지 않다, ~과 동일하지 않다",
+          "usage": "혼동되기 쉬운 두 개념을 구분할 때 사용하는 분석적 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "Yet [A] is not the same as [B]",
+          "explanation": "역접(Yet)으로 전환한 뒤 두 개념의 결정적 차이를 짧게 선언하는 단락 전환 패턴",
+          "examples": [
+            "Yet apology is not the same as accountability.",
+            "Yet diagnosis is not the same as treatment."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Yet acknowledgment is not the same as ______.",
+              "answer": "reversal",
+              "options": ["reversal", "revival", "retrieval", "rehearsal"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "네 번째 단락의 주제문으로, 짧고 격언적인 구조가 앞 단락의 복문들과 대조를 이룬다. Yet이 논리적 전환을 표시하며, acknowledgment와 reversal의 대비가 핵심 논점을 압축한다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Yet",
+          "ko": "그러나"
+        },
+        {
+          "en": "acknowledgment is not the same as",
+          "ko": "인정이 ~과 같지 않다"
+        },
+        {
+          "en": "reversal",
+          "ko": "번복"
+        }
+      ],
+      "pronunciationNotes": ["acknowledgment는 '억날리지먼트'로 두 번째 음절 강세"],
+      "rhetoricalDevice": "pivot sentence"
+    },
+    {
+      "id": 13,
+      "original": "Labour still refuses to rejoin the single market, restore free movement, or hold a new referendum.",
+      "translation": "노동당은 여전히 단일시장에 재가입하거나, 자유 이동을 복원하거나, 새로운 국민투표를 실시하는 것을 거부한다.",
+      "grammarElements": [
+        {
+          "text": "Labour",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "still refuses",
+          "role": "verb",
+          "label": "동사 (부사 still로 지속성 강조)"
+        },
+        {
+          "text": "to rejoin the single market, restore free movement, or hold a new referendum",
+          "role": "object",
+          "label": "to부정사 3개 병렬 목적어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "referendum",
+          "pos": "noun",
+          "meaning": "국민투표",
+          "example": "The government promised to hold a referendum on the new constitution.",
+          "collocations": ["hold a referendum", "call a referendum", "referendum on"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "restore free movement",
+          "meaning": "자유 이동을 복원하다",
+          "usage": "브렉시트로 폐기된 EU 시민의 이동 자유 권리를 되살리는 것을 지칭",
+          "register": "formal"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Actor] still refuses to [A], [B], or [C]",
+          "explanation": "행위자가 여전히 거부하는 세 가지 사항을 나열해 제한의 범위를 명확히 하는 패턴",
+          "examples": [
+            "The company still refuses to disclose earnings, publish audits, or appoint independent directors.",
+            "The administration still refuses to negotiate terms, release prisoners, or lift sanctions."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Labour still refuses to rejoin the single market, restore free movement, or hold a new ______.",
+              "answer": "referendum",
+              "options": ["referendum", "reform", "reflection", "refusal"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "세 가지 거부 항목이 병렬로 나열되어 노동당 입장의 '금기선'을 명확하게 긋는다. still이 인정과 행동 사이의 모순 지속을 강조한다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Labour still refuses to",
+          "ko": "노동당은 여전히 ~를 거부한다"
+        },
+        {
+          "en": "rejoin the single market",
+          "ko": "단일시장에 재가입하다"
+        },
+        {
+          "en": "restore free movement, or hold a new referendum",
+          "ko": "자유 이동을 복원하거나 새로운 국민투표를 실시하다"
+        }
+      ],
+      "pronunciationNotes": ["referendum은 '레퍼렌덤'으로 세 번째 음절 강세"],
+      "rhetoricalDevice": "enumeration"
+    },
+    {
+      "id": 14,
+      "original": "EU negotiators, who watched a similar alignment pitch from Theresa May collapse into Boris Johnson's hard exit, remain skeptical.",
+      "translation": "테리사 메이의 유사한 정렬 제안이 보리스 존슨의 강경 탈퇴로 무너지는 것을 지켜본 EU 협상가들은 회의적 태도를 유지하고 있다.",
+      "grammarElements": [
+        {
+          "text": "EU negotiators",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "who watched a similar alignment pitch from Theresa May collapse into Boris Johnson's hard exit",
+          "role": "modifier",
+          "label": "계속적 관계절 (삽입)"
+        },
+        {
+          "text": "remain",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "skeptical",
+          "role": "complement",
+          "label": "보어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "skeptical",
+          "pos": "adjective",
+          "meaning": "회의적인, 의심하는",
+          "example": "Investors remain skeptical about the company's turnaround plan.",
+          "collocations": ["remain skeptical", "deeply skeptical", "skeptical of"],
+          "difficulty": 3
+        },
+        {
+          "word": "pitch",
+          "pos": "noun",
+          "meaning": "제안, 설득 (비유적)",
+          "example": "The startup's pitch to investors fell flat despite months of preparation.",
+          "collocations": ["alignment pitch", "sales pitch", "make a pitch"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "collapse into",
+          "meaning": "~으로 무너지다, ~으로 전락하다",
+          "usage": "긍정적 시도가 부정적 결과로 전환되는 과정을 묘사할 때 사용",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Stakeholders], who watched [past attempt] collapse into [failure], remain [adjective]",
+          "explanation": "과거 경험을 관계절로 삽입하여 현재의 회의적 태도를 정당화하는 패턴",
+          "examples": [
+            "Creditors, who watched the previous restructuring collapse into insolvency, remain cautious.",
+            "Allies, who watched the last coalition collapse into mutual recrimination, remain wary."
+          ],
+          "drillQuestions": [
+            {
+              "question": "EU negotiators, who watched a similar alignment pitch collapse into Boris Johnson's hard exit, remain ______.",
+              "answer": "skeptical",
+              "options": ["skeptical", "sceptered", "spectral", "skeptic"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "관계절이 EU의 제도적 기억을 환기시키며, 현재의 회의론을 역사적으로 정당화한다. collapse into라는 동사구가 메이 시대의 실패를 물리적 붕괴에 빗댄다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "EU negotiators",
+          "ko": "EU 협상가들"
+        },
+        {
+          "en": "who watched a similar alignment pitch from Theresa May collapse into Boris Johnson's hard exit",
+          "ko": "테리사 메이의 유사한 정렬 제안이 보리스 존슨의 강경 탈퇴로 무너지는 것을 지켜본"
+        },
+        {
+          "en": "remain skeptical",
+          "ko": "회의적 태도를 유지하고 있다"
+        }
+      ],
+      "pronunciationNotes": ["skeptical은 '스켑티컬'로 첫 번째 음절 강세 (영국식 sceptical과 동일 발음)"],
+      "rhetoricalDevice": "historical parallel"
+    },
+    {
+      "id": 15,
+      "original": "Their position, as one analyst characterized it, is unchanged: welcome the sentiment, but show us the specifics.",
+      "translation": "한 분석가가 표현했듯이, 그들의 입장은 변함없다: 감상은 환영하지만, 구체적인 내용을 보여 달라.",
+      "grammarElements": [
+        {
+          "text": "Their position",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "as one analyst characterized it",
+          "role": "modifier",
+          "label": "삽입절 (인용 출처)"
+        },
+        {
+          "text": "is",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "unchanged",
+          "role": "complement",
+          "label": "보어"
+        },
+        {
+          "text": "welcome the sentiment, but show us the specifics",
+          "role": "modifier",
+          "label": "콜론 뒤 부연 (직접 인용풍)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "sentiment",
+          "pos": "noun",
+          "meaning": "감상, 정서, 의견",
+          "example": "Public sentiment has shifted decisively against the proposal.",
+          "collocations": ["welcome the sentiment", "public sentiment", "market sentiment"],
+          "difficulty": 3
+        },
+        {
+          "word": "specifics",
+          "pos": "noun",
+          "meaning": "구체적 사항, 세부 내용",
+          "example": "The proposal lacked specifics on how the programme would be funded.",
+          "collocations": ["show the specifics", "get into specifics", "the specifics of"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "welcome the sentiment, but show us the specifics",
+          "meaning": "감상은 환영하지만 구체적인 내용을 보여 달라",
+          "usage": "상대방의 선언이 실질적 내용 없이 좋게만 들린다고 꼬집을 때 사용하는 외교적 빈정거림",
+          "register": "diplomatic/ironic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Response], as [source] characterized it, is unchanged: [direct paraphrase]",
+          "explanation": "인용 출처를 삽입하고 콜론 뒤에 핵심 반응을 직접 인용풍으로 제시하는 패턴",
+          "examples": [
+            "The market's verdict, as traders characterized it, is unchanged: show us the earnings.",
+            "The electorate's message, as pollsters characterized it, is unchanged: deliver results, not promises."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Their position is unchanged: welcome the ______, but show us the specifics.",
+              "answer": "sentiment",
+              "options": ["sentiment", "settlement", "segment", "supplement"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "콜론 뒤의 직접 인용풍 문구가 EU의 냉소적 현실주의를 생생하게 전달한다. welcome...but 구조가 외교적 예의와 실질적 요구 사이의 긴장을 담는다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Their position",
+          "ko": "그들의 입장"
+        },
+        {
+          "en": "as one analyst characterized it",
+          "ko": "한 분석가가 표현했듯이"
+        },
+        {
+          "en": "is unchanged",
+          "ko": "변함없다"
+        }
+      ],
+      "pronunciationNotes": ["characterized는 '캐릭터라이즈드'로 첫 번째 음절 강세"],
+      "rhetoricalDevice": "reported speech with irony"
+    },
+    {
+      "id": 16,
+      "original": "Britain has conceded the principle that gravity pulls toward Europe; whether it is willing to pay the full fare remains an open question.",
+      "translation": "영국은 중력이 유럽 쪽으로 끌어당긴다는 원칙을 인정했다; 전체 비용을 지불할 용의가 있는지는 여전히 열린 질문으로 남아 있다.",
+      "grammarElements": [
+        {
+          "text": "Britain",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "has conceded",
+          "role": "verb",
+          "label": "현재완료 동사"
+        },
+        {
+          "text": "the principle that gravity pulls toward Europe",
+          "role": "object",
+          "label": "목적어 + 동격 that절"
+        },
+        {
+          "text": "whether it is willing to pay the full fare",
+          "role": "subject",
+          "label": "주어 (whether 명사절, 세미콜론 이후 절)"
+        },
+        {
+          "text": "remains",
+          "role": "verb",
+          "label": "동사 (세미콜론 이후 절)"
+        },
+        {
+          "text": "an open question",
+          "role": "complement",
+          "label": "보어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "conceded",
+          "pos": "verb",
+          "meaning": "인정하다, 양보하다",
+          "example": "After months of negotiation, the government conceded the central point of the opposition's argument.",
+          "collocations": ["concede the principle", "concede defeat", "concede a point"],
+          "difficulty": 3
+        },
+        {
+          "word": "fare",
+          "pos": "noun",
+          "meaning": "요금, 비용; (비유) 대가",
+          "example": "Rejoining the alliance would require paying a political fare that few leaders were willing to accept.",
+          "collocations": ["pay the fare", "full fare", "fare increase"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "pay the full fare",
+          "meaning": "전체 비용(대가)을 지불하다",
+          "usage": "특권이나 접근을 위해 요구되는 완전한 대가를 치르는 것을 비유적으로 표현",
+          "register": "journalistic"
+        },
+        {
+          "phrase": "remains an open question",
+          "meaning": "열린 질문으로 남다, 미해결로 남다",
+          "usage": "결론이 나지 않은 쟁점을 지적하며 글을 마무리할 때 사용",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Actor] has conceded [principle]; whether [condition] remains an open question",
+          "explanation": "원칙적 인정과 실행 의지 사이의 간극을 세미콜론으로 병치하여 열린 결말을 만드는 마무리 패턴",
+          "examples": [
+            "The company has conceded the need for reform; whether it is willing to restructure its board remains an open question.",
+            "The government has conceded the science on climate change; whether it is prepared to bear the fiscal cost remains an open question."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Britain has ______ the principle that gravity pulls toward Europe.",
+              "answer": "conceded",
+              "options": ["conceded", "conceived", "concealed", "contested"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "기사의 마무리 문장으로, 제목의 'gravity'를 경제학 은유로 되살린다. 세미콜론이 인정(conceded)과 미결(open question)을 병치하여 열린 결말을 만든다. fare라는 단어가 주권과 접근의 교환을 일상적 비유로 변환한다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Britain has conceded the principle that gravity pulls toward Europe",
+          "ko": "영국은 중력이 유럽 쪽으로 끌어당긴다는 원칙을 인정했다"
+        },
+        {
+          "en": "whether it is willing to pay the full fare",
+          "ko": "전체 비용을 지불할 용의가 있는지"
+        },
+        {
+          "en": "remains an open question",
+          "ko": "열린 질문으로 남아 있다"
+        }
+      ],
+      "pronunciationNotes": ["conceded는 '컨시디드'로 두 번째 음절 강세"],
+      "rhetoricalDevice": "reframing question"
+    }
+  ]
+}
