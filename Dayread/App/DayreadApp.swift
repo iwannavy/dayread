@@ -1,5 +1,6 @@
 import SwiftUI
 import Sentry
+import GoogleSignIn
 
 
 @main
@@ -97,6 +98,7 @@ struct DayreadApp: App {
                 }
             }
             .onOpenURL { url in
+                if GIDSignIn.sharedInstance.handle(url) { return }
                 handleDeepLink(url)
             }
             .preferredColorScheme(colorScheme)

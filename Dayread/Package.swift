@@ -12,6 +12,7 @@ let package = Package(
         .package(url: "https://github.com/RevenueCat/purchases-ios-spm.git", from: "5.0.0"),
         .package(url: "https://github.com/getsentry/sentry-cocoa.git", from: "8.0.0"),
         .package(url: "https://github.com/mixpanel/mixpanel-swift.git", from: "4.0.0"),
+        .package(url: "https://github.com/google/GoogleSignIn-iOS.git", from: "8.0.0"),
     ],
     targets: [
         .target(
@@ -21,6 +22,7 @@ let package = Package(
                 .product(name: "RevenueCat", package: "purchases-ios-spm"),
                 .product(name: "Sentry", package: "sentry-cocoa"),
                 .product(name: "Mixpanel", package: "mixpanel-swift"),
+                .product(name: "GoogleSignIn", package: "GoogleSignIn-iOS"),
             ],
             path: "."
         ),

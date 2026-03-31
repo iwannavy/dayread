@@ -20,6 +20,9 @@ packages:
   Mixpanel:
     url: https://github.com/mixpanel/mixpanel-swift.git
     from: "4.0.0"
+  GoogleSignIn:
+    url: https://github.com/google/GoogleSignIn-iOS.git
+    from: "8.0.0"
 
 targets:
   Dayread:
@@ -50,6 +53,9 @@ targets:
         CFBundleURLTypes:
           - CFBundleURLSchemes:
               - dayread
+          - CFBundleURLSchemes:
+              - com.googleusercontent.apps.538478676772-vc2dvii8emeeb7dgmusodt88lbbt09kq
+        GIDClientID: "538478676772-vc2dvii8emeeb7dgmusodt88lbbt09kq.apps.googleusercontent.com"
         ITSAppUsesNonExemptEncryption: false
         LSRequiresIPhoneOS: true
         NSMicrophoneUsageDescription: "발음 연습과 쉐도잉을 위해 마이크 접근이 필요합니다."
@@ -107,3 +113,5 @@ targets:
         product: Sentry
       - package: Mixpanel
         product: Mixpanel
+      - package: GoogleSignIn
+        product: GoogleSignIn

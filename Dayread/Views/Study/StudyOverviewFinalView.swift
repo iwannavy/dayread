@@ -9,6 +9,7 @@ struct StudyOverviewFinalView: View {
 
     @State private var selectedIndex: Int? = nil
     @State private var showSummary = false
+    @State private var animateCheckmark = false
 
     private var progress: Int {
         guard !sentences.isEmpty else { return 0 }
@@ -17,16 +18,38 @@ struct StudyOverviewFinalView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            // Welcome message
-            VStack(spacing: 4) {
-                Text("마무리로 한번 더 읽어보세요")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
+            // Welcome message / Celebration
+            VStack(spacing: 8) {
+                if progress == 100 {
+                    Image(systemName: "checkmark.seal.fill")
+                        .font(.system(size: 44))
+                        .foregroundStyle(Color.dayreadGold)
+                        .scaleEffect(animateCheckmark ? 1.0 : 0.5)
+                        .opacity(animateCheckmark ? 1.0 : 0.0)
+                        .padding(.bottom, 4)
+
+                    Text("오늘의 학습을 모두 마쳤습니다!")
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                } else {
+                    Text("마무리로 한번 더 읽어보세요")
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                }
+
                 Text("미흡한 부분이 있으면 문장을 탭해서 다시 확인해요")
                     .font(.caption)
                     .foregroundStyle(.tertiary)
             }
             .padding(.vertical, 16)
+            .onAppear {
+                if progress == 100 {
+                    withAnimation(.spring(response: 0.6, dampingFraction: 0.6)) {
+                        animateCheckmark = true
+                    }
+                    HapticsService.shared.success()
+                }
+            }
 
             // Full text — flowing paragraphs
             VStack(alignment: .leading, spacing: 20) {

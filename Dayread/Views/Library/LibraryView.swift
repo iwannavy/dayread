@@ -38,14 +38,9 @@ struct LibraryView: View {
                     .background(Color.orange)
                 }
 
-                // Segmented picker
-                Picker("섹션", selection: $sectionTab) {
-                    ForEach(LibrarySection.allCases, id: \.self) { section in
-                        Text(section.rawValue).tag(section)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal)
+                // Custom sliding tab picker
+                SlidingTabPicker(selection: $sectionTab, items: LibrarySection.allCases)
+                    .padding(.horizontal)
 
                 switch sectionTab {
                 case .path:
@@ -60,6 +55,7 @@ struct LibraryView: View {
                     .padding(.horizontal)
                 case .topics:
                     topicsSection
+                        .padding(.top, 8)
                 }
             }
             .padding(.vertical)
@@ -91,8 +87,11 @@ struct LibraryView: View {
     private var pathSection: some View {
         VStack(spacing: 20) {
             if libraryService.summariesStatus == .loading {
-                ProgressView()
-                    .padding(.top, 40)
+                VStack(spacing: 24) {
+                    LibrarySkeletonView()
+                    LibrarySkeletonView()
+                }
+                .padding(.top, 20)
             } else if libraryService.summariesStatus == .error && libraryService.sessions.isEmpty {
                 VStack(spacing: 12) {
                     Image(systemName: "exclamationmark.triangle")

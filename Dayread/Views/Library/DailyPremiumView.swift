@@ -38,7 +38,7 @@ struct DailyPremiumView: View {
         .padding(16)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(Color(.systemGray6))
+                .fill(Color.dayreadInk.opacity(0.04))
         )
     }
 
@@ -53,13 +53,15 @@ struct DailyPremiumView: View {
             } label: {
                 Image(systemName: "chevron.left")
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.dayreadInk.opacity(0.4))
             }
 
             Spacer()
 
             Text(monthYearString)
-                .font(.subheadline.weight(.bold))
+                .font(.system(.subheadline, design: .serif))
+                .fontWeight(.bold)
+                .foregroundStyle(Color.dayreadInk)
 
             Spacer()
 
@@ -70,7 +72,7 @@ struct DailyPremiumView: View {
             } label: {
                 Image(systemName: "chevron.right")
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.dayreadInk.opacity(0.4))
             }
         }
     }
@@ -147,8 +149,9 @@ struct DailyPremiumView: View {
 
         return VStack(alignment: .leading, spacing: 10) {
             Text(formatDateDisplay(selectedDate))
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(Color.dayreadGold)
+                .font(.system(.caption, design: .serif))
+                .fontWeight(.bold)
+                .foregroundStyle(Color.dayreadInk)
                 .padding(.bottom, 2)
 
             if items.isEmpty {
@@ -157,10 +160,10 @@ struct DailyPremiumView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "doc.text")
                             .font(.title3)
-                            .foregroundStyle(.tertiary)
+                            .foregroundStyle(Color.dayreadInk.opacity(0.3))
                         Text("이 날짜에 배정된 콘텐츠가 없습니다")
                             .font(.caption)
-                            .foregroundStyle(.tertiary)
+                            .foregroundStyle(Color.dayreadInk.opacity(0.4))
                     }
                     .padding(.vertical, 20)
                     Spacer()
@@ -204,14 +207,16 @@ struct DailyPremiumView: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(item.title)
-                        .font(.subheadline.weight(.medium))
-                        .foregroundStyle(.primary)
+                        .font(.system(.subheadline, design: .serif))
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Color.dayreadInk)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
 
                     Text("Dayread Original")
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
+                        .font(.system(size: 10, weight: .bold))
+                        .tracking(0.5)
+                        .foregroundStyle(Color.dayreadInk.opacity(0.4))
                 }
 
                 Spacer()
@@ -230,13 +235,13 @@ struct DailyPremiumView: View {
                 } else if item.sessionId != nil, sessionMap[item.sessionId!] != nil {
                     Image(systemName: "chevron.right")
                         .font(.caption2)
-                        .foregroundStyle(.tertiary)
+                        .foregroundStyle(Color.dayreadInk.opacity(0.2))
                 }
             }
             .padding(StudyLayout.cardPadding)
             .background(
                 RoundedRectangle(cornerRadius: StudyLayout.cornerRadiusMD)
-                    .fill(Color(.systemGray6))
+                    .fill(Color.dayreadInk.opacity(0.04))
             )
         }
         .buttonStyle(.plain)

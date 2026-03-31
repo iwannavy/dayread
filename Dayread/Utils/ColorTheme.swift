@@ -5,6 +5,7 @@ extension Color {
     // Brand colors
     static let dayreadGold = Color(red: 168/255, green: 149/255, blue: 128/255)
     static let dayreadBrown = Color(red: 140/255, green: 120/255, blue: 95/255)
+    static let dayreadInk = Color(red: 44/255, green: 62/255, blue: 80/255) // #2c3e50 - deep blue-gray
     static let dayreadCream = Color(UIColor { traits in
         traits.userInterfaceStyle == .dark
             ? .systemBackground
@@ -27,14 +28,22 @@ extension Color {
     static let grammarClause = Color(red: 79/255, green: 184/255, blue: 160/255)        // muted teal
 
     // Grammar background colors (0.08 opacity for subtlety)
-    static let grammarSubjectBg = Color(red: 196/255, green: 112/255, blue: 101/255).opacity(0.08)
-    static let grammarVerbBg = Color(red: 90/255, green: 141/255, blue: 181/255).opacity(0.08)
-    static let grammarObjectBg = Color(red: 160/255, green: 109/255, blue: 184/255).opacity(0.08)
-    static let grammarComplementBg = Color(red: 92/255, green: 184/255, blue: 130/255).opacity(0.08)
-    static let grammarModifierBg = Color(red: 212/255, green: 128/255, blue: 74/255).opacity(0.08)
-    static let grammarConjunctionBg = Color(red: 232/255, green: 185/255, blue: 90/255).opacity(0.08)
-    static let grammarPrepositionBg = Color(red: 90/255, green: 112/255, blue: 133/255).opacity(0.08)
-    static let grammarClauseBg = Color(red: 79/255, green: 184/255, blue: 160/255).opacity(0.08)
+    // Grammar background colors (dynamic opacity for dark mode)
+    private static func dynamicGrammarBg(red: CGFloat, green: CGFloat, blue: CGFloat) -> Color {
+        Color(UIColor { traits in
+            let alpha: CGFloat = traits.userInterfaceStyle == .dark ? 0.15 : 0.08
+            return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
+        })
+    }
+
+    static let grammarSubjectBg = dynamicGrammarBg(red: 196, green: 112, blue: 101)
+    static let grammarVerbBg = dynamicGrammarBg(red: 90, green: 141, blue: 181)
+    static let grammarObjectBg = dynamicGrammarBg(red: 160, green: 109, blue: 184)
+    static let grammarComplementBg = dynamicGrammarBg(red: 92, green: 184, blue: 130)
+    static let grammarModifierBg = dynamicGrammarBg(red: 212, green: 128, blue: 74)
+    static let grammarConjunctionBg = dynamicGrammarBg(red: 232, green: 185, blue: 90)
+    static let grammarPrepositionBg = dynamicGrammarBg(red: 90, green: 112, blue: 133)
+    static let grammarClauseBg = dynamicGrammarBg(red: 79, green: 184, blue: 160)
 
     // Sentence learning status colors — synced with grammar-colors.ts statusColors
     static let statusNew = Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.08)
@@ -64,19 +73,18 @@ extension Color {
         case .clause: return .grammarClause
         }
     }
-
-    static func grammarBgColor(for role: GrammarRole) -> Color {
-        switch role {
-        case .subject: return Color(red: 196/255, green: 112/255, blue: 101/255).opacity(0.08)
-        case .verb: return Color(red: 90/255, green: 141/255, blue: 181/255).opacity(0.08)
-        case .object: return Color(red: 160/255, green: 109/255, blue: 184/255).opacity(0.08)
-        case .complement: return Color(red: 92/255, green: 184/255, blue: 130/255).opacity(0.08)
-        case .modifier: return Color(red: 212/255, green: 128/255, blue: 74/255).opacity(0.08)
-        case .conjunction: return Color(red: 232/255, green: 185/255, blue: 90/255).opacity(0.08)
-        case .preposition: return Color(red: 90/255, green: 112/255, blue: 133/255).opacity(0.08)
-        case .clause: return Color(red: 79/255, green: 184/255, blue: 160/255).opacity(0.08)
-        }
+static func grammarBgColor(for role: GrammarRole) -> Color {
+    switch role {
+    case .subject: return grammarSubjectBg
+    case .verb: return grammarVerbBg
+    case .object: return grammarObjectBg
+    case .complement: return grammarComplementBg
+    case .modifier: return grammarModifierBg
+    case .conjunction: return grammarConjunctionBg
+    case .preposition: return grammarPrepositionBg
+    case .clause: return grammarClauseBg
     }
+}
 
     static func statusColor(for status: String) -> Color {
         switch status {

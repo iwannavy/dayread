@@ -3,7 +3,6 @@ import SwiftUI
 // MARK: - Spacing Scale
 
 enum StudyLayout {
-    // Spacing scale: 4 / 8 / 12 / 16 / 20 / 24 / 32
     static let spacingXS:  CGFloat = 4
     static let spacingSM:  CGFloat = 8
     static let spacingMD:  CGFloat = 12
@@ -12,88 +11,81 @@ enum StudyLayout {
     static let spacingXL:  CGFloat = 24
     static let spacingXXL: CGFloat = 32
 
-    // Horizontal page margins (consistent across all study views)
     static let pageHorizontal: CGFloat = 24
-
-    // Immersive card — tighter margins for card-based paging
     static let immersiveHorizontal: CGFloat = 16
-
-    // Card internal padding
     static let cardPadding: CGFloat = 16
     static let cardPaddingLarge: CGFloat = 24
 
-    // Corner radii
     static let cornerRadiusSM: CGFloat = 8
     static let cornerRadiusMD: CGFloat = 16
     static let cornerRadiusLG: CGFloat = 20
 }
 
-// MARK: - Typography
+// MARK: - Typography Modifiers
 
-extension Font {
-    /// Primary English sentences — serif (New York) for reading comfort
-    static var studySentence: Font {
-        .system(.title3, design: .serif)
-    }
-
-    /// Previous context sentences
-    static var studyContext: Font {
-        .subheadline
-    }
-
-    /// Korean translation text
-    static var studyTranslation: Font {
-        .callout
-    }
-
-    /// Vocabulary/expression word (pair with .fontWeight(.medium))
-    static var studyWord: Font {
-        .subheadline
-    }
-
-    /// Example sentences, notes
-    static var studyExample: Font {
-        .caption
-    }
-
-    /// Pill/badge label text
-    static var studyBadge: Font {
-        .caption2
+struct StudySentenceModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(.title3, design: .serif))
+            .lineSpacing(8)
     }
 }
 
-// MARK: - Composite Style Extensions
-
-extension View {
-    /// English primary sentence: serif title3, lineSpacing 8
-    func studySentenceStyle() -> some View {
-        self
-            .font(.studySentence)
-            .lineSpacing(8)
-    }
-
-    /// Previous context sentence: subheadline, secondary, lineSpacing 4
-    func studyContextStyle() -> some View {
-        self
-            .font(.studyContext)
+struct StudyContextModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.subheadline)
             .foregroundStyle(.secondary)
             .lineSpacing(4)
     }
+}
 
-    /// Korean translation: callout, secondary, lineSpacing 4
-    func studyTranslationStyle() -> some View {
-        self
-            .font(.studyTranslation)
+struct StudyTranslationModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.callout)
             .foregroundStyle(.secondary)
             .lineSpacing(4)
     }
+}
 
-    /// Section header: caption2, uppercase, tracking(1), tertiary
-    func studySectionHeaderStyle() -> some View {
-        self
-            .font(.studyBadge)
+struct StudySectionHeaderModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.caption2)
             .textCase(.uppercase)
             .tracking(1)
             .foregroundStyle(.tertiary)
     }
+}
+
+// MARK: - View Extensions
+
+extension View {
+    func studySentenceStyle() -> some View {
+        self.modifier(StudySentenceModifier())
+    }
+
+    func studyContextStyle() -> some View {
+        self.modifier(StudyContextModifier())
+    }
+
+    func studyTranslationStyle() -> some View {
+        self.modifier(StudyTranslationModifier())
+    }
+
+    func studySectionHeaderStyle() -> some View {
+        self.modifier(StudySectionHeaderModifier())
+    }
+}
+
+// MARK: - Legacy Font Extension (Keeping for backward compatibility where direct font is used)
+
+extension Font {
+    static var studySentence: Font { .system(.title3, design: .serif) }
+    static var studyContext: Font { .subheadline }
+    static var studyTranslation: Font { .callout }
+    static var studyWord: Font { .subheadline }
+    static var studyExample: Font { .caption }
+    static var studyBadge: Font { .caption2 }
 }

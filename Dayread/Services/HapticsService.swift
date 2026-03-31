@@ -29,6 +29,9 @@ final class HapticsService {
 
     // Convenience methods matching current Capacitor haptics usage
     func tap() { impact(.light) }
+    func soft() { impact(.soft) }
+    func light() { impact(.light) }
+    func medium() { impact(.medium) }
     func success() { notification(.success) }
     func error() { notification(.error) }
     func warning() { notification(.warning) }

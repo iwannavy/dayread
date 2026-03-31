@@ -26,23 +26,23 @@
 				<string>dayread</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.538478676772-vc2dvii8emeeb7dgmusodt88lbbt09kq</string>
+			</array>
+		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>538478676772-vc2dvii8emeeb7dgmusodt88lbbt09kq.apps.googleusercontent.com</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>MIXPANEL_TOKEN</key>
-	<string>8d7cae4ad62a61e4d2e6418031a4badd</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>발음 연습과 쉐도잉을 위해 마이크 접근이 필요합니다.</string>
-	<key>REVENUECAT_API_KEY</key>
-	<string>appl_TaiSCQKgQloWYtCwVhWUNVeZKCa</string>
-	<key>SENTRY_DSN</key>
-	<string></string>
-	<key>SUPABASE_ANON_KEY</key>
-	<string>sb_publishable_t-n6fMVyzFRCZO067tyx6w_B244ewmq</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

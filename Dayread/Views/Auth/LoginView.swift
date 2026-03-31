@@ -1,11 +1,13 @@
 import SwiftUI
 import AuthenticationServices
+import GoogleSignIn
 
 struct LoginView: View {
     @Environment(AuthService.self) private var authService
     @Environment(ToastService.self) private var toast
 
     @State private var isLoading = false
+    @State private var showEmailAuth = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -40,6 +42,47 @@ struct LoginView: View {
                 .frame(height: 52)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
 
+                // Google Sign In
+                Button {
+                    handleGoogleSignIn()
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "g.circle.fill")
+                            .font(.title2)
+                        Text("Google로 계속하기")
+                            .font(.body.weight(.medium))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 52)
+                    .background(Color(.systemBackground))
+                    .foregroundStyle(.primary)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(.separator), lineWidth: 0.5)
+                    )
+                }
+
+                // Email Sign In
+                Button {
+                    showEmailAuth = true
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "envelope.fill")
+                            .font(.title2)
+                        Text("이메일로 계속하기")
+                            .font(.body.weight(.medium))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 52)
+                    .background(Color(.systemBackground))
+                    .foregroundStyle(.primary)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color(.separator), lineWidth: 0.5)
+                    )
+                }
             }
             .padding(.horizontal, 24)
             .disabled(isLoading)
@@ -82,7 +125,12 @@ struct LoginView: View {
                     .scaleEffect(1.5)
             }
         }
+        .sheet(isPresented: $showEmailAuth) {
+            EmailAuthView()
+        }
     }
+
+    // MARK: - Apple Sign In
 
     private func handleAppleSignIn(_ result: Result<ASAuthorization, Error>) {
         switch result {
@@ -105,6 +153,48 @@ struct LoginView: View {
         case .failure(let error):
             if (error as NSError).code != ASAuthorizationError.canceled.rawValue {
                 toast.showError("Apple 로그인에 실패했습니다: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    // MARK: - Google Sign In
+
+    private func handleGoogleSignIn() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootVC = windowScene.windows.first?.rootViewController else {
+            toast.showError("Google 로그인을 시작할 수 없습니다.")
+            return
+        }
+
+        isLoading = true
+        GIDSignIn.sharedInstance.signIn(withPresenting: rootVC) { result, error in
+            Task { @MainActor in
+                defer { isLoading = false }
+
+                if let error {
+                    if (error as NSError).code != GIDSignInError.canceled.rawValue {
+                        toast.showError("Google 로그인에 실패했습니다.")
+                        AnalyticsService.captureError(error, context: "google_sign_in")
+                    }
+                    return
+                }
+
+                guard let user = result?.user,
+                      let idToken = user.idToken?.tokenString else {
+                    toast.showError("Google 인증 정보를 가져올 수 없습니다.")
+                    return
+                }
+
+                do {
+                    try await authService.signInWithGoogle(
+                        idToken: idToken,
+                        accessToken: user.accessToken.tokenString
+                    )
+                    AnalyticsService.track("login_success", properties: ["method": "google"])
+                } catch {
+                    toast.showError("로그인 실패: \(error.localizedDescription)")
+                    AnalyticsService.captureError(error, context: "google_sign_in_supabase")
+                }
             }
         }
     }

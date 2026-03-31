@@ -2,7 +2,7 @@ import SwiftUI
 
 // MARK: - Card Phase
 
-private enum CardPhase: Int, Comparable {
+fileprivate enum CardPhase: Int, Comparable, CaseIterable {
     case encounter = 0
     case comprehension = 1
     case deepDive = 2
@@ -28,10 +28,6 @@ struct ImmersiveView: View {
     @State private var flaggedSentences: Set<Int> = []
     @State private var expandedVocabId: String?
 
-    private let hapticSoft = UIImpactFeedbackGenerator(style: .soft)
-    private let hapticLight = UIImpactFeedbackGenerator(style: .light)
-    private let hapticMedium = UIImpactFeedbackGenerator(style: .medium)
-
     init(sentences: [AnalyzedSentence], initialIndex: Int,
          onAdvanceMode: @escaping () -> Void,
          onSentenceChange: @escaping (Int) -> Void,
@@ -55,9 +51,28 @@ struct ImmersiveView: View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(spacing: 0) {
                 ForEach(Array(sentences.enumerated()), id: \.offset) { idx, sentence in
-                    sentenceCard(sentence, index: idx)
-                        .containerRelativeFrame(.vertical)
-                        .id(idx)
+                    SentenceFullscreenPage(
+                        sentence: sentence,
+                        index: idx,
+                        totalCount: sentences.count,
+                        phase: phase(for: idx),
+                        isFlagged: flaggedSentences.contains(idx),
+                        expandedVocabId: $expandedVocabId,
+                        onPhaseChange: { nextPhase in
+                            withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                                cardPhases[idx] = nextPhase
+                            }
+                            HapticsService.shared.soft()
+                        },
+                        onFlag: { isFlag in
+                            if isFlag { flaggedSentences.insert(idx) }
+                            else { flaggedSentences.remove(idx) }
+                            onFlagSentence(idx, isFlag)
+                            HapticsService.shared.light()
+                        }
+                    )
+                    .containerRelativeFrame(.vertical)
+                    .id(idx)
                 }
 
                 completionCard
@@ -71,328 +86,63 @@ struct ImmersiveView: View {
         .onChange(of: scrolledID) { _, newID in
             handleCardChange(newID)
         }
-    }
-
-    // MARK: - Sentence Card
-
-    @ViewBuilder
-    private func sentenceCard(_ sentence: AnalyzedSentence, index: Int) -> some View {
-        let currentPhase = phase(for: index)
-
-        ZStack(alignment: .bottom) {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 0) {
-                    // Counter + difficulty dot
-                    cardHeader(sentence, index: index)
-                        .padding(.bottom, StudyLayout.spacingSM)
-
-                    // Layer 0: English sentence (always visible)
-                    englishSentence(sentence, index: index, phase: currentPhase)
-                        .padding(.bottom, StudyLayout.spacingBase)
-
-                    // Layer 1: Translation + grammar colors + phrase alignment
-                    if currentPhase >= .comprehension {
-                        comprehensionLayer(sentence, index: index)
-                            .transition(.opacity.combined(with: .offset(y: 12)))
-                    } else {
-                        // Hint line
-                        Text("번역 보려면 탭")
-                            .font(.caption2)
-                            .foregroundStyle(.quaternary)
-                            .padding(.bottom, StudyLayout.spacingLG)
-                            .transition(.opacity)
-                    }
-
-                    // Layer 2: Vocabulary + Expressions + Grammar
-                    if currentPhase >= .deepDive {
-                        deepDiveLayer(sentence, index: index)
-                            .transition(.move(edge: .bottom).combined(with: .opacity))
-                    }
-
-                    Spacer(minLength: 0)
-                }
-                .padding(.horizontal, StudyLayout.immersiveHorizontal)
-                .padding(.top, StudyLayout.spacingBase)
-                .padding(.bottom, 60)
-            }
-            .scrollDisabled(currentPhase < .deepDive)
-
-            // Bottom fade gradient
-            LinearGradient(
-                colors: [.clear, Color(.systemBackground)],
-                startPoint: UnitPoint(x: 0.5, y: 0.7),
-                endPoint: .bottom
-            )
-            .frame(height: 60)
-            .allowsHitTesting(false)
-
-            // Card indicator
-            cardIndicator(index: index, phase: currentPhase)
-        }
-        .clipped()
-        .contentShape(Rectangle())
-        .onTapGesture {
-            handleTap(index: index)
-        }
-    }
-
-    // MARK: - Card Header
-
-    private func cardHeader(_ sentence: AnalyzedSentence, index: Int) -> some View {
-        HStack {
-            Text("\(index + 1) / \(sentences.count)")
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
-                .monospacedDigit()
-                .accessibilityLabel("문장 \(index + 1)/\(sentences.count)")
-
-            if flaggedSentences.contains(index) {
-                Circle()
-                    .fill(Color.dayreadGold)
-                    .frame(width: 5, height: 5)
-                    .transition(.scale.combined(with: .opacity))
-            }
-
-            Spacer()
-
-            if sentence.difficulty >= 3 {
-                Circle()
-                    .fill(Color.difficultyColor(for: sentence.difficulty))
-                    .frame(width: 6, height: 6)
-            }
-        }
-    }
-
-    // MARK: - Layer 0: English Sentence
-
-    private func englishSentence(_ sentence: AnalyzedSentence, index: Int, phase: CardPhase) -> some View {
-        Group {
-            if phase >= .comprehension {
-                // Grammar-colored text
-                buildColorCodedText(sentence)
-                    .studySentenceStyle()
-                    .accessibilityLabel("영어 문장: \(sentence.original)")
-            } else {
-                // Plain text
-                Text(sentence.original)
-                    .studySentenceStyle()
-                    .foregroundStyle(.primary)
-                    .accessibilityLabel("영어 문장: \(sentence.original)")
-            }
-        }
-    }
-
-    // MARK: - Layer 1: Comprehension
-
-    private func comprehensionLayer(_ sentence: AnalyzedSentence, index: Int) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            // Korean translation
-            Text(sentence.translation)
-                .studyTranslationStyle()
-                .padding(.bottom, StudyLayout.spacingSM)
-                .accessibilityLabel("번역: \(sentence.translation)")
-
-            // Self-assessment icons
-            selfAssessmentRow(index: index)
-                .padding(.bottom, StudyLayout.spacingBase)
-
-            // Phrase translation
-            if let alignment = sentence.koreanAlignment, !alignment.isEmpty {
-                phraseSection(alignment)
-                    .padding(.bottom, StudyLayout.spacingBase)
-            }
-
-            // Deep dive hint (when not yet in deep dive)
-            if phase(for: index) < .deepDive {
-                HStack(spacing: 4) {
-                    Text("자세히")
-                        .font(.caption2)
-                    Image(systemName: "chevron.down")
-                        .font(.caption2)
-                }
-                .foregroundStyle(.quaternary)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top, StudyLayout.spacingSM)
-            }
-        }
-    }
-
-    // MARK: - Self Assessment
-
-    private func selfAssessmentRow(index: Int) -> some View {
-        HStack(spacing: 12) {
-            Spacer()
-            Button {
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                    if flaggedSentences.contains(index) {
-                        flaggedSentences.remove(index)
-                        onFlagSentence(index, false)
-                    }
-                }
-                hapticLight.impactOccurred()
-            } label: {
-                Image(systemName: flaggedSentences.contains(index) ? "checkmark.circle" : "checkmark.circle.fill")
-                    .font(.subheadline)
-                    .foregroundStyle(flaggedSentences.contains(index) ? Color.secondary : Color.green.opacity(0.6))
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("이해했어요")
-
-            Button {
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                    if flaggedSentences.contains(index) {
-                        flaggedSentences.remove(index)
-                        onFlagSentence(index, false)
-                    } else {
-                        flaggedSentences.insert(index)
-                        onFlagSentence(index, true)
-                    }
-                }
-                hapticLight.impactOccurred()
-            } label: {
-                Image(systemName: flaggedSentences.contains(index) ? "questionmark.circle.fill" : "questionmark.circle")
-                    .font(.subheadline)
-                    .foregroundStyle(flaggedSentences.contains(index) ? Color.dayreadGold : Color.secondary)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("어려워요")
-        }
-    }
-
-    // MARK: - Layer 2: Deep Dive
-
-    private func deepDiveLayer(_ sentence: AnalyzedSentence, index: Int) -> some View {
-        VStack(alignment: .leading, spacing: StudyLayout.spacingBase) {
-            // Key vocabulary (expandable pills)
-            if !sentence.vocabulary.isEmpty {
-                vocabularySection(sentence.vocabulary, sentenceIndex: index)
-            }
-
-            // Expressions (expandable pills)
-            if !sentence.expressions.isEmpty {
-                expressionsSection(sentence.expressions, sentenceIndex: index)
-            }
-
-            // Compact grammar summary
-            GrammarVizView(
-                elements: sentence.grammarElements,
-                translation: sentence.translation,
-                original: sentence.original,
-                hideOriginal: true,
-                allActive: true,
-                compact: true
-            )
-            .padding(StudyLayout.cardPadding)
-            .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: StudyLayout.cornerRadiusMD))
-        }
-    }
-
-    // MARK: - Tap Handler
-
-    private func handleTap(index: Int) {
-        let current = phase(for: index)
-        guard current < .deepDive else { return }
-
-        let next: CardPhase = current == .encounter ? .comprehension : .deepDive
-
-        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-            cardPhases[index] = next
-        }
-        hapticSoft.impactOccurred()
+        .ignoresSafeArea(edges: .bottom)
     }
 
     // MARK: - Completion Card
 
     private var completionCard: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 24) {
             Spacer()
 
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 40))
-                .foregroundStyle(.green)
+            ZStack {
+                Circle()
+                    .fill(Color.dayreadGold.opacity(0.1))
+                    .frame(width: 100, height: 100)
+                
+                Image(systemName: "checkmark.seal.fill")
+                    .font(.system(size: 50))
+                    .foregroundStyle(Color.dayreadGold)
+            }
 
-            Text("Immersive 읽기 완료!")
-                .font(.title3.weight(.medium))
-
-            // Summary
-            VStack(spacing: 4) {
-                Text("\(sentences.count)개 문장 읽기 완료")
+            VStack(spacing: 8) {
+                Text("Immersive 읽기 완료!")
+                    .font(.system(.title2, design: .serif))
+                    .fontWeight(.bold)
+                
+                Text("\(sentences.count)개 문장을 깊이 있게 읽었습니다")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-
-                if !flaggedSentences.isEmpty {
-                    Text("\(flaggedSentences.count)개 어려운 문장 표시됨")
-                        .font(.caption)
-                        .foregroundStyle(Color.dayreadGold)
-                }
             }
 
-            // Continue button
             Button {
-                hapticMedium.impactOccurred()
+                HapticsService.shared.medium()
                 onAdvanceMode()
             } label: {
-                Text("Focus 학습 시작")
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 24)
-                    .padding(.vertical, 12)
-                    .background(Color.dayreadGold)
-                    .clipShape(Capsule())
+                HStack(spacing: 8) {
+                    Text("Focus 학습 시작")
+                    Image(systemName: "arrow.right")
+                }
+                .font(.headline)
+                .foregroundStyle(.white)
+                .padding(.horizontal, 32)
+                .padding(.vertical, 16)
+                .background(Color.dayreadGold)
+                .clipShape(Capsule())
+                .shadow(color: Color.dayreadGold.opacity(0.3), radius: 10, x: 0, y: 5)
             }
             .buttonStyle(.plain)
-            .padding(.top, 8)
+            .padding(.top, 20)
 
             Spacer()
         }
         .frame(maxWidth: .infinity)
+        .background(Color(.systemBackground))
         .onAppear {
-            hapticMedium.impactOccurred()
+            HapticsService.shared.success()
             if let s = sentences.last { onStudied(s.id) }
         }
     }
-
-    // MARK: - Card Indicator
-
-    private func cardIndicator(index: Int, phase: CardPhase) -> some View {
-        HStack {
-            Text("\(index + 1) / \(sentences.count)")
-                .font(.caption2)
-                .monospacedDigit()
-                .foregroundStyle(.tertiary)
-
-            Spacer()
-
-            if phase < .comprehension {
-                HStack(spacing: 4) {
-                    Text("탭하여 확인")
-                        .font(.caption2)
-                }
-                .foregroundStyle(.quaternary)
-            } else if index < sentences.count - 1 {
-                HStack(spacing: 4) {
-                    Text("다음")
-                        .font(.caption2)
-                    Image(systemName: "chevron.up")
-                        .font(.caption2)
-                }
-                .foregroundStyle(.tertiary)
-            } else {
-                HStack(spacing: 4) {
-                    Text("완료")
-                        .font(.caption2)
-                    Image(systemName: "chevron.up")
-                        .font(.caption2)
-                }
-                .foregroundStyle(Color.dayreadGold)
-            }
-        }
-        .padding(.horizontal, StudyLayout.immersiveHorizontal)
-        .padding(.bottom, StudyLayout.spacingSM)
-    }
-
-    // MARK: - Card Change Handler
 
     private func handleCardChange(_ newID: Int?) {
         guard let newID, newID != sentenceIndex else { return }
@@ -402,7 +152,7 @@ struct ImmersiveView: View {
             onStudied(s.id)
         }
 
-        hapticLight.impactOccurred()
+        HapticsService.shared.light()
 
         if newID >= sentences.count {
             sentenceIndex = sentences.count - 1
@@ -413,35 +163,224 @@ struct ImmersiveView: View {
         expandedVocabId = nil
         onSentenceChange(newID)
     }
+}
 
-    // MARK: - Grammar Color Coding
+// MARK: - Sentence Fullscreen Page
 
-    private func buildColorCodedText(_ sentence: AnalyzedSentence) -> Text {
-        let segments = buildSegments(sentence)
-        var result = Text("")
-        for segment in segments {
-            switch segment {
-            case .plain(let text):
-                result = result + Text(text)
-            case .element(let element):
-                let color = Color.grammarColor(for: element.role)
-                let word = element.text.trimmingCharacters(in: .whitespaces)
-                result = result + Text(word)
-                    .foregroundColor(color)
-                    .underline(color: color.opacity(0.4))
+fileprivate struct SentenceFullscreenPage: View {
+    let sentence: AnalyzedSentence
+    let index: Int
+    let totalCount: Int
+    let phase: CardPhase
+    let isFlagged: Bool
+    @Binding var expandedVocabId: String?
+    let onPhaseChange: (CardPhase) -> Void
+    let onFlag: (Bool) -> Void
+
+    var body: some View {
+        ZStack(alignment: .top) {
+            // Fixed Background Original Text
+            VStack(spacing: 0) {
+                fixedOriginalSection
+                Spacer()
+            }
+            .zIndex(1)
+
+            // Scrollable Content
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 0) {
+                    // Spacer for the fixed top part
+                    Color.clear
+                        .frame(height: 220)
+                    
+                    VStack(alignment: .leading, spacing: 24) {
+                        if phase >= .comprehension {
+                            comprehensionSection
+                                .staggeredAppear(delay: 0.1)
+                        } else {
+                            revealHintView(text: "위로 밀어서 번역 보기", icon: "arrow.up")
+                        }
+
+                        if phase >= .deepDive {
+                            deepDiveSection
+                                .staggeredAppear(delay: 0.1)
+                        } else if phase == .comprehension {
+                            revealHintView(text: "위로 밀어서 심화 학습", icon: "arrow.up")
+                        }
+                        
+                        // Final spacing to allow scrolling the reveal hint into view
+                        Spacer(minLength: 100)
+                    }
+                    .padding(.horizontal, StudyLayout.pageHorizontal)
+                    .padding(.top, 20)
+                }
+            }
+            .scrollBounceBehavior(.always)
+            .simultaneousGesture(
+                DragGesture().onEnded { value in
+                    if value.translation.height < -50 { // Swipe Up
+                        handleSwipeUp()
+                    }
+                }
+            )
+        }
+        .background(Color(.systemBackground))
+    }
+
+    private func handleSwipeUp() {
+        if phase == .encounter {
+            onPhaseChange(.comprehension)
+        } else if phase == .comprehension {
+            onPhaseChange(.deepDive)
+        }
+    }
+
+    // MARK: - Sections
+
+    private var fixedOriginalSection: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Text("\(index + 1) / \(totalCount)")
+                    .font(.system(.caption2, design: .monospaced))
+                    .foregroundStyle(.tertiary)
+                
+                Spacer()
+                
+                difficultyBadge
+            }
+            
+            Group {
+                if phase >= .comprehension {
+                    buildColorCodedText(sentence)
+                        .studySentenceStyle()
+                } else {
+                    Text(sentence.original)
+                        .studySentenceStyle()
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .minimumScaleFactor(0.8)
+        }
+        .padding(.horizontal, StudyLayout.pageHorizontal)
+        .padding(.top, 20)
+        .padding(.bottom, 30)
+        .background(
+            LinearGradient(
+                colors: [Color(.systemBackground), Color(.systemBackground), Color(.systemBackground).opacity(0)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
+    }
+
+    private var comprehensionSection: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            // Translation Card
+            VStack(alignment: .leading, spacing: 12) {
+                Text("번역")
+                    .studySectionHeaderStyle()
+                
+                Text(sentence.translation)
+                    .studyTranslationStyle()
+                    .foregroundStyle(.primary)
+            }
+            .padding(20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.dayreadGold.opacity(0.05))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            
+            // Interaction Row
+            HStack(spacing: 16) {
+                Spacer()
+                
+                actionButton(icon: isFlagged ? "questionmark.circle.fill" : "questionmark.circle", color: isFlagged ? .dayreadGold : .secondary) {
+                    onFlag(!isFlagged)
+                }
+                
+                actionButton(icon: "checkmark.circle.fill", color: .green.opacity(0.6)) {
+                    // Already studied via scroll
+                }
             }
         }
-        return result
     }
 
-    private enum TextSegment {
-        case plain(String)
-        case element(GrammarElement)
+    private var deepDiveSection: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            if !sentence.vocabulary.isEmpty {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("핵심 단어")
+                        .studySectionHeaderStyle()
+                    
+                    ForEach(sentence.vocabulary.prefix(3)) { vocab in
+                        VocabPill(vocab: vocab, isExpanded: expandedVocabId == vocab.word)
+                            .onTapGesture {
+                                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                                    expandedVocabId = expandedVocabId == vocab.word ? nil : vocab.word
+                                }
+                            }
+                    }
+                }
+            }
+            
+            VStack(alignment: .leading, spacing: 12) {
+                Text("문장 구조")
+                    .studySectionHeaderStyle()
+                
+                GrammarVizView(
+                    elements: sentence.grammarElements,
+                    translation: sentence.translation,
+                    original: sentence.original,
+                    hideOriginal: true,
+                    allActive: true,
+                    compact: true
+                )
+                .padding(20)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.dayreadGold.opacity(0.15), lineWidth: 1)
+                )
+            }
+        }
     }
 
-    private func buildSegments(_ sentence: AnalyzedSentence) -> [TextSegment] {
+    // MARK: - Components
+
+    private var difficultyBadge: some View {
+        Text(DifficultyLevel.label(for: sentence.difficulty))
+            .font(.system(size: 10, weight: .bold))
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(CurriculumUtils.difficultyColor(sentence.difficulty).opacity(0.1))
+            .foregroundStyle(CurriculumUtils.difficultyColor(sentence.difficulty))
+            .clipShape(Capsule())
+    }
+
+    private func actionButton(icon: String, color: Color, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: icon)
+                .font(.title3)
+                .foregroundStyle(color)
+                .frame(width: 44, height: 44)
+                .background(Circle().fill(color.opacity(0.1)))
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func revealHintView(text: String, icon: String) -> some View {
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.caption)
+            Text(text)
+                .font(.caption2.weight(.medium))
+        }
+        .foregroundStyle(.quaternary)
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 40)
+    }
+
+    private func buildColorCodedText(_ sentence: AnalyzedSentence) -> Text {
         let original = sentence.original
-        var segments: [TextSegment] = []
+        var result = Text("")
         var pos = original.startIndex
 
         for el in sentence.grammarElements {
@@ -449,198 +388,79 @@ struct ImmersiveView: View {
             guard !trimmed.isEmpty else { continue }
             if let range = original.range(of: trimmed, range: pos..<original.endIndex) {
                 if range.lowerBound > pos {
-                    segments.append(.plain(String(original[pos..<range.lowerBound])))
+                    result = result + Text(original[pos..<range.lowerBound])
                 }
-                segments.append(.element(el))
+                let color = Color.grammarColor(for: el.role)
+                result = result + Text(original[range])
+                    .foregroundColor(color)
+                    .underline(color: color.opacity(0.3))
                 pos = range.upperBound
             }
         }
         if pos < original.endIndex {
-            segments.append(.plain(String(original[pos...])))
+            result = result + Text(original[pos...])
         }
-        return segments
-    }
-
-    // MARK: - Phrase Translation
-
-    private func phraseSection(_ alignment: [KoreanAlignment]) -> some View {
-        VStack(alignment: .leading, spacing: StudyLayout.spacingSM) {
-            Text("구 번역")
-                .studySectionHeaderStyle()
-
-            VStack(spacing: 8) {
-                ForEach(Array(alignment.enumerated()), id: \.offset) { _, pair in
-                    HStack {
-                        Text(pair.en)
-                            .font(.subheadline)
-                            .foregroundStyle(.primary)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                        Text("=")
-                            .font(.subheadline)
-                            .foregroundStyle(.tertiary)
-                        Text(pair.ko)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                }
-            }
-        }
-    }
-
-    // MARK: - Vocabulary (Expandable)
-
-    private func vocabularySection(_ vocabulary: [AnalyzedWord], sentenceIndex: Int) -> some View {
-        VStack(alignment: .leading, spacing: StudyLayout.spacingSM) {
-            Text("핵심 단어")
-                .studySectionHeaderStyle()
-
-            VStack(spacing: 6) {
-                ForEach(Array(vocabulary.prefix(6).enumerated()), id: \.offset) { _, v in
-                    let isExpanded = expandedVocabId == v.word
-                    VStack(alignment: .leading, spacing: 0) {
-                        // Collapsed pill
-                        HStack(spacing: 4) {
-                            Circle()
-                                .fill(Color.difficultyColor(for: v.difficulty))
-                                .frame(width: 5, height: 5)
-                            Text(v.word).fontWeight(.medium)
-                            if !isExpanded {
-                                Text("·").foregroundStyle(.tertiary)
-                                Text(v.meaning).foregroundStyle(.secondary)
-                            }
-                            Spacer(minLength: 0)
-                            if isExpanded {
-                                let isSaved = srsService.items.contains { $0.front == v.word }
-                                Button {
-                                    srsService.addItem(type: .vocabulary, front: v.word, back: v.meaning, source: "")
-                                    hapticLight.impactOccurred()
-                                } label: {
-                                    Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
-                                        .font(.caption)
-                                        .foregroundStyle(Color.dayreadGold)
-                                }
-                                .buttonStyle(.plain)
-                                .disabled(isSaved)
-                            }
-                        }
-                        .font(.caption)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-
-                        // Expanded detail
-                        if isExpanded {
-                            VStack(alignment: .leading, spacing: 4) {
-                                // POS + difficulty
-                                HStack(spacing: 4) {
-                                    Text(v.pos)
-                                        .font(.caption2)
-                                        .padding(.horizontal, 6)
-                                        .padding(.vertical, 2)
-                                        .background(.quaternary)
-                                        .clipShape(Capsule())
-                                    Text(DifficultyLevel.label(for: v.difficulty))
-                                        .font(.caption2)
-                                        .foregroundStyle(v.difficulty >= 4 ? Color.dayreadGold : .secondary)
-                                }
-
-                                // Meaning
-                                Text(v.meaning)
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-
-                                // Example
-                                if !v.example.isEmpty {
-                                    HStack(spacing: 6) {
-                                        Rectangle()
-                                            .fill(Color.dayreadGold.opacity(0.2))
-                                            .frame(width: 2)
-                                        Text(v.example)
-                                            .font(.caption2)
-                                            .foregroundStyle(.tertiary)
-                                            .italic()
-                                    }
-                                }
-                            }
-                            .padding(.horizontal, 12)
-                            .padding(.bottom, 8)
-                            .transition(.opacity.combined(with: .scale(scale: 0.95, anchor: .top)))
-                        }
-                    }
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) {
-                            expandedVocabId = isExpanded ? nil : v.word
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // MARK: - Expressions (Expandable)
-
-    private func expressionsSection(_ expressions: [Expression], sentenceIndex: Int) -> some View {
-        VStack(alignment: .leading, spacing: StudyLayout.spacingSM) {
-            Text("표현")
-                .studySectionHeaderStyle()
-
-            VStack(spacing: 6) {
-                ForEach(Array(expressions.prefix(4).enumerated()), id: \.offset) { _, ex in
-                    let isExpanded = expandedVocabId == "ex_\(ex.phrase)"
-                    VStack(alignment: .leading, spacing: 0) {
-                        HStack(spacing: 4) {
-                            Text(ex.phrase).fontWeight(.medium)
-                            if !isExpanded {
-                                Text("·").foregroundStyle(.tertiary)
-                                Text(ex.meaning).foregroundStyle(.secondary)
-                            }
-                            Spacer(minLength: 0)
-                        }
-                        .font(.caption)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-
-                        if isExpanded {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(ex.meaning)
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                Text(ex.usage)
-                                    .font(.caption2)
-                                    .foregroundStyle(.tertiary)
-                                Text(ex.register.rawValue)
-                                    .font(.caption2)
-                                    .padding(.horizontal, 6)
-                                    .padding(.vertical, 2)
-                                    .background(Color.dayreadGold.opacity(0.08))
-                                    .clipShape(Capsule())
-                            }
-                            .padding(.horizontal, 12)
-                            .padding(.bottom, 8)
-                            .transition(.opacity.combined(with: .scale(scale: 0.95, anchor: .top)))
-                        }
-                    }
-                    .background(Color.dayreadGold.opacity(0.08))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) {
-                            expandedVocabId = isExpanded ? nil : "ex_\(ex.phrase)"
-                        }
-                    }
-                }
-            }
-        }
+        return result
     }
 }
 
-// MARK: - Safe Array Access
-
-extension Collection {
-    subscript(safe index: Index) -> Element? {
-        indices.contains(index) ? self[index] : nil
+struct VocabPill: View {
+    let vocab: AnalyzedWord
+    let isExpanded: Bool
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text(vocab.word)
+                    .font(.system(.subheadline, design: .serif))
+                    .fontWeight(.bold)
+                
+                if !isExpanded {
+                    Text("·")
+                        .foregroundStyle(.tertiary)
+                    Text(vocab.meaning)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+                
+                Spacer()
+                
+                Image(systemName: "chevron.down")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                    .rotationEffect(.degrees(isExpanded ? 180 : 0))
+            }
+            
+            if isExpanded {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(vocab.meaning)
+                        .font(.subheadline)
+                        .foregroundStyle(.primary)
+                    
+                    if !vocab.example.isEmpty {
+                        Text(vocab.example)
+                            .font(.system(.caption, design: .serif))
+                            .italic()
+                            .foregroundStyle(.secondary)
+                            .padding(.leading, 10)
+                            .overlay(
+                                Rectangle()
+                                    .fill(Color.dayreadGold.opacity(0.3))
+                                    .frame(width: 2)
+                                    .padding(.vertical, 2),
+                                alignment: .leading
+                            )
+                    }
+                }
+                .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.dayreadGold.opacity(isExpanded ? 0.08 : 0.03))
+        )
     }
 }

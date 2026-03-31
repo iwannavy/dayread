@@ -117,6 +117,23 @@ final class AuthService {
         state = .guest
     }
 
+    // MARK: - Email Auth
+
+    func signInWithEmail(email: String, password: String) async throws {
+        try await supabase.auth.signIn(email: email, password: password)
+    }
+
+    func signUpWithEmail(email: String, password: String) async throws {
+        let response = try await supabase.auth.signUp(email: email, password: password)
+        if response.session == nil {
+            throw AuthError.emailConfirmationRequired
+        }
+    }
+
+    func resetPassword(email: String) async throws {
+        try await supabase.auth.resetPasswordForEmail(email)
+    }
+
     // MARK: - Sign Out
 
     func signOut() async throws {
@@ -133,11 +150,13 @@ final class AuthService {
     enum AuthError: LocalizedError {
         case invalidCredential
         case noSession
+        case emailConfirmationRequired
 
         var errorDescription: String? {
             switch self {
             case .invalidCredential: return "잘못된 인증 정보입니다."
             case .noSession: return "세션이 만료되었습니다. 다시 로그인해주세요."
+            case .emailConfirmationRequired: return "인증 이메일이 발송되었습니다. 이메일을 확인해주세요."
             }
         }
     }

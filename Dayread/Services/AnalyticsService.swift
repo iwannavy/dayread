@@ -6,6 +6,7 @@ import Mixpanel
 /// Port of src/lib/analytics.ts
 enum AnalyticsService {
     private static var isConfigured = false
+    private static var isMixpanelEnabled = false
 
     // MARK: - Setup
 
@@ -28,6 +29,7 @@ enum AnalyticsService {
         if !mixpanelToken.isEmpty {
             Mixpanel.initialize(token: mixpanelToken, trackAutomaticEvents: true)
             Mixpanel.mainInstance().people.set(properties: ["platform": "iOS"])
+            isMixpanelEnabled = true
             print("[Analytics] Mixpanel initialized with token: \(mixpanelToken.prefix(8))...")
         } else {
             print("[Analytics] Mixpanel token is EMPTY — skipped")
@@ -43,12 +45,14 @@ enum AnalyticsService {
         print("[Analytics] identify: \(userId)")
         #endif
         SentrySDK.setUser(User(userId: userId))
-        Mixpanel.mainInstance().identify(distinctId: userId)
-        Mixpanel.mainInstance().people.set(properties: [
-            "$name": userId,
-            "platform": "iOS"
-        ])
-        Mixpanel.mainInstance().flush()
+        if isMixpanelEnabled {
+            Mixpanel.mainInstance().identify(distinctId: userId)
+            Mixpanel.mainInstance().people.set(properties: [
+                "$name": userId,
+                "platform": "iOS"
+            ])
+            Mixpanel.mainInstance().flush()
+        }
     }
 
     static func reset() {
@@ -56,7 +60,7 @@ enum AnalyticsService {
         print("[Analytics] reset")
         #else
         SentrySDK.setUser(nil)
-        Mixpanel.mainInstance().reset()
+        if isMixpanelEnabled { Mixpanel.mainInstance().reset() }
         #endif
     }
 
@@ -85,7 +89,9 @@ enum AnalyticsService {
         }
         #endif
         SentrySDK.addBreadcrumb(Breadcrumb(level: .info, category: "analytics"))
-        Mixpanel.mainInstance().track(event: event, properties: properties)
-        Mixpanel.mainInstance().flush()
+        if isMixpanelEnabled {
+            Mixpanel.mainInstance().track(event: event, properties: properties)
+            Mixpanel.mainInstance().flush()
+        }
     }
 }

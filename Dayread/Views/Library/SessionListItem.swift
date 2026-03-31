@@ -23,86 +23,78 @@ struct SessionListItemView: View {
 
     var body: some View {
         Button(action: onTap) {
-            HStack(spacing: 12) {
-                // Genre icon
-                Image(systemName: CurriculumUtils.genreIcon("article"))
-                    .font(.system(size: 16))
-                    .foregroundStyle(isLocked ? .secondary : CurriculumUtils.difficultyColor(session.overview.difficulty))
-                    .frame(width: 32, height: 32)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill((isLocked ? Color.gray : CurriculumUtils.difficultyColor(session.overview.difficulty)).opacity(0.12))
-                    )
-
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack(spacing: 6) {
-                        Text(session.overview.title)
-                            .font(.subheadline.weight(.medium))
-                            .foregroundStyle(isLocked ? .secondary : .primary)
-                            .lineLimit(1)
-
-                        if isLocked {
-                            Image(systemName: "lock.fill")
-                                .font(.caption2)
-                                .foregroundStyle(Color.dayreadGold)
-                        }
-
-                        if isCompleted {
-                            Image(systemName: "checkmark.circle.fill")
-                                .font(.caption)
-                                .foregroundStyle(.green)
-                        }
+            HStack(spacing: 16) {
+                // Progress Ring or Genre Icon
+                ZStack {
+                    if !isLocked && progressPercent > 0 {
+                        Circle()
+                            .stroke(Color(.systemGray5), lineWidth: 3)
+                            .frame(width: 44, height: 44)
+                        
+                        Circle()
+                            .trim(from: 0, to: progressPercent / 100)
+                            .stroke(isCompleted ? Color.green : Color.dayreadGold, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                            .frame(width: 44, height: 44)
+                            .rotationEffect(.degrees(-90))
+                    } else {
+                        Circle()
+                            .fill(Color(.secondarySystemBackground))
+                            .frame(width: 44, height: 44)
                     }
+
+                    Image(systemName: isLocked ? "lock.fill" : (isCompleted ? "checkmark" : CurriculumUtils.genreIcon("article")))
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(isLocked ? Color.dayreadGold : (isCompleted ? .green : .secondary))
+                }
+                .padding(.leading, 4)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(session.overview.title)
+                        .font(.system(.subheadline, design: .serif))
+                        .fontWeight(.semibold)
+                        .foregroundStyle(isLocked ? .secondary : .primary)
+                        .lineLimit(1)
 
                     HStack(spacing: 8) {
                         Text(session.overview.source)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-
-                        if !isLocked && progressPercent > 0 && !isCompleted {
-                            ProgressView(value: progressPercent, total: 100)
-                                .tint(Color.dayreadGold)
-                                .frame(width: 40)
-
-                            Text("\(Int(progressPercent))%")
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
-                        }
-
-                        Spacer()
-
-                        Text(CurriculumUtils.difficultyLabel(session.overview.difficulty))
                             .font(.caption2)
-                            .foregroundStyle(CurriculumUtils.difficultyColor(session.overview.difficulty))
+                            .foregroundStyle(.tertiary)
+                        
+                        Spacer()
+                        
+                        difficultyBadge
                     }
                 }
             }
-            .padding(.vertical, 8)
-            .padding(.horizontal, 12)
+            .padding(16)
             .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(isLocked ? Color(.systemGray6).opacity(0.5) : Color(.systemBackground))
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color(.secondarySystemBackground).opacity(0.3))
+                    .shadow(color: Color.black.opacity(0.02), radius: 8, x: 0, y: 4)
             )
-            .contentShape(Rectangle())
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(isCompleted ? Color.green.opacity(0.1) : Color.clear, lineWidth: 1)
+            )
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel(sessionAccessibilityLabel)
-        .accessibilityHint(isLocked ? "프리미엄 구독으로 잠금 해제" : "탭하여 학습 시작")
         .onAppear { onAppear?() }
     }
 
-    private var sessionAccessibilityLabel: String {
-        var parts = [session.overview.title]
-        if isLocked {
-            parts.insert("프리미엄 전용 세션:", at: 0)
+    private var difficultyBadge: some View {
+        HStack(spacing: 4) {
+            Circle()
+                .fill(CurriculumUtils.difficultyColor(session.overview.difficulty))
+                .frame(width: 6, height: 6)
+            
+            Text(CurriculumUtils.difficultyLabel(session.overview.difficulty))
+                .font(.system(size: 10, weight: .bold))
+                .foregroundStyle(.secondary)
         }
-        parts.append("난이도 \(session.overview.difficulty)")
-        if isCompleted {
-            parts.append("완료됨")
-        } else if progressPercent > 0 {
-            parts.append("진행률 \(Int(progressPercent))%")
-        }
-        return parts.joined(separator: ", ")
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
+        .background(Color(.systemBackground).opacity(0.6))
+        .clipShape(Capsule())
     }
 }

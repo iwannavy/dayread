@@ -122,17 +122,17 @@ struct GrammarVizView: View {
                 .foregroundColor(Color.grammarColor(for: el.role))
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
-                .background(
-                    isActive
-                        ? Color.grammarColor(for: el.role).opacity(0.15)
-                        : Color.grammarBgColor(for: el.role)
-                )
+                .background {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.grammarBgColor(for: el.role))
+                        .grammarHighlight(isActive: isActive, color: Color.grammarColor(for: el.role))
+                }
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .accessibilityLabel("\(el.role.labelKo): \(el.text.trimmingCharacters(in: .whitespaces))")
                 .accessibilityHint("탭하여 문장에서 강조 표시")
                 .onTapGesture {
                     if !allActive {
-                        withAnimation(.easeInOut(duration: 0.2)) {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                             activeElement = activeElement == idx ? nil : idx
                         }
                     }
