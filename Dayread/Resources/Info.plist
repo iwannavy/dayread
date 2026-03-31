@@ -35,6 +35,8 @@
 	</array>
 	<key>GIDClientID</key>
 	<string>538478676772-vc2dvii8emeeb7dgmusodt88lbbt09kq.apps.googleusercontent.com</string>
+	<key>SUPABASE_ANON_KEY</key>
+	<string>sb_publishable_t-n6fMVyzFRCZO067tyx6w_B244ewmq</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
