@@ -1,7 +1,7 @@
 import Foundation
 
 enum AppConstants {
-    static let appId = "com.dayread.app"
+    static let appId = "com.iwannavy.dayread"
     static let appName = "데일리딩"
 
     enum API {

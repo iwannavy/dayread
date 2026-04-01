@@ -16,6 +16,7 @@ fileprivate enum LearningPhase: Int, Comparable, CaseIterable {
 struct ImmersiveView: View {
     let sentences: [AnalyzedSentence]
     let initialIndex: Int
+    let sessionId: String
     let onAdvanceMode: () -> Void
     let onSentenceChange: (Int) -> Void
     let onStudied: (Int) -> Void
@@ -25,14 +26,16 @@ struct ImmersiveView: View {
     @State private var scrolledID: Int?
     @State private var sentencePhases: [Int: LearningPhase] = [:]
     @State private var flaggedSentences: Set<Int> = []
-    
+
     init(sentences: [AnalyzedSentence], initialIndex: Int,
+         sessionId: String = "",
          onAdvanceMode: @escaping () -> Void,
          onSentenceChange: @escaping (Int) -> Void,
          onStudied: @escaping (Int) -> Void,
          onFlagSentence: @escaping (Int, Bool) -> Void = { _, _ in }) {
         self.sentences = sentences
         self.initialIndex = initialIndex
+        self.sessionId = sessionId
         self.onAdvanceMode = onAdvanceMode
         self.onSentenceChange = onSentenceChange
         self.onStudied = onStudied
@@ -40,68 +43,62 @@ struct ImmersiveView: View {
         _scrolledID = State(initialValue: initialIndex)
     }
 
-    var body: some View {
-        GeometryReader { fullGeo in
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVStack(spacing: 0) {
-                    ForEach(Array(sentences.enumerated()), id: \.offset) { idx, sentence in
-                        SentencePagingPage(
-                            sentence: sentence,
-                            index: idx,
-                            totalCount: sentences.count,
-                            phase: sentencePhases[idx] ?? .original,
-                            isFlagged: flaggedSentences.contains(idx),
-                            onPhaseChange: { newPhase in
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
-                                    sentencePhases[idx] = newPhase
-                                }
-                                HapticsService.shared.soft()
-                            },
-                            onNextSentence: {
-                                if idx < sentences.count - 1 {
-                                    withAnimation(.easeInOut(duration: 0.5)) {
-                                        scrolledID = idx + 1
-                                    }
-                                } else {
-                                    withAnimation(.easeInOut(duration: 0.5)) {
-                                        scrolledID = sentences.count // Final card
-                                    }
-                                }
-                            },
-                            onFlag: { isFlag in
-                                if isFlag { flaggedSentences.insert(idx) }
-                                else { flaggedSentences.remove(idx) }
-                                onFlagSentence(idx, isFlag)
-                                HapticsService.shared.light()
-                            }
-                        )
-                        .frame(width: fullGeo.size.width, height: fullGeo.size.height)
-                        .id(idx)
-                    }
+    private var currentIndex: Int { scrolledID ?? 0 }
 
-                    // Completion Card
-                    ImmersiveCompletionCard(
-                        count: sentences.count,
-                        onAction: onAdvanceMode
-                    )
-                    .frame(width: fullGeo.size.width, height: fullGeo.size.height)
-                    .id(sentences.count)
-                }
-                .scrollTargetLayout()
-            }
-            .scrollTargetBehavior(.paging)
-            .scrollPosition(id: $scrolledID)
-            .onChange(of: scrolledID) { old, new in
-                if let new, new < sentences.count {
-                    onSentenceChange(new)
-                    if let old, old < sentences.count {
-                        onStudied(sentences[old].id)
+    var body: some View {
+        Group {
+            if currentIndex >= sentences.count {
+                ImmersiveCompletionCard(
+                    count: sentences.count,
+                    onAction: onAdvanceMode
+                )
+            } else {
+                SentencePagingPage(
+                    sentence: sentences[currentIndex],
+                    index: currentIndex,
+                    totalCount: sentences.count,
+                    phase: sentencePhases[currentIndex] ?? .original,
+                    isFlagged: flaggedSentences.contains(currentIndex),
+                    sessionId: sessionId,
+                    onPhaseChange: { newPhase in
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                            sentencePhases[currentIndex] = newPhase
+                        }
+                        HapticsService.shared.soft()
+                    },
+                    onNextSentence: { goToNextSentence() },
+                    onFlag: { isFlag in
+                        if isFlag { flaggedSentences.insert(currentIndex) }
+                        else { flaggedSentences.remove(currentIndex) }
+                        onFlagSentence(currentIndex, isFlag)
+                        HapticsService.shared.light()
                     }
-                    HapticsService.shared.light()
-                }
+                )
+                .id(currentIndex)
+                .transition(.push(from: .bottom))
             }
-            .background(Color(.systemBackground))
         }
+        .background(Color(.systemBackground))
+        .animation(.easeInOut(duration: 0.4), value: scrolledID)
+        .task(id: initialIndex) {
+            if scrolledID != initialIndex {
+                scrolledID = initialIndex
+            }
+        }
+    }
+
+    private func goToNextSentence() {
+        let oldIndex = currentIndex
+        if oldIndex < sentences.count {
+            onStudied(sentences[oldIndex].id)
+        }
+        if oldIndex < sentences.count - 1 {
+            scrolledID = oldIndex + 1
+            onSentenceChange(oldIndex + 1)
+        } else {
+            scrolledID = sentences.count
+        }
+        HapticsService.shared.light()
     }
 }
 
@@ -113,51 +110,47 @@ fileprivate struct SentencePagingPage: View {
     let totalCount: Int
     let phase: LearningPhase
     let isFlagged: Bool
+    let sessionId: String
     let onPhaseChange: (LearningPhase) -> Void
     let onNextSentence: () -> Void
     let onFlag: (Bool) -> Void
 
-    @State private var expandedVocabId: String? = nil
+    @Environment(SRSService.self) private var srsService
+    @State private var activeGrammarIdx: Int? = nil
+    @State private var arrowBounce = false
 
     var body: some View {
         VStack(spacing: 0) {
-            // 1. Header & Fixed Original
             fixedHeaderSection
-            
-            // 2. Scrollable Detail Area
+
             ScrollViewReader { proxy in
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 24) {
-                        // Phase 1: Phrase Alignment (Chunking)
-                        if phase >= .chunks {
+                        if phase == .chunks {
                             phraseAlignmentSection
                                 .staggeredAppear(delay: 0.1)
                                 .id("chunks")
                         }
-                        
-                        // Phase 2: Full Translation
-                        if phase >= .fullTranslation {
+
+                        if phase == .fullTranslation {
                             fullTranslationSection
                                 .staggeredAppear(delay: 0.1)
                                 .id("full")
                         }
-                        
-                        // Phase 3: Deep Dive
-                        if phase >= .deepDive {
+
+                        if phase == .deepDive {
                             deepDiveSection
                                 .staggeredAppear(delay: 0.1)
                                 .id("deep")
                         }
-                        
-                        // reveal Hint or Spacer
-                        revealHintView
-                            .id("hint")
-                        
-                        Spacer(minLength: 80)
+
+                        Spacer(minLength: 60)
                     }
                     .padding(.horizontal, StudyLayout.pageHorizontal)
                     .padding(.top, 16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .onChange(of: phase) { _, newPhase in
+                        activeGrammarIdx = nil
                         withAnimation {
                             switch newPhase {
                             case .chunks: proxy.scrollTo("chunks", anchor: .top)
@@ -169,18 +162,31 @@ fileprivate struct SentencePagingPage: View {
                     }
                 }
                 .scrollBounceBehavior(.basedOnSize)
-                .simultaneousGesture(
-                    DragGesture().onEnded { value in
-                        if value.translation.height < -40 { // Swipe Up
-                            advancePhase()
-                        }
-                    }
-                )
             }
+
+            hintBar
         }
         .background(
             Color.dayreadGold.opacity(0.02)
                 .ignoresSafeArea()
+        )
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .onEnded { value in
+                    let dy = value.translation.height
+                    let totalDist = abs(dy) + abs(value.translation.width)
+
+                    if totalDist < 10 {
+                        // Tap — advance phase (non-deepDive only)
+                        if phase < .deepDive { advancePhase() }
+                    } else if dy > 150 && value.velocity.height > 800 {
+                        // Swipe down — retreat to previous phase
+                        retreatPhase()
+                    } else if phase == .deepDive && dy < -150 && value.velocity.height < -1200 {
+                        // Strong swipe up in deepDive — next sentence
+                        onNextSentence()
+                    }
+                }
         )
     }
 
@@ -191,50 +197,87 @@ fileprivate struct SentencePagingPage: View {
             onPhaseChange(.fullTranslation)
         } else if phase == .fullTranslation {
             onPhaseChange(.deepDive)
+        }
+        // deepDive: swipe only for next sentence
+    }
+
+    private func retreatPhase() {
+        if phase == .chunks {
+            onPhaseChange(.original)
+        } else if phase == .fullTranslation {
+            onPhaseChange(.chunks)
         } else if phase == .deepDive {
-            onNextSentence()
+            onPhaseChange(.fullTranslation)
         }
     }
 
     // MARK: - Sections
 
+    private var sentenceSaved: Bool {
+        srsService.isSaved(front: sentence.original, type: .sentence)
+    }
+
     private var fixedHeaderSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            // Progress Bar
-            HStack(spacing: 4) {
-                ForEach(0..<totalCount, id: \.self) { i in
-                    Capsule()
-                        .fill(i <= index ? Color.dayreadGold : Color.dayreadGold.opacity(0.15))
-                        .frame(height: 3)
-                }
-            }
-            .padding(.top, 16)
-            
             HStack {
                 Text("SENTENCE \(index + 1)")
                     .font(.system(size: 10, weight: .bold))
                     .tracking(1)
                     .foregroundStyle(.tertiary)
-                
                 Spacer()
-                
-                difficultyBadge
-            }
-            
-            // The Fixed Original English
-            Group {
-                if phase >= .deepDive {
-                    buildColorCodedText(sentence)
-                        .studySentenceStyle()
-                } else {
-                    Text(sentence.original)
-                        .studySentenceStyle()
+                Button {
+                    srsService.toggleSave(
+                        type: .sentence,
+                        front: sentence.original,
+                        back: sentence.translation,
+                        source: sessionId
+                    )
+                    HapticsService.shared.light()
+                } label: {
+                    Image(systemName: sentenceSaved ? "checkmark.circle.fill" : "plus.circle")
+                        .font(.body)
+                        .foregroundStyle(sentenceSaved ? Color.dayreadGold : Color.gray)
                 }
+                .buttonStyle(.plain)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .contentShape(Rectangle())
-            .onTapGesture {
-                advancePhase()
+            .padding(.top, 16)
+
+            // Grammar role labels + color-coded text in deepDive
+            if phase == .deepDive {
+                buildColorCodedText(sentence)
+                    .studySentenceStyle()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                FlowLayout(spacing: 6) {
+                    ForEach(Array(sentence.grammarElements.enumerated()), id: \.offset) { idx, el in
+                        let isActive = activeGrammarIdx == idx
+                        HStack(spacing: 3) {
+                            Text(el.role.label)
+                                .fontWeight(.bold)
+                            Text(el.role.labelKo)
+                        }
+                        .font(.system(size: 10, weight: .medium))
+                        .foregroundColor(Color.grammarColor(for: el.role))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color.grammarBgColor(for: el.role))
+                        .overlay(
+                            Capsule()
+                                .stroke(Color.grammarColor(for: el.role), lineWidth: isActive ? 1.5 : 0)
+                        )
+                        .clipShape(Capsule())
+                        .scaleEffect(isActive ? 1.05 : 1.0)
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                                activeGrammarIdx = activeGrammarIdx == idx ? nil : idx
+                            }
+                        }
+                    }
+                }
+            } else {
+                Text(sentence.original)
+                    .studySentenceStyle()
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .padding(.horizontal, StudyLayout.pageHorizontal)
@@ -297,26 +340,41 @@ fileprivate struct SentencePagingPage: View {
         }
     }
 
+    /// Vocabulary filtered to exclude words already covered by expressions
+    private var filteredVocabulary: [AnalyzedWord] {
+        let exprPhrases = sentence.expressions.map { $0.phrase.lowercased() }
+        return sentence.vocabulary.filter { vocab in
+            !exprPhrases.contains { $0.contains(vocab.word.lowercased()) }
+        }
+    }
+
     private var deepDiveSection: some View {
         VStack(alignment: .leading, spacing: 24) {
-            // Vocab
-            if !sentence.vocabulary.isEmpty {
+            // 핵심 표현 (Expressions)
+            if !sentence.expressions.isEmpty {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("핵심 표현")
                         .studySectionHeaderStyle()
-                    
-                    ForEach(sentence.vocabulary.prefix(3)) { vocab in
-                        VocabPill(vocab: vocab, isExpanded: expandedVocabId == vocab.word)
-                            .onTapGesture {
-                                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                                    expandedVocabId = expandedVocabId == vocab.word ? nil : vocab.word
-                                }
-                            }
+
+                    ForEach(sentence.expressions) { expr in
+                        ExpressionPill(expression: expr, sessionId: sessionId)
                     }
                 }
             }
-            
-            // Flag/Study
+
+            // 핵심 단어 (Vocabulary) — deduplicated
+            if !filteredVocabulary.isEmpty {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("핵심 단어")
+                        .studySectionHeaderStyle()
+
+                    ForEach(filteredVocabulary.prefix(3)) { vocab in
+                        VocabPill(vocab: vocab, sessionId: sessionId)
+                    }
+                }
+            }
+
+            // Flag
             HStack {
                 Spacer()
                 Button {
@@ -333,66 +391,116 @@ fileprivate struct SentencePagingPage: View {
         }
     }
 
-    private var revealHintView: some View {
-        VStack(spacing: 8) {
-            if phase < .deepDive {
+    // MARK: - Hint Bar
+
+    @ViewBuilder
+    private var hintBar: some View {
+        if phase == .deepDive {
+            // Swipe-only zone with animated arrow
+            VStack(spacing: 8) {
+                Image(systemName: "chevron.up")
+                    .font(.caption)
+                    .offset(y: arrowBounce ? -4 : 2)
+                Image(systemName: "chevron.up")
+                    .font(.caption.weight(.medium))
+                    .offset(y: arrowBounce ? -4 : 2)
+
+                Text(index < totalCount - 1 ? "올려서 다음 문장 보기" : "올려서 완료")
+                    .font(.caption2.weight(.bold))
+                    .tracking(1)
+            }
+            .foregroundStyle(.tertiary)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 20)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
+                    arrowBounce = true
+                }
+            }
+            .onDisappear { arrowBounce = false }
+        } else {
+            // Tap hint for phase advance
+            VStack(spacing: 6) {
                 Image(systemName: "chevron.compact.up")
-                    .font(.title2)
+                    .font(.title3)
                 Text(hintText)
                     .font(.caption2.weight(.bold))
                     .tracking(1)
-            } else {
-                Text("다음 문장으로 넘어가려면 위로 스와이프")
-                    .font(.caption2.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .padding(.top, 20)
             }
+            .foregroundStyle(.tertiary)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 16)
         }
-        .foregroundStyle(.tertiary)
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 30)
     }
 
     private var hintText: String {
         switch phase {
-        case .original: return "위로 밀어서 구 단위 번역 보기"
-        case .chunks: return "위로 밀어서 전체 번역 보기"
-        case .fullTranslation: return "위로 밀어서 문장 상세 분석"
-        default: return ""
+        case .original: return "탭하여 구 단위 번역 보기"
+        case .chunks: return "탭하여 전체 번역 보기"
+        case .fullTranslation: return "탭하여 핵심 표현 보기"
+        case .deepDive: return ""
         }
-    }
-
-    private var difficultyBadge: some View {
-        Text(DifficultyLevel.label(for: sentence.difficulty))
-            .font(.system(size: 9, weight: .bold))
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(CurriculumUtils.difficultyColor(sentence.difficulty).opacity(0.1))
-            .foregroundStyle(CurriculumUtils.difficultyColor(sentence.difficulty))
-            .clipShape(Capsule())
     }
 
     private func buildColorCodedText(_ sentence: AnalyzedSentence) -> Text {
         let original = sentence.original
-        var result = Text("")
-        var pos = original.startIndex
 
-        for el in sentence.grammarElements {
+        // Independent matching — handles out-of-order grammar elements
+        struct Match { let range: Range<String.Index>; let idx: Int }
+        var matches: [Match] = []
+        var usedRanges: [Range<String.Index>] = []
+
+        for (idx, el) in sentence.grammarElements.enumerated() {
             let trimmed = el.text.trimmingCharacters(in: .whitespaces)
             guard !trimmed.isEmpty else { continue }
-            if let range = original.range(of: trimmed, range: pos..<original.endIndex) {
-                if range.lowerBound > pos {
-                    result = result + Text(original[pos..<range.lowerBound])
+            var searchStart = original.startIndex
+            while searchStart < original.endIndex {
+                guard let range = original.range(of: trimmed, range: searchStart..<original.endIndex) else { break }
+                let overlaps = usedRanges.contains { $0.lowerBound < range.upperBound && $0.upperBound > range.lowerBound }
+                if !overlaps {
+                    matches.append(Match(range: range, idx: idx))
+                    usedRanges.append(range)
+                    break
                 }
-                let color = Color.grammarColor(for: el.role)
-                result = result + Text(original[range])
-                    .foregroundColor(color)
-                    .underline(color: color.opacity(0.3))
-                pos = range.upperBound
+                searchStart = range.upperBound
             }
         }
+
+        matches.sort { $0.range.lowerBound < $1.range.lowerBound }
+
+        var result = Text("")
+        var pos = original.startIndex
+        let dimColor: Color = .primary
+
+        for match in matches {
+            if match.range.lowerBound < pos { continue }
+            if match.range.lowerBound > pos {
+                result = result + Text(original[pos..<match.range.lowerBound])
+                    .foregroundColor(activeGrammarIdx != nil ? dimColor : .primary)
+            }
+            let el = sentence.grammarElements[match.idx]
+            let color = Color.grammarColor(for: el.role)
+            if let active = activeGrammarIdx {
+                if active == match.idx {
+                    result = result + Text(original[match.range])
+                        .foregroundColor(color)
+                        .underline(color: color)
+                        .bold()
+                } else {
+                    result = result + Text(original[match.range])
+                        .foregroundColor(dimColor)
+                }
+            } else {
+                result = result + Text(original[match.range])
+                    .foregroundColor(color)
+                    .underline(color: color.opacity(0.3))
+            }
+            pos = match.range.upperBound
+        }
+
         if pos < original.endIndex {
             result = result + Text(original[pos...])
+                .foregroundColor(activeGrammarIdx != nil ? dimColor : .primary)
         }
         return result
     }
@@ -423,7 +531,7 @@ struct ImmersiveCompletionCard: View {
                     .font(.system(.title2, design: .serif))
                     .fontWeight(.bold)
                 
-                Text("\(count)개의 문장을 깊이 있게 읽었습니다.\n이제 Focus 학습을 시작해볼까요?")
+                Text("\(count)개의 문장을 읽었습니다.\n더 깊이 읽어볼까요?")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -435,7 +543,7 @@ struct ImmersiveCompletionCard: View {
                 onAction()
             } label: {
                 HStack(spacing: 8) {
-                    Text("Focus 학습 시작")
+                    Text("더 깊게 읽기")
                     Image(systemName: "arrow.right")
                 }
                 .font(.headline)
@@ -458,11 +566,66 @@ struct ImmersiveCompletionCard: View {
     }
 }
 
+// MARK: - Expression Pill
+
+fileprivate struct ExpressionPill: View {
+    let expression: Expression
+    let sessionId: String
+    @Environment(SRSService.self) private var srsService
+
+    private var isSaved: Bool {
+        srsService.isSaved(front: expression.phrase, type: .expression)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text(expression.phrase)
+                    .font(.subheadline.weight(.semibold))
+                Spacer()
+                Button {
+                    srsService.toggleSave(
+                        type: .expression,
+                        front: expression.phrase,
+                        back: expression.meaning,
+                        source: sessionId
+                    )
+                    HapticsService.shared.light()
+                } label: {
+                    Image(systemName: isSaved ? "checkmark.circle.fill" : "plus.circle")
+                        .font(.body)
+                        .foregroundStyle(isSaved ? Color.dayreadGold : Color.gray)
+                }
+                .buttonStyle(.plain)
+            }
+
+            Text(expression.meaning)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            if !expression.usage.isEmpty {
+                Text(expression.usage)
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                    .italic()
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(Color(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+}
+
 // MARK: - Vocab Pill
 
 fileprivate struct VocabPill: View {
     let vocab: AnalyzedWord
-    let isExpanded: Bool
+    let sessionId: String
+    @Environment(SRSService.self) private var srsService
+
+    private var isSaved: Bool {
+        srsService.isSaved(front: vocab.word, type: .vocabulary)
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -477,24 +640,33 @@ fileprivate struct VocabPill: View {
                     .background(Color(.tertiarySystemFill))
                     .clipShape(Capsule())
                 Spacer()
-                Image(systemName: "chevron.down")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
-                    .rotationEffect(.degrees(isExpanded ? 180 : 0))
+                Button {
+                    srsService.toggleSave(
+                        type: .vocabulary,
+                        front: vocab.word,
+                        back: vocab.meaning,
+                        source: sessionId
+                    )
+                    HapticsService.shared.light()
+                } label: {
+                    Image(systemName: isSaved ? "checkmark.circle.fill" : "plus.circle")
+                        .font(.body)
+                        .foregroundStyle(isSaved ? Color.dayreadGold : Color.gray)
+                }
+                .buttonStyle(.plain)
             }
 
-            if isExpanded {
-                Text(vocab.meaning)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                if !vocab.example.isEmpty {
-                    Text(vocab.example)
-                        .font(.caption)
-                        .foregroundStyle(.tertiary)
-                        .italic()
-                }
+            Text(vocab.meaning)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            if !vocab.example.isEmpty {
+                Text(vocab.example)
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                    .italic()
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(12)
         .background(Color(.secondarySystemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 10))

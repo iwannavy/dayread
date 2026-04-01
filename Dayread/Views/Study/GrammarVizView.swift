@@ -172,31 +172,53 @@ struct GrammarVizView: View {
 
     private func buildSegments() -> [Segment] {
         guard let original, !original.isEmpty else {
-            // Fallback: just list elements with spaces
             var segments: [Segment] = []
             for (i, el) in elements.enumerated() {
                 segments.append(.element(el, i))
-                if i < elements.count - 1 {
-                    segments.append(.plain(" "))
-                }
+                if i < elements.count - 1 { segments.append(.plain(" ")) }
             }
             return segments
         }
 
-        var segments: [Segment] = []
-        var pos = original.startIndex
+        // Independent matching — handles out-of-order grammar elements
+        struct Match { let range: Range<String.Index>; let idx: Int }
+        var matches: [Match] = []
+        var usedRanges: [Range<String.Index>] = []
 
         for (i, el) in elements.enumerated() {
             let trimmed = el.text.trimmingCharacters(in: .whitespaces)
             guard !trimmed.isEmpty else { continue }
-
-            if let range = original.range(of: trimmed, range: pos..<original.endIndex) {
-                if range.lowerBound > pos {
-                    segments.append(.plain(String(original[pos..<range.lowerBound])))
+            var searchStart = original.startIndex
+            while searchStart < original.endIndex {
+                guard let range = original.range(of: trimmed, range: searchStart..<original.endIndex) else { break }
+                let overlaps = usedRanges.contains { $0.lowerBound < range.upperBound && $0.upperBound > range.lowerBound }
+                if !overlaps {
+                    matches.append(Match(range: range, idx: i))
+                    usedRanges.append(range)
+                    break
                 }
-                segments.append(.element(el, i))
-                pos = range.upperBound
-            } else {
+                searchStart = range.upperBound
+            }
+        }
+
+        matches.sort { $0.range.lowerBound < $1.range.lowerBound }
+
+        var segments: [Segment] = []
+        var pos = original.startIndex
+
+        for match in matches {
+            if match.range.lowerBound < pos { continue }
+            if match.range.lowerBound > pos {
+                segments.append(.plain(String(original[pos..<match.range.lowerBound])))
+            }
+            segments.append(.element(elements[match.idx], match.idx))
+            pos = match.range.upperBound
+        }
+
+        // Add unmatched elements at the end
+        for (i, el) in elements.enumerated() {
+            if !matches.contains(where: { $0.idx == i }) {
+                segments.append(.plain(" "))
                 segments.append(.element(el, i))
             }
         }

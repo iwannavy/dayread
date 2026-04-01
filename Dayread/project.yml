@@ -84,7 +84,7 @@ targets:
       path: Resources/Dayread.entitlements
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.dayread.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.iwannavy.dayread
         DEVELOPMENT_TEAM: 358S53JSMU
         CODE_SIGN_STYLE: Automatic
         CODE_SIGN_IDENTITY: "Apple Development"

@@ -1,0 +1,1266 @@
+{
+  "id": "premium-2026-04-01-the-war-that-pays-for-itself",
+  "rawText": "Eastern Congo has endured more peace agreements than most conflicts produce battles. The latest, brokered by Washington and signed in December 2025 by the presidents of Congo and Rwanda, was supposed to silence the guns — yet three months later, fighting has spread deeper into South Kivu province, displacing half a million civilians and pushing toward Katanga, the industrial heartland that holds nine of the world's ten largest cobalt mines. The pattern is not new, and the reason is structural: this is a war that generates more wealth for its participants than peace would deliver.\n\nThe economics are stark. The Democratic Republic of Congo sits atop an estimated $24 trillion in mineral reserves and produces roughly 80 percent of the world's cobalt, a metal essential for every electric vehicle battery and smartphone on the planet. M23, the Rwandan-backed militia driving the current escalation, earns approximately $300,000 per month from its control of the Rubaya coltan mine alone, with at least 150 tons of tantalum ore smuggled across the border annually. For an armed group sustained by an estimated 4,000 Rwandan soldiers, this revenue transforms violence from a political instrument into a self-financing enterprise.\n\nDiplomatic interventions have failed to alter this calculus. M23's January withdrawal from Uvira, presented as a goodwill gesture, was a tactical repositioning under American pressure; within weeks, fighting intensified in the surrounding highlands. Washington imposed sanctions on Rwanda's defence forces in March, yet the measures targeted individuals rather than the mineral supply chains that finance the conflict — the equivalent of fining a company's executives while leaving its most profitable division untouched.\n\nThe humanitarian consequences are devastating: more than seven million Congolese are now internally displaced, the largest such crisis on earth, and 25 million face acute food insecurity. Health systems across eastern provinces have buckled under outbreaks of cholera, measles, and mpox in camps built for thousands but sheltering tens of thousands. Until the financial architecture sustaining this war is dismantled — through enforceable mineral traceability and genuine penalties on nations profiting from smuggled resources — ceasefire agreements will continue to function as intermissions rather than conclusions. The conflict endures not despite diplomatic efforts, but because no agreement has yet made peace more profitable than war.",
+  "overview": {
+    "title": "The War That Pays for Itself",
+    "source": "데일리딩 Premium",
+    "wordCount": 370,
+    "sentenceCount": 14,
+    "estimatedLevel": "upper-intermediate",
+    "readingTimeMinutes": 2,
+    "mainTopics": ["DRC conflict", "conflict minerals", "peace deal failure", "M23 militia", "humanitarian crisis"],
+    "keyVocabularyPreview": ["endured", "brokered", "structural", "militia", "smuggled", "calculus", "traceability", "intermissions"],
+    "difficulty": 3
+  },
+  "createdAt": "2026-04-01T00:00:00.000Z",
+  "sentences": [
+    {
+      "id": 0,
+      "original": "Eastern Congo has endured more peace agreements than most conflicts produce battles.",
+      "translation": "동부 콩고는 대부분의 분쟁이 전투를 치르는 것보다 더 많은 평화협정을 견뎌왔다.",
+      "grammarElements": [
+        {
+          "text": "Eastern Congo",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "has endured",
+          "role": "verb",
+          "label": "동사 (현재완료)"
+        },
+        {
+          "text": "more peace agreements than most conflicts produce battles",
+          "role": "object",
+          "label": "목적어 + 비교 구문"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "endured",
+          "pos": "verb",
+          "meaning": "견뎌내다, 감내하다",
+          "example": "The region has endured decades of instability without meaningful international support.",
+          "collocations": ["endure hardship", "endure suffering", "endure criticism"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "endured more peace agreements than... produce battles",
+          "meaning": "전투보다 평화협정을 더 많이 겪었다",
+          "usage": "평화 노력의 반복적 실패를 역설적으로 표현하는 수사법. 평화협정이 오히려 고통의 대상이 됨을 암시",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Subject] has endured more [X] than [Y] produce [Z]",
+          "explanation": "A가 B보다 더 많은 경험을 축적했다는 비교 구문으로, 반복과 실패를 역설적으로 강조",
+          "examples": [
+            "The company has endured more restructurings than most startups produce pitch decks.",
+            "The city has endured more flood warnings than most towns produce traffic reports."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Eastern Congo has _______ more peace agreements than most conflicts produce battles.",
+              "answer": "endured",
+              "options": ["endured", "enjoyed", "enforced", "endorsed"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "글의 첫 문장으로, 평화협정의 반복적 실패를 역설적 비교로 압축. 'endured'는 보통 고통과 함께 쓰이는데, 평화협정에 적용하여 평화 자체가 고통이 되는 아이러니를 암시한다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "Eastern Congo has endured",
+          "ko": "동부 콩고는 견뎌왔다"
+        },
+        {
+          "en": "more peace agreements than most conflicts produce battles",
+          "ko": "대부분의 분쟁이 전투를 치르는 것보다 더 많은 평화협정을"
+        }
+      ],
+      "pronunciationNotes": ["endured는 '인듀어드'로 두 번째 음절 강세"],
+      "rhetoricalDevice": "thesis hook — paradox"
+    },
+    {
+      "id": 1,
+      "original": "The latest, brokered by Washington and signed in December 2025 by the presidents of Congo and Rwanda, was supposed to silence the guns — yet three months later, fighting has spread deeper into South Kivu province, displacing half a million civilians and pushing toward Katanga, the industrial heartland that holds nine of the world's ten largest cobalt mines.",
+      "translation": "가장 최근의 협정은 워싱턴이 중재하고 2025년 12월 콩고와 르완다 대통령이 서명한 것으로, 총성을 잠재울 것으로 기대되었다 — 그러나 3개월 뒤, 전투는 남키부 주 깊숙이 확산되어 50만 명의 민간인을 이주시키고 세계 10대 코발트 광산 중 9곳을 보유한 산업 중심지 카탕가를 향해 밀고 나아가고 있다.",
+      "grammarElements": [
+        {
+          "text": "The latest",
+          "role": "subject",
+          "label": "주어 (생략된 명사: agreement)"
+        },
+        {
+          "text": "brokered by Washington and signed in December 2025 by the presidents of Congo and Rwanda",
+          "role": "modifier",
+          "label": "과거분사 삽입구 (주어 수식)"
+        },
+        {
+          "text": "was supposed to silence the guns",
+          "role": "verb",
+          "label": "동사구 (기대된 행위)"
+        },
+        {
+          "text": "yet three months later, fighting has spread deeper into South Kivu province",
+          "role": "clause",
+          "label": "대시 뒤 역접절"
+        },
+        {
+          "text": "displacing half a million civilians and pushing toward Katanga",
+          "role": "modifier",
+          "label": "현재분사 결과구"
+        },
+        {
+          "text": "the industrial heartland that holds nine of the world's ten largest cobalt mines",
+          "role": "modifier",
+          "label": "동격 + 관계절 (Katanga 설명)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "brokered",
+          "pos": "verb",
+          "meaning": "중재하다, 주선하다",
+          "example": "The United Nations brokered a fragile ceasefire between the two factions.",
+          "collocations": ["broker a deal", "broker a ceasefire", "broker an agreement"],
+          "difficulty": 3
+        },
+        {
+          "word": "displacing",
+          "pos": "verb",
+          "meaning": "이주시키다, 추방하다",
+          "example": "The flooding displaced over two million people from their homes.",
+          "collocations": ["displacing civilians", "internally displaced", "displaced populations"],
+          "difficulty": 2
+        },
+        {
+          "word": "heartland",
+          "pos": "noun",
+          "meaning": "중심지, 핵심 지역",
+          "example": "The industrial heartland of the country drives most of its export revenue.",
+          "collocations": ["industrial heartland", "political heartland", "economic heartland"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "silence the guns",
+          "meaning": "총성을 잠재우다, 전쟁을 끝내다",
+          "usage": "무력 분쟁의 종식을 은유적으로 표현. 아프리카연합의 'Silencing the Guns' 이니셔티브에서 유래한 표현으로 아프리카 분쟁 맥락에서 자주 사용",
+          "register": "journalistic"
+        },
+        {
+          "phrase": "was supposed to",
+          "meaning": "~할 것으로 기대되었다",
+          "usage": "기대와 현실의 괴리를 강조할 때 사용. 뒤에 역접(yet, but)이 따라오면 실패를 암시",
+          "register": "neutral"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[The latest/most recent], [past participle phrase], was supposed to [goal] — yet [time later], [opposite outcome]",
+          "explanation": "기대된 결과와 실제 결과의 대비를 대시(—)와 yet으로 극적으로 연결하는 서사 패턴",
+          "examples": [
+            "The latest reform, drafted by a bipartisan committee and signed into law in June, was supposed to curb inflation — yet six months later, prices have risen faster than before.",
+            "The most recent treaty, negotiated over two years and ratified by both parliaments, was supposed to end the trade war — yet within weeks, tariffs escalated further."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The latest, _______ by Washington and signed in December 2025, was supposed to silence the guns.",
+              "answer": "brokered",
+              "options": ["brokered", "broken", "borrowed", "broadened"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "글에서 가장 긴 문장. 삽입구, 대시, 현재분사 결과구, 동격이 중첩되어 복잡한 구조를 형성. 핵심은 '기대(was supposed to) → 대시 → 역접(yet) → 현실'의 대비 구조.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "The latest, brokered by Washington",
+          "ko": "가장 최근의 협정은 워싱턴이 중재한"
+        },
+        {
+          "en": "was supposed to silence the guns",
+          "ko": "총성을 잠재울 것으로 기대되었다"
+        },
+        {
+          "en": "yet three months later, fighting has spread deeper",
+          "ko": "그러나 3개월 뒤 전투는 더 깊숙이 확산되었다"
+        },
+        {
+          "en": "displacing half a million civilians",
+          "ko": "50만 명의 민간인을 이주시키며"
+        },
+        {
+          "en": "the industrial heartland that holds nine of the world's ten largest cobalt mines",
+          "ko": "세계 10대 코발트 광산 중 9곳을 보유한 산업 중심지"
+        }
+      ],
+      "pronunciationNotes": ["Kivu는 '키부'로 발음", "Katanga는 '카탕가'로 두 번째 음절 강세", "cobalt는 '코볼트'로 첫 음절 강세"]
+    },
+    {
+      "id": 2,
+      "original": "The pattern is not new, and the reason is structural: this is a war that generates more wealth for its participants than peace would deliver.",
+      "translation": "이 패턴은 새로운 것이 아니며, 그 이유는 구조적이다: 이것은 평화가 가져다줄 것보다 더 많은 부를 참여자들에게 생성하는 전쟁이다.",
+      "grammarElements": [
+        {
+          "text": "The pattern is not new",
+          "role": "clause",
+          "label": "첫 번째 독립절"
+        },
+        {
+          "text": "and the reason is structural",
+          "role": "clause",
+          "label": "두 번째 독립절 (등위접속)"
+        },
+        {
+          "text": "this is a war that generates more wealth for its participants than peace would deliver",
+          "role": "clause",
+          "label": "콜론 뒤 설명절 (thesis 선언)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "structural",
+          "pos": "adjective",
+          "meaning": "구조적인, 근본적인",
+          "example": "The unemployment problem is structural, not cyclical — it won't disappear when the economy recovers.",
+          "collocations": ["structural reform", "structural problem", "structural change"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "the reason is structural",
+          "meaning": "이유는 구조적이다",
+          "usage": "문제가 일시적·우연적이 아니라 시스템 자체에 내재된 것임을 선언할 때 사용하는 분석적 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Observation], and the reason is [adjective]: [thesis statement]",
+          "explanation": "관찰 → 원인 요약 → 콜론 뒤에 핵심 주장을 선언하는 thesis 패턴",
+          "examples": [
+            "The shortage persists, and the reason is geographical: the supply chain passes through a single chokepoint that no alternative route can bypass.",
+            "Turnover remains high, and the reason is cultural: the company rewards individual performance while demanding team collaboration."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The pattern is not new, and the reason is _______: this is a war that generates more wealth than peace would deliver.",
+              "answer": "structural",
+              "options": ["structural", "strategic", "symbolic", "systematic"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "글 전체의 thesis를 선언하는 핵심 문장. '구조적'이라는 한 단어가 이후 경제적 분석의 토대를 놓는다. 콜론 뒤의 비교 구문(more wealth... than peace would deliver)이 전쟁의 경제적 합리성을 직설적으로 드러낸다.",
+      "paragraphIndex": 0,
+      "koreanAlignment": [
+        {
+          "en": "The pattern is not new",
+          "ko": "이 패턴은 새로운 것이 아니다"
+        },
+        {
+          "en": "and the reason is structural",
+          "ko": "그리고 그 이유는 구조적이다"
+        },
+        {
+          "en": "this is a war that generates more wealth for its participants than peace would deliver",
+          "ko": "이것은 평화가 가져다줄 것보다 더 많은 부를 참여자들에게 생성하는 전쟁이다"
+        }
+      ],
+      "rhetoricalDevice": "thesis statement"
+    },
+    {
+      "id": 3,
+      "original": "The economics are stark.",
+      "translation": "경제적 현실은 냉혹하다.",
+      "grammarElements": [
+        {
+          "text": "The economics",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "are",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "stark",
+          "role": "complement",
+          "label": "보어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "stark",
+          "pos": "adjective",
+          "meaning": "냉혹한, 적나라한, 뚜렷한",
+          "example": "The stark reality of climate change is visible in the shrinking Arctic ice sheets.",
+          "collocations": ["stark contrast", "stark reality", "stark reminder"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "The economics are stark",
+          "meaning": "경제적 현실이 냉혹하다",
+          "usage": "추상적 논의에서 구체적 수치로 전환할 때 사용하는 짧은 전환 문장. 독자의 주의를 환기시키는 효과",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "The [abstract noun] is/are [stark/clear/simple].",
+          "explanation": "짧고 단호한 전환 문장으로, 이전의 서사적 설명에서 분석적 근거 제시로 넘어갈 때 사용",
+          "examples": [
+            "The math is clear.",
+            "The implications are stark."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The economics are _______.",
+              "answer": "stark",
+              "options": ["stark", "strong", "strict", "steep"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 1,
+      "notes": "5단어로 이루어진 초단문. 첫 문단의 서사적 도입에서 두 번째 문단의 경제적 분석으로 전환하는 '브릿지' 역할. 짧은 문장이 긴 문장들 사이에서 리듬적 변화를 만든다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "The economics are stark",
+          "ko": "경제적 현실은 냉혹하다"
+        }
+      ],
+      "rhetoricalDevice": "transition — tonal shift"
+    },
+    {
+      "id": 4,
+      "original": "The Democratic Republic of Congo sits atop an estimated $24 trillion in mineral reserves and produces roughly 80 percent of the world's cobalt, a metal essential for every electric vehicle battery and smartphone on the planet.",
+      "translation": "콩고민주공화국은 약 24조 달러 규모의 광물 매장량 위에 자리하고 있으며, 지구상의 모든 전기차 배터리와 스마트폰에 필수적인 금속인 코발트의 약 80퍼센트를 생산한다.",
+      "grammarElements": [
+        {
+          "text": "The Democratic Republic of Congo",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "sits atop an estimated $24 trillion in mineral reserves",
+          "role": "verb",
+          "label": "동사구 1 (은유적 위치)"
+        },
+        {
+          "text": "and produces roughly 80 percent of the world's cobalt",
+          "role": "verb",
+          "label": "동사구 2 (등위접속)"
+        },
+        {
+          "text": "a metal essential for every electric vehicle battery and smartphone on the planet",
+          "role": "modifier",
+          "label": "동격 (cobalt 설명)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "sits atop",
+          "pos": "phrasal verb",
+          "meaning": "~위에 자리하다, ~을 보유하다",
+          "example": "Saudi Arabia sits atop the world's second-largest proven oil reserves.",
+          "collocations": ["sits atop reserves", "sits atop a fortune", "sits atop a mountain of"],
+          "difficulty": 2
+        },
+        {
+          "word": "cobalt",
+          "pos": "noun",
+          "meaning": "코발트 (배터리 핵심 원료 금속)",
+          "example": "Global demand for cobalt has surged as automakers race to build electric vehicles.",
+          "collocations": ["cobalt mining", "cobalt reserves", "cobalt supply chain"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "sits atop an estimated $24 trillion",
+          "meaning": "약 24조 달러 규모 위에 자리하다",
+          "usage": "자원 보유국의 잠재적 부를 물리적 위치의 은유로 표현. 나라가 말 그대로 부 '위에 앉아 있다'는 이미지로 자원의 규모를 극적으로 전달",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Country] sits atop [value] in [resource] and produces [percentage] of the world's [commodity]",
+          "explanation": "한 국가의 자원 보유량과 생산량을 결합하여 전략적 중요성을 강조하는 경제 분석 패턴",
+          "examples": [
+            "Chile sits atop the world's largest lithium reserves and produces roughly a quarter of the global supply.",
+            "Australia sits atop an estimated $6 trillion in mineral wealth and produces over half of the world's iron ore."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The Democratic Republic of Congo sits _______ an estimated $24 trillion in mineral reserves.",
+              "answer": "atop",
+              "options": ["atop", "above", "upon", "across"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "thesis를 뒷받침하는 첫 번째 경제적 근거. '$24 trillion'과 '80 percent'라는 수치가 전쟁의 경제적 유인을 구체화한다. 동격구가 코발트의 현대적 중요성을 일상적 제품(배터리, 스마트폰)과 연결.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "The Democratic Republic of Congo sits atop an estimated $24 trillion in mineral reserves",
+          "ko": "콩고민주공화국은 약 24조 달러 규모의 광물 매장량 위에 자리하고 있다"
+        },
+        {
+          "en": "and produces roughly 80 percent of the world's cobalt",
+          "ko": "그리고 세계 코발트의 약 80퍼센트를 생산한다"
+        },
+        {
+          "en": "a metal essential for every electric vehicle battery and smartphone on the planet",
+          "ko": "지구상의 모든 전기차 배터리와 스마트폰에 필수적인 금속"
+        }
+      ],
+      "pronunciationNotes": ["cobalt는 '코볼트'로 첫 음절 강세"]
+    },
+    {
+      "id": 5,
+      "original": "M23, the Rwandan-backed militia driving the current escalation, earns approximately $300,000 per month from its control of the Rubaya coltan mine alone, with at least 150 tons of tantalum ore smuggled across the border annually.",
+      "translation": "현재 확전을 주도하고 있는 르완다 지원 민병대 M23은 루바야 콜탄 광산 통제만으로 월 약 30만 달러를 벌어들이며, 매년 최소 150톤의 탄탈럼 광석이 국경을 넘어 밀수된다.",
+      "grammarElements": [
+        {
+          "text": "M23",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "the Rwandan-backed militia driving the current escalation",
+          "role": "modifier",
+          "label": "동격 삽입구 (M23 설명)"
+        },
+        {
+          "text": "earns approximately $300,000 per month from its control of the Rubaya coltan mine alone",
+          "role": "verb",
+          "label": "동사구"
+        },
+        {
+          "text": "with at least 150 tons of tantalum ore smuggled across the border annually",
+          "role": "modifier",
+          "label": "with 절대분사 구문 (부가 정보)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "militia",
+          "pos": "noun",
+          "meaning": "민병대, 비정규 무장 조직",
+          "example": "The militia controlled the region's main trade routes, taxing every vehicle that passed.",
+          "collocations": ["armed militia", "rebel militia", "militia group"],
+          "difficulty": 3
+        },
+        {
+          "word": "smuggled",
+          "pos": "verb",
+          "meaning": "밀수하다, 불법으로 반출하다",
+          "example": "Investigators traced the smuggled diamonds back to a conflict zone in Central Africa.",
+          "collocations": ["smuggled goods", "smuggled across the border", "smuggling network"],
+          "difficulty": 2
+        },
+        {
+          "word": "tantalum",
+          "pos": "noun",
+          "meaning": "탄탈럼 (전자기기 핵심 원료 금속)",
+          "example": "Tantalum is a critical component in the capacitors found inside most electronic devices.",
+          "collocations": ["tantalum ore", "tantalum capacitor", "tantalum mining"],
+          "difficulty": 3
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "from its control of... alone",
+          "meaning": "~의 통제만으로",
+          "usage": "'alone'이 문장 끝에서 강조 기능을 하여 이것이 전체 수입의 일부에 불과함을 암시. 실제 총 수입은 훨씬 더 클 것이라는 추론을 유도",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Group], [appositive], earns [amount] from [source] alone, with [additional detail]",
+          "explanation": "주체 → 동격 설명 → 수입원 → 'alone'으로 축소 강조 → with구문으로 부가 정보를 쌓는 분석 패턴",
+          "examples": [
+            "The cartel, now the region's largest employer, earns an estimated $5 billion from cocaine trafficking alone, with thousands of tons moving through Central American corridors each year.",
+            "The platform, the dominant marketplace for digital goods, earns roughly $2 million per day from commission fees alone, with fraud losses adding further costs to sellers."
+          ],
+          "drillQuestions": [
+            {
+              "question": "M23 earns approximately $300,000 per month from its control of the Rubaya coltan mine _______, with at least 150 tons of tantalum ore smuggled across the border.",
+              "answer": "alone",
+              "options": ["alone", "already", "almost", "altogether"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "전쟁의 경제적 자기 유지 구조를 가장 직접적으로 보여주는 문장. $300,000/월이라는 구체적 수치와 150톤이라는 밀수 규모가 분쟁이 단순 정치적 갈등이 아닌 사업임을 입증한다.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "M23, the Rwandan-backed militia driving the current escalation",
+          "ko": "현재 확전을 주도하는 르완다 지원 민병대 M23"
+        },
+        {
+          "en": "earns approximately $300,000 per month from its control of the Rubaya coltan mine alone",
+          "ko": "루바야 콜탄 광산 통제만으로 월 약 30만 달러를 벌어들인다"
+        },
+        {
+          "en": "with at least 150 tons of tantalum ore smuggled across the border annually",
+          "ko": "매년 최소 150톤의 탄탈럼 광석이 국경을 넘어 밀수되며"
+        }
+      ],
+      "pronunciationNotes": ["militia는 '밀리셔'로 두 번째 음절 강세", "tantalum은 '탠털럼'으로 첫 음절 강세", "Rubaya는 '루바야'"]
+    },
+    {
+      "id": 6,
+      "original": "For an armed group sustained by an estimated 4,000 Rwandan soldiers, this revenue transforms violence from a political instrument into a self-financing enterprise.",
+      "translation": "약 4,000명의 르완다 군인에 의해 유지되는 무장 조직에게 이 수입은 폭력을 정치적 도구에서 자기 자금 조달 사업으로 변환시킨다.",
+      "grammarElements": [
+        {
+          "text": "For an armed group sustained by an estimated 4,000 Rwandan soldiers",
+          "role": "modifier",
+          "label": "전치사구 (맥락 설정)"
+        },
+        {
+          "text": "this revenue",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "transforms",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "violence",
+          "role": "object",
+          "label": "목적어"
+        },
+        {
+          "text": "from a political instrument into a self-financing enterprise",
+          "role": "complement",
+          "label": "전치사구 (변환 결과)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "sustained",
+          "pos": "verb",
+          "meaning": "유지하다, 지탱하다",
+          "example": "The guerrilla movement was sustained by cross-border supply lines that governments were unwilling to cut.",
+          "collocations": ["sustained by", "sustained effort", "sustained growth"],
+          "difficulty": 2
+        },
+        {
+          "word": "enterprise",
+          "pos": "noun",
+          "meaning": "사업, 기업 (여기서는 비유적으로 수익 활동)",
+          "example": "What began as a protest movement has evolved into a well-organized commercial enterprise.",
+          "collocations": ["criminal enterprise", "private enterprise", "commercial enterprise"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "transforms... from a political instrument into a self-financing enterprise",
+          "meaning": "정치적 도구에서 자기 자금 조달 사업으로 변환시키다",
+          "usage": "A를 B에서 C로 변환한다는 'transform X from A into B' 구문으로, 전쟁의 성격 변화를 비즈니스 용어로 재프레이밍",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "For [entity in context], [this factor] transforms [X] from [A] into [B]",
+          "explanation": "특정 맥락에서 어떤 요인이 대상의 본질을 변화시킴을 서술하는 분석 패턴. from-into 대비가 핵심",
+          "examples": [
+            "For a nation dependent on a single export, currency volatility transforms trade from a growth engine into a survival threat.",
+            "For hospitals operating at capacity, a minor outbreak transforms routine care from a baseline service into an impossible luxury."
+          ],
+          "drillQuestions": [
+            {
+              "question": "This revenue transforms violence from a political instrument into a self-financing _______.",
+              "answer": "enterprise",
+              "options": ["enterprise", "encounter", "environment", "experiment"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "두 번째 문단의 결론. 'political instrument → self-financing enterprise'라는 대비가 글의 thesis를 응축. 전쟁이 목적을 달성하기 위한 수단이 아니라 그 자체로 수익 모델이 되었다는 핵심 주장.",
+      "paragraphIndex": 1,
+      "koreanAlignment": [
+        {
+          "en": "For an armed group sustained by an estimated 4,000 Rwandan soldiers",
+          "ko": "약 4,000명의 르완다 군인에 의해 유지되는 무장 조직에게"
+        },
+        {
+          "en": "this revenue transforms violence",
+          "ko": "이 수입은 폭력을 변환시킨다"
+        },
+        {
+          "en": "from a political instrument into a self-financing enterprise",
+          "ko": "정치적 도구에서 자기 자금 조달 사업으로"
+        }
+      ],
+      "pronunciationNotes": ["enterprise는 '엔터프라이즈'로 첫 음절 강세"]
+    },
+    {
+      "id": 7,
+      "original": "Diplomatic interventions have failed to alter this calculus.",
+      "translation": "외교적 개입은 이 셈법을 바꾸는 데 실패했다.",
+      "grammarElements": [
+        {
+          "text": "Diplomatic interventions",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "have failed to alter",
+          "role": "verb",
+          "label": "동사 (현재완료 + to부정사)"
+        },
+        {
+          "text": "this calculus",
+          "role": "object",
+          "label": "목적어 (은유: 경제적 계산)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "calculus",
+          "pos": "noun",
+          "meaning": "셈법, 계산법 (여기서는 비유적으로 이해타산)",
+          "example": "The political calculus shifted when swing voters began prioritising healthcare over tax cuts.",
+          "collocations": ["political calculus", "strategic calculus", "alter the calculus"],
+          "difficulty": 3
+        },
+        {
+          "word": "interventions",
+          "pos": "noun",
+          "meaning": "개입, 중재",
+          "example": "Military interventions in the region have consistently failed to produce lasting peace.",
+          "collocations": ["diplomatic intervention", "military intervention", "humanitarian intervention"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "alter this calculus",
+          "meaning": "이 이해타산을 바꾸다",
+          "usage": "분쟁·협상에서 관련자들의 비용-편익 계산을 변화시키다는 의미. 수학 용어를 차용한 사회과학적 은유",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Efforts/Interventions] have failed to alter this [calculus/equation/dynamic]",
+          "explanation": "기존 노력이 근본적 구조를 바꾸지 못했음을 선언하는 전환 문장. 새로운 문단의 도입부로 자주 사용",
+          "examples": [
+            "Regulatory efforts have failed to alter this equation, as platforms continue to profit from user data.",
+            "Successive rounds of negotiations have failed to alter this dynamic, with both sides retreating to maximalist positions."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Diplomatic interventions have failed to alter this _______.",
+              "answer": "calculus",
+              "options": ["calculus", "calendar", "catalogue", "caliber"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 2,
+      "notes": "세 번째 문단의 도입. 'calculus'는 앞 문단의 경제적 분석을 이어받아 전쟁의 비용-편익 구조가 외교로는 변하지 않았음을 선언. 짧은 문장으로 리듬을 다시 끊어 독자의 주의를 환기.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "Diplomatic interventions have failed to alter this calculus",
+          "ko": "외교적 개입은 이 셈법을 바꾸는 데 실패했다"
+        }
+      ],
+      "rhetoricalDevice": "transition — paragraph bridge"
+    },
+    {
+      "id": 8,
+      "original": "M23's January withdrawal from Uvira, presented as a goodwill gesture, was a tactical repositioning under American pressure; within weeks, fighting intensified in the surrounding highlands.",
+      "translation": "M23의 1월 우비라 철수는 선의의 제스처로 제시되었지만 실제로는 미국의 압력 하에 이루어진 전술적 재배치였다; 수 주 만에 주변 고지대에서 전투가 격화되었다.",
+      "grammarElements": [
+        {
+          "text": "M23's January withdrawal from Uvira",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "presented as a goodwill gesture",
+          "role": "modifier",
+          "label": "과거분사 삽입구 (표면적 이유)"
+        },
+        {
+          "text": "was a tactical repositioning under American pressure",
+          "role": "verb",
+          "label": "동사 + 보어 (실제 이유)"
+        },
+        {
+          "text": "within weeks, fighting intensified in the surrounding highlands",
+          "role": "clause",
+          "label": "세미콜론 뒤 결과절"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "repositioning",
+          "pos": "noun",
+          "meaning": "재배치, 위치 조정",
+          "example": "The company's pivot to cloud services was less a transformation than a tactical repositioning.",
+          "collocations": ["strategic repositioning", "tactical repositioning", "market repositioning"],
+          "difficulty": 3
+        },
+        {
+          "word": "intensified",
+          "pos": "verb",
+          "meaning": "격화되다, 강화되다",
+          "example": "As negotiations stalled, shelling along the border intensified through the night.",
+          "collocations": ["fighting intensified", "pressure intensified", "competition intensified"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "presented as a goodwill gesture",
+          "meaning": "선의의 제스처로 제시된",
+          "usage": "'presented as'는 표면과 실제의 괴리를 암시. 공식 발표와 실제 동기가 다를 때 사용하는 회의적 프레이밍",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Action], presented as [appearance], was [reality]; [consequence]",
+          "explanation": "표면적 해석(presented as) → 실제 의미(was) → 세미콜론 뒤 결과를 연쇄하는 탈구성(debunking) 패턴",
+          "examples": [
+            "The merger, presented as a partnership of equals, was an acquisition in all but name; within months, the smaller firm's leadership had been replaced.",
+            "The policy change, presented as a simplification, was a quiet withdrawal of coverage; within a year, claims had dropped by thirty percent."
+          ],
+          "drillQuestions": [
+            {
+              "question": "M23's January withdrawal from Uvira, presented as a goodwill gesture, was a tactical _______ under American pressure.",
+              "answer": "repositioning",
+              "options": ["repositioning", "restructuring", "retaliation", "reconciliation"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "외교적 제스처의 이면을 폭로하는 문장. 'presented as... was...'의 대비 구조가 공식 서사와 현실의 괴리를 드러낸다. 세미콜론 뒤에서 즉각적 결과를 보여줌으로써 철수가 평화가 아닌 전술이었음을 입증.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "M23's January withdrawal from Uvira",
+          "ko": "M23의 1월 우비라 철수"
+        },
+        {
+          "en": "presented as a goodwill gesture",
+          "ko": "선의의 제스처로 제시된"
+        },
+        {
+          "en": "was a tactical repositioning under American pressure",
+          "ko": "미국의 압력 하 전술적 재배치였다"
+        },
+        {
+          "en": "within weeks, fighting intensified in the surrounding highlands",
+          "ko": "수 주 만에 주변 고지대에서 전투가 격화되었다"
+        }
+      ],
+      "pronunciationNotes": ["Uvira는 '우비라'로 두 번째 음절 강세"]
+    },
+    {
+      "id": 9,
+      "original": "Washington imposed sanctions on Rwanda's defence forces in March, yet the measures targeted individuals rather than the mineral supply chains that finance the conflict — the equivalent of fining a company's executives while leaving its most profitable division untouched.",
+      "translation": "워싱턴은 3월 르완다 국방군에 제재를 부과했지만, 그 조치는 분쟁에 자금을 대는 광물 공급망이 아닌 개인들을 겨냥했다 — 이는 기업의 가장 수익성 높은 사업부는 건드리지 않으면서 경영진에게만 벌금을 부과하는 것과 같다.",
+      "grammarElements": [
+        {
+          "text": "Washington",
+          "role": "subject",
+          "label": "주어 (환유: 미국 정부)"
+        },
+        {
+          "text": "imposed sanctions on Rwanda's defence forces in March",
+          "role": "verb",
+          "label": "동사구"
+        },
+        {
+          "text": "yet the measures targeted individuals rather than the mineral supply chains that finance the conflict",
+          "role": "clause",
+          "label": "역접절 (yet)"
+        },
+        {
+          "text": "the equivalent of fining a company's executives while leaving its most profitable division untouched",
+          "role": "modifier",
+          "label": "대시 뒤 비유적 설명"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "imposed",
+          "pos": "verb",
+          "meaning": "부과하다, 강제하다",
+          "example": "The European Union imposed trade restrictions on goods produced with forced labour.",
+          "collocations": ["impose sanctions", "impose restrictions", "impose a ban"],
+          "difficulty": 2
+        },
+        {
+          "word": "untouched",
+          "pos": "adjective",
+          "meaning": "건드리지 않은, 손대지 않은",
+          "example": "Despite the audit, the department's largest budget line remained untouched.",
+          "collocations": ["left untouched", "remain untouched", "virtually untouched"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "the equivalent of fining a company's executives while leaving its most profitable division untouched",
+          "meaning": "경영진에게만 벌금을 부과하고 가장 수익성 높은 사업부는 건드리지 않는 것과 같다",
+          "usage": "정책의 비효과성을 기업 비유로 설명. 추상적 국제정치를 독자가 아는 비즈니스 논리로 번역하여 즉각적 이해를 유도",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Action], yet [measures] targeted [symptom] rather than [cause] — the equivalent of [business analogy]",
+          "explanation": "정책의 한계를 '증상 vs 원인' 프레임으로 비판하고, 대시 뒤 비유로 핵심을 포착하는 비평 패턴",
+          "examples": [
+            "The regulator fined the platform for data breaches, yet the penalty targeted the incident rather than the business model that incentivises data hoarding — the equivalent of ticketing a driver for speeding while ignoring the broken brakes.",
+            "Congress passed new restrictions on social media, yet the rules targeted content rather than the algorithms that amplify it — the equivalent of banning certain words while leaving the megaphone on."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The measures targeted individuals rather than the mineral supply chains that _______ the conflict.",
+              "answer": "finance",
+              "options": ["finance", "feature", "facilitate", "frustrate"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "세 번째 문단의 핵심이자 글 전체에서 가장 강력한 비유. 제재의 비효과성을 기업 비유로 번역함으로써 독자가 국제정치를 비즈니스 논리로 즉각 이해하게 만든다. rather than과 while의 이중 대비가 논증의 밀도를 높인다.",
+      "paragraphIndex": 2,
+      "koreanAlignment": [
+        {
+          "en": "Washington imposed sanctions on Rwanda's defence forces in March",
+          "ko": "워싱턴은 3월 르완다 국방군에 제재를 부과했다"
+        },
+        {
+          "en": "yet the measures targeted individuals rather than the mineral supply chains",
+          "ko": "그러나 그 조치는 광물 공급망이 아닌 개인들을 겨냥했다"
+        },
+        {
+          "en": "the equivalent of fining a company's executives while leaving its most profitable division untouched",
+          "ko": "경영진에게만 벌금을 부과하고 가장 수익성 높은 사업부는 건드리지 않는 것과 같다"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "original": "The humanitarian consequences are devastating: more than seven million Congolese are now internally displaced, the largest such crisis on earth, and 25 million face acute food insecurity.",
+      "translation": "인도적 결과는 참혹하다: 700만 명 이상의 콩고인이 현재 국내 실향민이 되었으며 — 지구상 최대 규모의 위기 — 2,500만 명이 극심한 식량 불안에 직면해 있다.",
+      "grammarElements": [
+        {
+          "text": "The humanitarian consequences",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "are devastating",
+          "role": "verb",
+          "label": "동사 + 보어"
+        },
+        {
+          "text": "more than seven million Congolese are now internally displaced",
+          "role": "clause",
+          "label": "콜론 뒤 설명절 1"
+        },
+        {
+          "text": "the largest such crisis on earth",
+          "role": "modifier",
+          "label": "동격 삽입구"
+        },
+        {
+          "text": "and 25 million face acute food insecurity",
+          "role": "clause",
+          "label": "설명절 2 (등위접속)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "devastating",
+          "pos": "adjective",
+          "meaning": "참혹한, 파괴적인",
+          "example": "The report's findings were devastating for the government's claims of economic recovery.",
+          "collocations": ["devastating impact", "devastating consequences", "devastating blow"],
+          "difficulty": 2
+        },
+        {
+          "word": "internally displaced",
+          "pos": "adjective",
+          "meaning": "국내 실향민(IDP)이 된",
+          "example": "The number of internally displaced persons worldwide exceeded 70 million for the first time in 2025.",
+          "collocations": ["internally displaced persons", "internally displaced populations", "IDP camps"],
+          "difficulty": 3
+        },
+        {
+          "word": "acute",
+          "pos": "adjective",
+          "meaning": "극심한, 급성의",
+          "example": "Acute water shortages have forced communities to rely on contaminated sources.",
+          "collocations": ["acute food insecurity", "acute shortage", "acute crisis"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "the largest such crisis on earth",
+          "meaning": "지구상 최대 규모의 위기",
+          "usage": "삽입 동격구로 규모를 강조하는 저널리즘 기법. 'such'가 앞의 명사(crisis = displacement)를 지시하여 문장 흐름을 끊지 않고 최상급 정보를 삽입",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Summary]: [statistic 1], [superlative appositive], and [statistic 2]",
+          "explanation": "콜론 뒤에 수치를 나열하되 동격 삽입구로 규모감을 부여하는 데이터 제시 패턴",
+          "examples": [
+            "The scale of the disaster is staggering: more than three million homes were destroyed, the worst housing loss in the country's history, and twelve million people lost access to clean water.",
+            "The educational impact is alarming: forty percent of schools remain closed, the highest closure rate in the region, and two million children have missed an entire academic year."
+          ],
+          "drillQuestions": [
+            {
+              "question": "More than seven million Congolese are now internally _______, the largest such crisis on earth.",
+              "answer": "displaced",
+              "options": ["displaced", "disrupted", "dismissed", "dispersed"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "네 번째 문단의 도입. 경제적 분석에서 인도적 현실로 전환하면서 전쟁의 인간적 비용을 수치로 제시. '700만'과 '2,500만'이라는 숫자가 앞 문단의 '$24조'와 '$30만/월'과 대비되어 부의 편중을 암시.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "The humanitarian consequences are devastating",
+          "ko": "인도적 결과는 참혹하다"
+        },
+        {
+          "en": "more than seven million Congolese are now internally displaced",
+          "ko": "700만 명 이상의 콩고인이 국내 실향민이 되었다"
+        },
+        {
+          "en": "the largest such crisis on earth",
+          "ko": "지구상 최대 규모의 위기"
+        },
+        {
+          "en": "and 25 million face acute food insecurity",
+          "ko": "그리고 2,500만 명이 극심한 식량 불안에 직면해 있다"
+        }
+      ],
+      "pronunciationNotes": ["acute는 '어큐트'로 두 번째 음절 강세", "Congolese는 '콩골리즈'로 세 번째 음절 강세"]
+    },
+    {
+      "id": 11,
+      "original": "Health systems across eastern provinces have buckled under outbreaks of cholera, measles, and mpox in camps built for thousands but sheltering tens of thousands.",
+      "translation": "동부 주 전역의 의료 체계는 수천 명을 위해 건설되었지만 수만 명을 수용하고 있는 캠프에서 발생한 콜레라, 홍역, 엠폭스 발병으로 무너졌다.",
+      "grammarElements": [
+        {
+          "text": "Health systems across eastern provinces",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "have buckled",
+          "role": "verb",
+          "label": "동사 (현재완료)"
+        },
+        {
+          "text": "under outbreaks of cholera, measles, and mpox",
+          "role": "modifier",
+          "label": "전치사구 (원인)"
+        },
+        {
+          "text": "in camps built for thousands but sheltering tens of thousands",
+          "role": "modifier",
+          "label": "전치사구 (장소) + 대비 구문"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "buckled",
+          "pos": "verb",
+          "meaning": "무너지다, 구부러지다 (압력 하에 붕괴)",
+          "example": "The country's healthcare infrastructure buckled under the weight of simultaneous epidemics.",
+          "collocations": ["buckled under pressure", "buckled under the strain", "buckled under demand"],
+          "difficulty": 3
+        },
+        {
+          "word": "outbreaks",
+          "pos": "noun",
+          "meaning": "발병, 발생 (질병의 급격한 확산)",
+          "example": "Cholera outbreaks are common in displacement camps where clean water is scarce.",
+          "collocations": ["disease outbreak", "outbreak of violence", "contain an outbreak"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "built for thousands but sheltering tens of thousands",
+          "meaning": "수천 명을 위해 건설되었지만 수만 명을 수용하는",
+          "usage": "수용 능력과 실제 수요의 격차를 숫자 대비로 드러내는 표현. 'thousands vs tens of thousands'가 10배 초과를 암시",
+          "register": "journalistic"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Systems] have buckled under [crisis] in [infrastructure] built for [X] but [serving/sheltering] [10X]",
+          "explanation": "시스템이 설계 용량을 초과하는 수요로 붕괴하는 상황을 묘사하는 패턴. 숫자 대비가 핵심",
+          "examples": [
+            "Schools have buckled under enrollment surges in classrooms built for thirty but seating sixty.",
+            "Transit systems have buckled under commuter volumes on lines built for half a million but carrying two million daily."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Health systems across eastern provinces have _______ under outbreaks of cholera, measles, and mpox.",
+              "answer": "buckled",
+              "options": ["buckled", "balanced", "bounced", "budgeted"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "'buckled'는 금속이 압력으로 구부러지는 이미지. 의료 체계를 물리적 구조물에 비유하여 과부하 상태를 시각적으로 전달. 'thousands but tens of thousands'의 대비가 위기의 규모를 압축적으로 보여준다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Health systems across eastern provinces have buckled",
+          "ko": "동부 주 전역의 의료 체계가 무너졌다"
+        },
+        {
+          "en": "under outbreaks of cholera, measles, and mpox",
+          "ko": "콜레라, 홍역, 엠폭스 발병으로"
+        },
+        {
+          "en": "in camps built for thousands but sheltering tens of thousands",
+          "ko": "수천 명을 위해 건설되었지만 수만 명을 수용하는 캠프에서"
+        }
+      ],
+      "pronunciationNotes": ["cholera는 '콜러라'로 첫 음절 강세", "measles는 '미즐즈'로 첫 음절 강세", "mpox는 '엠팍스'"]
+    },
+    {
+      "id": 12,
+      "original": "Until the financial architecture sustaining this war is dismantled — through enforceable mineral traceability and genuine penalties on nations profiting from smuggled resources — ceasefire agreements will continue to function as intermissions rather than conclusions.",
+      "translation": "이 전쟁을 유지하는 금융 구조가 해체될 때까지 — 강제력 있는 광물 추적 시스템과 밀수 자원으로 이익을 취하는 국가에 대한 실질적 제재를 통해 — 휴전 협정은 결론이 아닌 막간으로 기능할 것이다.",
+      "grammarElements": [
+        {
+          "text": "Until the financial architecture sustaining this war is dismantled",
+          "role": "modifier",
+          "label": "시간 부사절 (until)"
+        },
+        {
+          "text": "through enforceable mineral traceability and genuine penalties on nations profiting from smuggled resources",
+          "role": "modifier",
+          "label": "대시 삽입구 (방법)"
+        },
+        {
+          "text": "ceasefire agreements",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "will continue to function as intermissions rather than conclusions",
+          "role": "verb",
+          "label": "동사구 + 비유적 보어"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "traceability",
+          "pos": "noun",
+          "meaning": "추적 가능성, 이력 추적",
+          "example": "Supply chain traceability has become a regulatory requirement for conflict minerals in the European Union.",
+          "collocations": ["mineral traceability", "supply chain traceability", "product traceability"],
+          "difficulty": 3
+        },
+        {
+          "word": "intermissions",
+          "pos": "noun",
+          "meaning": "막간, 휴식 시간 (공연의 중간 쉬는 시간)",
+          "example": "The ceasefire proved to be an intermission in the fighting rather than an end to it.",
+          "collocations": ["brief intermission", "without intermission", "intermission in hostilities"],
+          "difficulty": 3
+        },
+        {
+          "word": "dismantled",
+          "pos": "verb",
+          "meaning": "해체하다, 분해하다",
+          "example": "The new administration moved quickly to dismantle the regulatory framework built by its predecessor.",
+          "collocations": ["dismantle a network", "dismantle barriers", "dismantle a system"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "function as intermissions rather than conclusions",
+          "meaning": "결론이 아닌 막간으로 기능하다",
+          "usage": "연극의 '막간(intermission)'을 차용하여 휴전이 진정한 종결이 아닌 일시적 중단임을 표현. 분쟁의 주기성을 은유적으로 전달",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "Until [root cause] is [resolved] — through [specific measures] — [symptom] will continue to [persist]",
+          "explanation": "근본 원인 해결 없이는 현상이 지속된다는 논증 구조. 대시 삽입구에 해결책을 명시하여 비판에 건설성을 더함",
+          "examples": [
+            "Until the incentive structure driving deforestation is reformed — through enforceable land rights and carbon pricing — conservation pledges will continue to function as branding exercises rather than commitments.",
+            "Until the funding model sustaining misinformation is disrupted — through advertiser accountability and algorithmic transparency — content moderation will continue to function as a game of whack-a-mole rather than a solution."
+          ],
+          "drillQuestions": [
+            {
+              "question": "Ceasefire agreements will continue to function as _______ rather than conclusions.",
+              "answer": "intermissions",
+              "options": ["intermissions", "interventions", "illustrations", "implementations"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 4,
+      "notes": "글의 처방적(prescriptive) 문장. 'financial architecture'는 두 번째 문단의 경제 분석을 가리키고, 'intermissions rather than conclusions'는 첫 문장의 '반복되는 평화협정'을 회수. 대시 삽입구가 해결 조건을 구체적으로 명시.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "Until the financial architecture sustaining this war is dismantled",
+          "ko": "이 전쟁을 유지하는 금융 구조가 해체될 때까지"
+        },
+        {
+          "en": "through enforceable mineral traceability and genuine penalties on nations profiting from smuggled resources",
+          "ko": "강제력 있는 광물 추적과 밀수 자원 이익 국가에 대한 실질적 제재를 통해"
+        },
+        {
+          "en": "ceasefire agreements will continue to function as intermissions rather than conclusions",
+          "ko": "휴전 협정은 결론이 아닌 막간으로 계속 기능할 것이다"
+        }
+      ],
+      "pronunciationNotes": ["traceability는 '트레이서빌리티'로 세 번째 음절 강세", "intermissions는 '인터미션즈'로 세 번째 음절 강세"]
+    },
+    {
+      "id": 13,
+      "original": "The conflict endures not despite diplomatic efforts, but because no agreement has yet made peace more profitable than war.",
+      "translation": "분쟁은 외교적 노력에도 불구하고가 아니라, 어떤 협정도 아직 평화를 전쟁보다 더 수익성 있게 만들지 못했기 때문에 지속된다.",
+      "grammarElements": [
+        {
+          "text": "The conflict",
+          "role": "subject",
+          "label": "주어"
+        },
+        {
+          "text": "endures",
+          "role": "verb",
+          "label": "동사"
+        },
+        {
+          "text": "not despite diplomatic efforts",
+          "role": "modifier",
+          "label": "부정된 양보구"
+        },
+        {
+          "text": "but because no agreement has yet made peace more profitable than war",
+          "role": "modifier",
+          "label": "실제 이유절 (not A but B 구조)"
+        }
+      ],
+      "vocabulary": [
+        {
+          "word": "endures",
+          "pos": "verb",
+          "meaning": "지속되다, 견디다",
+          "example": "The legacy of colonialism endures in the region's political boundaries and economic structures.",
+          "collocations": ["endures to this day", "conflict endures", "the tradition endures"],
+          "difficulty": 2
+        },
+        {
+          "word": "profitable",
+          "pos": "adjective",
+          "meaning": "수익성 있는, 이익이 되는",
+          "example": "Until renewable energy becomes more profitable than fossil fuels, the transition will remain painfully slow.",
+          "collocations": ["more profitable", "highly profitable", "profitable venture"],
+          "difficulty": 2
+        }
+      ],
+      "expressions": [
+        {
+          "phrase": "not despite... but because",
+          "meaning": "~에도 불구하고가 아니라 ~때문에",
+          "usage": "통념을 뒤집는 수사 구조. 독자가 기대하는 인과관계(despite)를 부정하고 반대의 원인(because)을 제시하여 논증을 완결",
+          "register": "analytical"
+        },
+        {
+          "phrase": "made peace more profitable than war",
+          "meaning": "평화를 전쟁보다 더 수익성 있게 만들다",
+          "usage": "평화와 전쟁을 경제적 비용-편익으로 프레이밍하는 글 전체의 thesis를 최종 응축한 표현",
+          "register": "analytical"
+        }
+      ],
+      "patterns": [
+        {
+          "pattern": "[Subject] endures/persists not despite [expected cause], but because [actual cause]",
+          "explanation": "통념적 인과관계를 부정하고 대안적 설명을 제시하는 결론 패턴. 글의 핵심 논증을 한 문장으로 응축",
+          "examples": [
+            "The digital divide persists not despite government spending, but because investment targets connectivity rather than literacy.",
+            "The housing shortage endures not despite new construction, but because zoning laws channel development away from where demand is highest."
+          ],
+          "drillQuestions": [
+            {
+              "question": "The conflict endures not despite diplomatic efforts, but because no agreement has yet made peace more _______ than war.",
+              "answer": "profitable",
+              "options": ["profitable", "possible", "practical", "powerful"]
+            }
+          ]
+        }
+      ],
+      "difficulty": 3,
+      "notes": "글의 마지막 문장이자 thesis의 최종 재진술. 첫 문장의 'endured'를 'endures'로 시제를 바꿔 회수하면서 원형 구조를 완성. 'not despite... but because'가 통념을 뒤집고, 'peace more profitable than war'가 글 전체의 경제적 분석을 한 문구로 응축한다.",
+      "paragraphIndex": 3,
+      "koreanAlignment": [
+        {
+          "en": "The conflict endures",
+          "ko": "분쟁은 지속된다"
+        },
+        {
+          "en": "not despite diplomatic efforts",
+          "ko": "외교적 노력에도 불구하고가 아니라"
+        },
+        {
+          "en": "but because no agreement has yet made peace more profitable than war",
+          "ko": "어떤 협정도 아직 평화를 전쟁보다 더 수익성 있게 만들지 못했기 때문에"
+        }
+      ],
+      "rhetoricalDevice": "thesis restatement — circular closure"
+    }
+  ]
+}

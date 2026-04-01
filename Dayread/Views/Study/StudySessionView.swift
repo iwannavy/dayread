@@ -188,6 +188,7 @@ struct StudySessionView: View {
             ImmersiveView(
                 sentences: session.sentences,
                 initialIndex: currentIndex,
+                sessionId: sessionId,
                 onAdvanceMode: {
                     setMaxUnlockedStep(max(maxUnlockedStep, 2 + n))
                     setGlobalStep(2 + n)

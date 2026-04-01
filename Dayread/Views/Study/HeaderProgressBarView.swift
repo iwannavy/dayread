@@ -28,6 +28,14 @@ enum StudyStepUtils {
     }
 }
 
+// MARK: - Stage Section
+
+private struct StageSection: Identifiable {
+    let id: String
+    let stepRange: Range<Int>
+    let ratio: CGFloat
+}
+
 // MARK: - Header Progress Bar View
 
 struct HeaderProgressBarView: View {
@@ -36,6 +44,9 @@ struct HeaderProgressBarView: View {
     let maxUnlockedStep: Int
     var onGoToStep: ((Int) -> Void)? = nil
 
+    @State private var dragTargetStep: Int? = nil
+    @State private var dragX: CGFloat = 0
+
     private var totalSteps: Int { StudyStepUtils.computeTotalSteps(sentenceCount) }
 
     private var stageBreaks: Set<Int> {
@@ -43,28 +54,77 @@ struct HeaderProgressBarView: View {
         return [2, 2 + n, 2 + n + 3 * n]
     }
 
+    // Stage sections with weighted ratios: Overview 2/10, Immersive 4/10, Focus 4/10
+    private var stageSections: [StageSection] {
+        let n = sentenceCount
+        return [
+            StageSection(id: "overview", stepRange: 0..<2, ratio: 0.2),
+            StageSection(id: "immersive", stepRange: 2..<(2 + n), ratio: 0.4),
+            StageSection(id: "focus", stepRange: (2 + n)..<totalSteps, ratio: 0.4),
+        ]
+    }
+
+    // Gap between stages
+    private let stageGap: CGFloat = 3
+
     var body: some View {
         GeometryReader { geo in
+            let totalGaps = stageGap * CGFloat(stageSections.count - 1)
+            let usableWidth = geo.size.width - totalGaps
+
             ZStack(alignment: .leading) {
-                // Background segments
+                // Progress bar segments
                 HStack(spacing: 0) {
-                    ForEach(0..<totalSteps, id: \.self) { i in
-                        stepSegment(i)
+                    ForEach(Array(stageSections.enumerated()), id: \.element.id) { sIdx, section in
+                        let sectionWidth = usableWidth * section.ratio
+                        let stepCount = section.stepRange.count
+
+                        HStack(spacing: 0) {
+                            ForEach(section.stepRange, id: \.self) { i in
+                                stepSegment(i)
+                                    .frame(width: stepCount > 0 ? sectionWidth / CGFloat(stepCount) : 0)
+                            }
+                        }
+
+                        if sIdx < stageSections.count - 1 {
+                            Spacer().frame(width: stageGap)
+                        }
                     }
+                }
+
+                // Drag indicator label
+                if let target = dragTargetStep {
+                    Text(StudyStepUtils.stageLabel(step: target, n: sentenceCount))
+                        .font(.system(size: 10, weight: .medium))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(.ultraThinMaterial)
+                        .clipShape(Capsule())
+                        .position(x: clampLabelX(dragX, width: geo.size.width), y: -14)
+                        .transition(.opacity)
+                        .animation(.easeOut(duration: 0.15), value: target)
                 }
             }
             .contentShape(Rectangle())
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { value in
-                        let step = stepFromPosition(value.location.x, width: geo.size.width)
+                        dragX = value.location.x
+                        let step = stepFromPosition(value.location.x, width: geo.size.width, usableWidth: usableWidth)
                         if step <= maxUnlockedStep {
+                            dragTargetStep = step
                             onGoToStep?(step)
+                        }
+                    }
+                    .onEnded { _ in
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            dragTargetStep = nil
                         }
                     }
             )
         }
         .frame(height: 5)
+        .padding(.top, 8)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("학습 진행률")
         .accessibilityValue("전체 \(totalSteps)단계 중 \(currentStep + 1)단계")
@@ -75,13 +135,11 @@ struct HeaderProgressBarView: View {
     private func stepSegment(_ i: Int) -> some View {
         let isLocked = i > maxUnlockedStep
         let isCurrent = i == currentStep
-        let isBreak = stageBreaks.contains(i)
 
         return Rectangle()
             .fill(segmentColor(i, isCurrent: isCurrent))
             .frame(height: isCurrent ? 5 : 3)
             .opacity(isLocked ? 0.25 : 1)
-            .padding(.trailing, isBreak ? 2 : 0)
     }
 
     private func segmentColor(_ i: Int, isCurrent: Bool) -> Color {
@@ -94,9 +152,34 @@ struct HeaderProgressBarView: View {
         return Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.08)
     }
 
-    private func stepFromPosition(_ x: CGFloat, width: CGFloat) -> Int {
+    // MARK: - Position Mapping (weighted by stage ratios)
+
+    private func stepFromPosition(_ x: CGFloat, width: CGFloat, usableWidth: CGFloat) -> Int {
         guard totalSteps > 0, width > 0 else { return 0 }
-        let ratio = max(0, min(1, x / width))
-        return Int(round(ratio * Double(totalSteps - 1)))
+        let clampedX = max(0, min(width, x))
+
+        // Determine which stage section the x position falls in
+        var accumulatedX: CGFloat = 0
+        for (sIdx, section) in stageSections.enumerated() {
+            let sectionWidth = usableWidth * section.ratio
+            let sectionEnd = accumulatedX + sectionWidth
+
+            if clampedX < sectionEnd || sIdx == stageSections.count - 1 {
+                // Within this section
+                let localX = clampedX - accumulatedX
+                let stepCount = section.stepRange.count
+                guard stepCount > 0 else { return section.stepRange.lowerBound }
+                let ratio = max(0, min(1, localX / sectionWidth))
+                let localStep = Int(round(ratio * CGFloat(stepCount - 1)))
+                return section.stepRange.lowerBound + localStep
+            }
+
+            accumulatedX = sectionEnd + stageGap
+        }
+        return totalSteps - 1
+    }
+
+    private func clampLabelX(_ x: CGFloat, width: CGFloat) -> CGFloat {
+        max(40, min(width - 40, x))
     }
 }

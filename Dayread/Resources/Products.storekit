@@ -49,7 +49,7 @@
               "locale" : "ko"
             }
           ],
-          "productID" : "com.dayread.app.premium.monthly",
+          "productID" : "dayread",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Monthly Premium",
           "subscriptionGroupID" : "69EA2E95-A031-419C-9BCA-02AC62738898",
@@ -74,7 +74,7 @@
               "locale" : "ko"
             }
           ],
-          "productID" : "com.dayread.app.premium.annual",
+          "productID" : "dayread_annual",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Annual Premium",
           "subscriptionGroupID" : "69EA2E95-A031-419C-9BCA-02AC62738898",

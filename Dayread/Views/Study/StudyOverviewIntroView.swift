@@ -8,6 +8,8 @@ struct StudyOverviewIntroView: View {
 
     @State private var expandedIdx: Int? = nil
     @State private var hasReachedBottom = false
+    @State private var activeGrammarWord: String? = nil
+    @State private var activeGrammarSentenceIdx: Int? = nil
 
     var body: some View {
         ScrollView {
@@ -17,7 +19,7 @@ struct StudyOverviewIntroView: View {
                     Text("먼저 글을 한번 읽어보세요")
                         .font(.body)
                         .foregroundStyle(.secondary)
-                    Text("궁금한 문장을 탭하면 문법 분석을 볼 수 있어요")
+                    Text("궁금한 문장을 탭해보세요")
                         .font(.caption)
                         .foregroundStyle(.tertiary)
                 }
@@ -88,39 +90,25 @@ struct StudyOverviewIntroView: View {
     // MARK: - Paragraph View (flowing text)
 
     private func paragraphView(_ paragraph: ParagraphGroup) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            // Flowing paragraph text — sentences concatenated for natural word wrapping
-            buildParagraphText(paragraph.items)
-                .studySentenceStyle()
-                .fixedSize(horizontal: false, vertical: true)
-                .onTapGesture {
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        handleParagraphTap(paragraph.items)
-                    }
-                }
-
-            // Sentence selector (when expanded, multi-sentence paragraph)
-            if paragraph.items.count > 1,
-               paragraph.items.contains(where: { expandedIdx == $0.idx }) {
-                HStack(spacing: 6) {
-                    ForEach(paragraph.items, id: \.idx) { item in
-                        Button {
-                            withAnimation(.easeInOut(duration: 0.2)) {
+        VStack(alignment: .leading, spacing: 2) {
+            // Each sentence is individually tappable
+            ForEach(paragraph.items, id: \.idx) { item in
+                buildSentenceText(item)
+                    .studySentenceStyle()
+                    .fixedSize(horizontal: false, vertical: true)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.15)) {
+                            if expandedIdx == item.idx {
+                                expandedIdx = nil
+                                activeGrammarWord = nil
+                                activeGrammarSentenceIdx = nil
+                            } else {
                                 expandedIdx = item.idx
+                                activeGrammarWord = nil
+                                activeGrammarSentenceIdx = nil
                             }
-                        } label: {
-                            Text("\(item.idx + 1)")
-                                .font(.caption2)
-                                .fontWeight(expandedIdx == item.idx ? .bold : .regular)
-                                .frame(width: 24, height: 24)
-                                .background(expandedIdx == item.idx ? Color.dayreadGold : Color.gray.opacity(0.2))
-                                .foregroundStyle(expandedIdx == item.idx ? .white : .secondary)
-                                .clipShape(Circle())
                         }
-                        .buttonStyle(.plain)
                     }
-                }
-                .padding(.top, StudyLayout.spacingSM)
             }
 
             // Inline GrammarViz for expanded sentence
@@ -132,47 +120,86 @@ struct StudyOverviewIntroView: View {
                     koreanAlignment: expandedItem.sentence.koreanAlignment,
                     notes: expandedItem.sentence.notes,
                     rhetoricalDevice: expandedItem.sentence.rhetoricalDevice,
-                    hideOriginal: true
+                    hideOriginal: true,
+                    onWordTap: { word in
+                        activeGrammarWord = word
+                        activeGrammarSentenceIdx = expandedItem.idx
+                    }
                 )
                 .padding(StudyLayout.cardPadding)
                 .background(.quaternary.opacity(0.5))
                 .clipShape(RoundedRectangle(cornerRadius: StudyLayout.cornerRadiusLG))
                 .padding(.vertical, StudyLayout.spacingSM)
-                .transition(.opacity.combined(with: .scale(scale: 0.95, anchor: .top)))
+                .transition(.opacity)
             }
         }
     }
 
-    // MARK: - Paragraph Text Building
+    // MARK: - Sentence Text Building
 
-    private func buildParagraphText(_ items: [(sentence: AnalyzedSentence, idx: Int)]) -> Text {
-        var result = Text("")
-        for (i, item) in items.enumerated() {
-            if i > 0 { result = result + Text(" ") }
-            if expandedIdx == item.idx {
-                result = result + Text(item.sentence.original)
-                    .foregroundColor(.dayreadGold)
-            } else if highlightIndex == item.idx {
-                result = result + Text(item.sentence.original)
-                    .foregroundColor(.yellow.opacity(0.8))
-            } else {
-                result = result + Text(item.sentence.original)
+    private func buildSentenceText(_ item: (sentence: AnalyzedSentence, idx: Int)) -> Text {
+        // Grammar highlight: when a grammar element is tapped in GrammarViz
+        if activeGrammarSentenceIdx == item.idx, let word = activeGrammarWord {
+            return highlightGrammarWord(in: item.sentence, word: word)
+        }
+        // Expanded sentence: gold
+        if expandedIdx == item.idx {
+            return Text(item.sentence.original)
+                .foregroundColor(.dayreadGold)
+        }
+        // Audio highlight
+        if highlightIndex == item.idx {
+            return Text(item.sentence.original)
+                .foregroundColor(.yellow.opacity(0.8))
+        }
+        return Text(item.sentence.original)
+    }
+
+    private func highlightGrammarWord(in sentence: AnalyzedSentence, word: String) -> Text {
+        let original = sentence.original
+        // Independent matching — handles out-of-order grammar elements
+        struct Match { let range: Range<String.Index>; let element: GrammarElement }
+        var matches: [Match] = []
+        var usedRanges: [Range<String.Index>] = []
+
+        for el in sentence.grammarElements {
+            let trimmed = el.text.trimmingCharacters(in: .whitespaces)
+            guard !trimmed.isEmpty else { continue }
+            var searchStart = original.startIndex
+            while searchStart < original.endIndex {
+                guard let range = original.range(of: trimmed, range: searchStart..<original.endIndex) else { break }
+                let overlaps = usedRanges.contains { $0.lowerBound < range.upperBound && $0.upperBound > range.lowerBound }
+                if !overlaps {
+                    matches.append(Match(range: range, element: el))
+                    usedRanges.append(range)
+                    break
+                }
+                searchStart = range.upperBound
             }
+        }
+        matches.sort { $0.range.lowerBound < $1.range.lowerBound }
+
+        var result = Text("")
+        var pos = original.startIndex
+        for match in matches {
+            if match.range.lowerBound < pos { continue }
+            if match.range.lowerBound > pos {
+                result = result + Text(original[pos..<match.range.lowerBound])
+            }
+            let trimmed = match.element.text.trimmingCharacters(in: .whitespaces)
+            if trimmed == word {
+                let color = Color.grammarColor(for: match.element.role)
+                result = result + Text(original[match.range])
+                    .foregroundColor(color)
+                    .underline(color: color.opacity(0.3))
+            } else {
+                result = result + Text(original[match.range])
+            }
+            pos = match.range.upperBound
+        }
+        if pos < original.endIndex {
+            result = result + Text(original[pos...])
         }
         return result
-    }
-
-    private func handleParagraphTap(_ items: [(sentence: AnalyzedSentence, idx: Int)]) {
-        if let current = expandedIdx,
-           let currentPos = items.firstIndex(where: { $0.idx == current }) {
-            let nextPos = currentPos + 1
-            if nextPos < items.count {
-                expandedIdx = items[nextPos].idx
-            } else {
-                expandedIdx = nil
-            }
-        } else if let first = items.first {
-            expandedIdx = first.idx
-        }
     }
 }

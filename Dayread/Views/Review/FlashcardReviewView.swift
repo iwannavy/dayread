@@ -255,6 +255,7 @@ extension SRSItemType {
         case .vocabulary: return "단어"
         case .pattern: return "패턴"
         case .expression: return "표현"
+        case .sentence: return "문장"
         }
     }
 
@@ -263,6 +264,7 @@ extension SRSItemType {
         case .vocabulary: return .blue
         case .pattern: return Color.dayreadGold
         case .expression: return .purple
+        case .sentence: return .green
         }
     }
 }

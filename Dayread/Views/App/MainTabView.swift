@@ -2,12 +2,14 @@ import SwiftUI
 
 enum AppTab: String, CaseIterable {
     case study = "학습"
+    case review = "복습"
     case progress = "진도"
     case profile = "프로필"
 
     var icon: String {
         switch self {
         case .study: return "book.fill"
+        case .review: return "arrow.counterclockwise"
         case .progress: return "chart.bar.fill"
         case .profile: return "person.fill"
         }
@@ -43,7 +45,7 @@ struct MainTabView: View {
         }
         .tint(Color.dayreadGold)
         .onChange(of: selectedTab) { _, newTab in
-            if isGuest && (newTab == .progress || newTab == .profile) {
+            if isGuest && (newTab == .progress || newTab == .profile || newTab == .review) {
                 showLoginWall = true
                 selectedTab = .study
             }
@@ -61,6 +63,10 @@ extension AppTab {
         case .study:
             NavigationStack {
                 LibraryView()
+            }
+        case .review:
+            NavigationStack {
+                ReviewTabView()
             }
         case .progress:
             NavigationStack {
