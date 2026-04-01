@@ -192,8 +192,7 @@ fileprivate struct SentencePagingPage: View {
         } else if phase == .fullTranslation {
             onPhaseChange(.deepDive)
         } else if phase == .deepDive {
-            // Already at max phase, wait for global scroll to handle next sentence
-            // or we could trigger onNextSentence() if we want it to be buttonless
+            onNextSentence()
         }
     }
 
@@ -315,26 +314,6 @@ fileprivate struct SentencePagingPage: View {
                             }
                     }
                 }
-            }
-            
-            // Grammar
-            VStack(alignment: .leading, spacing: 12) {
-                Text("문장 구조")
-                    .studySectionHeaderStyle()
-                
-                GrammarVizView(
-                    elements: sentence.grammarElements,
-                    translation: sentence.translation,
-                    original: sentence.original,
-                    hideOriginal: true,
-                    allActive: true,
-                    compact: true
-                )
-                .padding(20)
-                .background(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.dayreadGold.opacity(0.15), lineWidth: 1)
-                )
             }
             
             // Flag/Study
