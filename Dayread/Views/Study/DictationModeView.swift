@@ -1,13 +1,20 @@
 import SwiftUI
 
+enum DictationExerciseMode: String {
+    case translation, dictation
+}
+
 struct DictationModeView: View {
     let sentence: String
     let translation: String
+    var translationDone: Bool = false
+    var dictationDone: Bool = false
     var onComplete: ((Int) -> Void)? = nil
+    var onModeComplete: ((DictationExerciseMode, Int) -> Void)? = nil
 
     @Environment(TTSService.self) private var tts
 
-    @State private var exerciseMode: ExerciseMode = .translation
+    @State private var exerciseMode: DictationExerciseMode = .translation
     @State private var played = false
     @State private var submitted = false
     @State private var available: [String] = []
@@ -16,13 +23,18 @@ struct DictationModeView: View {
     private let words: [String]
     private let shuffled: [String]
 
-    init(sentence: String, translation: String, onComplete: ((Int) -> Void)? = nil) {
+    init(sentence: String, translation: String,
+         translationDone: Bool = false, dictationDone: Bool = false,
+         onComplete: ((Int) -> Void)? = nil,
+         onModeComplete: ((DictationExerciseMode, Int) -> Void)? = nil) {
         self.sentence = sentence
         self.translation = translation
+        self.translationDone = translationDone
+        self.dictationDone = dictationDone
         self.onComplete = onComplete
+        self.onModeComplete = onModeComplete
 
         let w = sentence
-            .replacingOccurrences(of: "[.!?,;:]", with: "", options: .regularExpression)
             .split(separator: " ")
             .map(String.init)
             .filter { !$0.isEmpty }
@@ -36,58 +48,93 @@ struct DictationModeView: View {
         self.shuffled = arr
     }
 
+    private var isCurrentModeDone: Bool {
+        exerciseMode == .translation ? translationDone : dictationDone
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // Mode toggle
             modeToggle
 
-            // Prompt
-            promptView
+            if isCurrentModeDone && !submitted {
+                // Already completed state
+                completedView
+            } else {
+                // Prompt
+                promptView
 
-            if !submitted {
-                // Answer area
-                answerArea
+                if !submitted {
+                    // Answer area
+                    answerArea
 
-                // Available words
-                FlowLayout(spacing: 8) {
-                    ForEach(Array(available.enumerated()), id: \.offset) { i, word in
-                        Button {
-                            handleSelect(word, at: i)
-                        } label: {
-                            Text(word)
+                    // Available words
+                    FlowLayout(spacing: 8) {
+                        ForEach(Array(available.enumerated()), id: \.offset) { i, word in
+                            Button {
+                                handleSelect(word, at: i)
+                            } label: {
+                                Text(word)
+                                    .font(.subheadline)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 6)
+                                    .background(.quaternary.opacity(0.5))
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+
+                    // Check button
+                    if selected.count == words.count {
+                        HStack {
+                            Spacer()
+                            Button("확인") { handleSubmit() }
                                 .font(.subheadline)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 6)
-                                .background(.quaternary.opacity(0.5))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.white)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
+                                .background(Color.dayreadGold)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
-                        .buttonStyle(.plain)
                     }
+                } else {
+                    // Result
+                    resultView
                 }
-
-                // Check button
-                if selected.count == words.count {
-                    HStack {
-                        Spacer()
-                        Button("확인") { handleSubmit() }
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(Color.dayreadGold)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                    }
-                }
-            } else {
-                // Result
-                resultView
             }
         }
         .onAppear {
             available = shuffled
             selected = []
+            submitted = false
+            // Start on first incomplete mode
+            if translationDone && !dictationDone {
+                exerciseMode = .dictation
+            } else {
+                exerciseMode = .translation
+            }
         }
+    }
+
+    private var completedView: some View {
+        HStack {
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundStyle(.green)
+            Text("완료됨")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Spacer()
+            Button("다시 하기") { handleReset() }
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(.quaternary)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
+        .padding(.vertical, 12)
     }
 
     // MARK: - Mode Toggle
@@ -95,8 +142,8 @@ struct DictationModeView: View {
     private var modeToggle: some View {
         HStack {
             HStack(spacing: 2) {
-                modeButton("번역", mode: .translation)
-                modeButton("받아쓰기", mode: .dictation)
+                modeButton("번역", mode: .translation, done: translationDone)
+                modeButton("받아쓰기", mode: .dictation, done: dictationDone)
             }
             .padding(2)
             .background(.quaternary.opacity(0.5))
@@ -106,21 +153,33 @@ struct DictationModeView: View {
         }
     }
 
-    private func modeButton(_ title: String, mode: ExerciseMode) -> some View {
+    private func modeButton(_ title: String, mode: DictationExerciseMode, done: Bool) -> some View {
         Button {
             exerciseMode = mode
+            // Reset exercise state when switching modes
+            available = shuffled
+            selected = []
+            submitted = false
+            played = false
         } label: {
-            Text(title)
-                .font(.caption)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .background {
-                    if exerciseMode == mode {
-                        RoundedRectangle(cornerRadius: 10).fill(.regularMaterial)
-                    }
+            HStack(spacing: 4) {
+                if done {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundStyle(.green)
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .foregroundStyle(exerciseMode == mode ? .primary : .tertiary)
+                Text(title)
+            }
+            .font(.caption)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background {
+                if exerciseMode == mode {
+                    RoundedRectangle(cornerRadius: 10).fill(.regularMaterial)
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .foregroundStyle(exerciseMode == mode ? .primary : .secondary)
         }
         .buttonStyle(.plain)
     }
@@ -264,6 +323,9 @@ struct DictationModeView: View {
         }
         let score = words.isEmpty ? 0 : Int(round(Double(correct) / Double(words.count) * 100))
         onComplete?(score)
+        if score >= 70 {
+            onModeComplete?(exerciseMode, score)
+        }
     }
 
     private func handleReset() {
@@ -274,8 +336,3 @@ struct DictationModeView: View {
     }
 }
 
-// MARK: - Exercise Mode
-
-private enum ExerciseMode {
-    case translation, dictation
-}

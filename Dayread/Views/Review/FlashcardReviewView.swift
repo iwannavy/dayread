@@ -101,11 +101,13 @@ struct FlashcardReviewView: View {
 
             Spacer()
 
-            // Actions
-            if showAnswer {
-                qualityButtons
-            } else {
-                showAnswerButton
+            // Actions (hidden for sentence type — SentenceWriteCard handles its own scoring)
+            if let item = dueItems[safe: currentIndex], item.type != .sentence {
+                if showAnswer {
+                    qualityButtons
+                } else {
+                    showAnswerButton
+                }
             }
         }
     }
@@ -137,48 +139,61 @@ struct FlashcardReviewView: View {
     @ViewBuilder
     private var cardContent: some View {
         if let item = dueItems[safe: currentIndex] {
-            VStack(spacing: 16) {
-                // Type badge
-                Text(item.type.displayName)
-                    .font(.caption.weight(.medium))
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 4)
-                    .background(item.type.badgeColor.opacity(0.15), in: Capsule())
-                    .foregroundStyle(item.type.badgeColor)
+            if item.type == .sentence {
+                SentenceWriteCard(
+                    sentence: item.front,
+                    translation: item.back,
+                    index: currentIndex,
+                    total: dueItems.count,
+                    onComplete: { quality in
+                        handleReview(quality: quality)
+                    }
+                )
+                .id(currentIndex)
+            } else {
+                VStack(spacing: 16) {
+                    // Type badge
+                    Text(item.type.displayName)
+                        .font(.caption.weight(.medium))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(item.type.badgeColor.opacity(0.15), in: Capsule())
+                        .foregroundStyle(item.type.badgeColor)
 
-                // Front (question)
-                Text(item.front)
-                    .font(.title2.weight(.medium))
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
-
-                if showAnswer {
-                    Divider()
-                        .padding(.horizontal, 40)
-
-                    // Back (answer)
-                    Text(item.back)
-                        .font(.body)
-                        .foregroundStyle(.secondary)
+                    // Front (question)
+                    Text(item.front)
+                        .font(.title2.weight(.medium))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
-                }
 
-                // Position counter
-                Text("\(currentIndex + 1) / \(dueItems.count)")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
+                    if showAnswer {
+                        Divider()
+                            .padding(.horizontal, 40)
+
+                        // Back (answer)
+                        Text(item.back)
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 20)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+
+                    // Position counter
+                    Text("\(currentIndex + 1) / \(dueItems.count)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(24)
+                .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20))
+                .padding(.horizontal, 20)
+                .animation(.easeInOut(duration: 0.2), value: showAnswer)
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("\(item.type.displayName): \(item.front)")
+                .accessibilityValue(showAnswer ? "정답: \(item.back)" : "탭하여 정답 보기")
+                .accessibilityHint("\(currentIndex + 1)/\(dueItems.count)")
             }
-            .frame(maxWidth: .infinity)
-            .padding(24)
-            .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20))
-            .padding(.horizontal, 20)
-            .animation(.easeInOut(duration: 0.2), value: showAnswer)
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel("\(item.type.displayName): \(item.front)")
-            .accessibilityValue(showAnswer ? "정답: \(item.back)" : "탭하여 정답 보기")
-            .accessibilityHint("\(currentIndex + 1)/\(dueItems.count)")
         }
     }
 

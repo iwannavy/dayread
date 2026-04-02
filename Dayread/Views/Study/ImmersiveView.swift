@@ -15,88 +15,55 @@ fileprivate enum LearningPhase: Int, Comparable, CaseIterable {
 
 struct ImmersiveView: View {
     let sentences: [AnalyzedSentence]
-    let initialIndex: Int
+    @Binding var sentenceIndex: Int
     let sessionId: String
     let onAdvanceMode: () -> Void
     let onSentenceChange: (Int) -> Void
     let onStudied: (Int) -> Void
-    let onFlagSentence: (Int, Bool) -> Void
-
     @Environment(SRSService.self) private var srsService
-    @State private var scrolledID: Int?
+    @State private var showCompletion = false
     @State private var sentencePhases: [Int: LearningPhase] = [:]
-    @State private var flaggedSentences: Set<Int> = []
-
-    init(sentences: [AnalyzedSentence], initialIndex: Int,
-         sessionId: String = "",
-         onAdvanceMode: @escaping () -> Void,
-         onSentenceChange: @escaping (Int) -> Void,
-         onStudied: @escaping (Int) -> Void,
-         onFlagSentence: @escaping (Int, Bool) -> Void = { _, _ in }) {
-        self.sentences = sentences
-        self.initialIndex = initialIndex
-        self.sessionId = sessionId
-        self.onAdvanceMode = onAdvanceMode
-        self.onSentenceChange = onSentenceChange
-        self.onStudied = onStudied
-        self.onFlagSentence = onFlagSentence
-        _scrolledID = State(initialValue: initialIndex)
-    }
-
-    private var currentIndex: Int { scrolledID ?? 0 }
 
     var body: some View {
         Group {
-            if currentIndex >= sentences.count {
+            if showCompletion {
                 ImmersiveCompletionCard(
                     count: sentences.count,
                     onAction: onAdvanceMode
                 )
             } else {
                 SentencePagingPage(
-                    sentence: sentences[currentIndex],
-                    index: currentIndex,
+                    sentence: sentences[sentenceIndex],
+                    index: sentenceIndex,
                     totalCount: sentences.count,
-                    phase: sentencePhases[currentIndex] ?? .original,
-                    isFlagged: flaggedSentences.contains(currentIndex),
+                    phase: sentencePhases[sentenceIndex] ?? .original,
                     sessionId: sessionId,
                     onPhaseChange: { newPhase in
                         withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
-                            sentencePhases[currentIndex] = newPhase
+                            sentencePhases[sentenceIndex] = newPhase
                         }
                         HapticsService.shared.soft()
                     },
-                    onNextSentence: { goToNextSentence() },
-                    onFlag: { isFlag in
-                        if isFlag { flaggedSentences.insert(currentIndex) }
-                        else { flaggedSentences.remove(currentIndex) }
-                        onFlagSentence(currentIndex, isFlag)
-                        HapticsService.shared.light()
-                    }
+                    onNextSentence: { goToNextSentence() }
                 )
-                .id(currentIndex)
+                .id(sentenceIndex)
                 .transition(.push(from: .bottom))
             }
         }
         .background(Color(.systemBackground))
-        .animation(.easeInOut(duration: 0.4), value: scrolledID)
-        .task(id: initialIndex) {
-            if scrolledID != initialIndex {
-                scrolledID = initialIndex
-            }
-        }
+        .animation(.easeInOut(duration: 0.4), value: sentenceIndex)
     }
 
     private func goToNextSentence() {
-        let oldIndex = currentIndex
+        let oldIndex = sentenceIndex
         if oldIndex < sentences.count {
             onStudied(sentences[oldIndex].id)
         }
         if oldIndex < sentences.count - 1 {
-            scrolledID = oldIndex + 1
+            sentenceIndex = oldIndex + 1
             onSentenceChange(oldIndex + 1)
         } else {
-            scrolledID = sentences.count
+            showCompletion = true
         }
         HapticsService.shared.light()
     }
@@ -109,11 +76,9 @@ fileprivate struct SentencePagingPage: View {
     let index: Int
     let totalCount: Int
     let phase: LearningPhase
-    let isFlagged: Bool
     let sessionId: String
     let onPhaseChange: (LearningPhase) -> Void
     let onNextSentence: () -> Void
-    let onFlag: (Bool) -> Void
 
     @Environment(SRSService.self) private var srsService
     @State private var activeGrammarIdx: Int? = nil
@@ -223,7 +188,7 @@ fileprivate struct SentencePagingPage: View {
                 Text("SENTENCE \(index + 1)")
                     .font(.system(size: 10, weight: .bold))
                     .tracking(1)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
                 Spacer()
                 Button {
                     srsService.toggleSave(
@@ -236,7 +201,7 @@ fileprivate struct SentencePagingPage: View {
                 } label: {
                     Image(systemName: sentenceSaved ? "checkmark.circle.fill" : "plus.circle")
                         .font(.body)
-                        .foregroundStyle(sentenceSaved ? Color.dayreadGold : Color.gray)
+                        .foregroundStyle(sentenceSaved ? Color.dayreadGold : .secondary)
                 }
                 .buttonStyle(.plain)
             }
@@ -318,7 +283,7 @@ fileprivate struct SentencePagingPage: View {
             } else {
                 Text("구 단위 데이터가 없습니다.")
                     .font(.caption)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
             }
         }
     }
@@ -374,20 +339,7 @@ fileprivate struct SentencePagingPage: View {
                 }
             }
 
-            // Flag
-            HStack {
-                Spacer()
-                Button {
-                    onFlag(!isFlagged)
-                } label: {
-                    Label(isFlagged ? "저장됨" : "중요 표시", systemImage: isFlagged ? "questionmark.circle.fill" : "questionmark.circle")
-                        .font(.caption.weight(.medium))
-                        .foregroundStyle(isFlagged ? Color.dayreadGold : .secondary)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Capsule().fill(Color.dayreadGold.opacity(0.08)))
-                }
-            }
+
         }
     }
 
@@ -409,7 +361,7 @@ fileprivate struct SentencePagingPage: View {
                     .font(.caption2.weight(.bold))
                     .tracking(1)
             }
-            .foregroundStyle(.tertiary)
+            .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
             .onAppear {
@@ -427,7 +379,7 @@ fileprivate struct SentencePagingPage: View {
                     .font(.caption2.weight(.bold))
                     .tracking(1)
             }
-            .foregroundStyle(.tertiary)
+            .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 16)
         }
@@ -594,7 +546,7 @@ fileprivate struct ExpressionPill: View {
                 } label: {
                     Image(systemName: isSaved ? "checkmark.circle.fill" : "plus.circle")
                         .font(.body)
-                        .foregroundStyle(isSaved ? Color.dayreadGold : Color.gray)
+                        .foregroundStyle(isSaved ? Color.dayreadGold : .secondary)
                 }
                 .buttonStyle(.plain)
             }
@@ -605,7 +557,7 @@ fileprivate struct ExpressionPill: View {
             if !expression.usage.isEmpty {
                 Text(expression.usage)
                     .font(.caption)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
                     .italic()
             }
         }
@@ -651,7 +603,7 @@ fileprivate struct VocabPill: View {
                 } label: {
                     Image(systemName: isSaved ? "checkmark.circle.fill" : "plus.circle")
                         .font(.body)
-                        .foregroundStyle(isSaved ? Color.dayreadGold : Color.gray)
+                        .foregroundStyle(isSaved ? Color.dayreadGold : .secondary)
                 }
                 .buttonStyle(.plain)
             }
@@ -662,7 +614,7 @@ fileprivate struct VocabPill: View {
             if !vocab.example.isEmpty {
                 Text(vocab.example)
                     .font(.caption)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
                     .italic()
             }
         }

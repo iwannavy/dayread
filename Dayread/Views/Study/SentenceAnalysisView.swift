@@ -12,7 +12,7 @@ struct SentenceAnalysisView: View {
             // Vocabulary
             if !sentence.vocabulary.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
-                    sectionHeader("어휘")
+                    sectionHeader("핵심 단어")
 
                     ForEach(Array(sentence.vocabulary.enumerated()), id: \.offset) { _, v in
                         vocabularyCard(v)
@@ -23,7 +23,7 @@ struct SentenceAnalysisView: View {
             // Expressions
             if !sentence.expressions.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
-                    sectionHeader("표현")
+                    sectionHeader("핵심 표현")
 
                     ForEach(Array(sentence.expressions.enumerated()), id: \.offset) { _, ex in
                         expressionCard(ex)
@@ -78,16 +78,21 @@ struct SentenceAnalysisView: View {
                 Spacer()
 
                 // Save to SRS button
-                let isSaved = srsService.items.contains { $0.front == v.word && $0.source == sessionId }
+                let isSaved = srsService.isSaved(front: v.word, type: .vocabulary)
                 Button {
-                    srsService.addItem(type: .vocabulary, front: v.word, back: v.meaning, source: sessionId)
+                    srsService.toggleSave(
+                        type: .vocabulary,
+                        front: v.word,
+                        back: v.meaning,
+                        source: sessionId
+                    )
+                    HapticsService.shared.light()
                 } label: {
-                    Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
-                        .font(.subheadline)
-                        .foregroundStyle(Color.dayreadGold)
+                    Image(systemName: isSaved ? "checkmark.circle.fill" : "plus.circle")
+                        .font(.body)
+                        .foregroundStyle(isSaved ? Color.dayreadGold : .secondary)
                 }
                 .buttonStyle(.plain)
-                .disabled(isSaved)
             }
 
             // Meaning
@@ -129,12 +134,37 @@ struct SentenceAnalysisView: View {
     // MARK: - Expression Card
 
     private func expressionCard(_ ex: Expression) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("\"\(ex.phrase)\"")
-                .font(.subheadline)
+        let isSaved = srsService.isSaved(front: ex.phrase, type: .expression)
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text(ex.phrase)
+                    .font(.subheadline.weight(.semibold))
+                Spacer()
+                Button {
+                    srsService.toggleSave(
+                        type: .expression,
+                        front: ex.phrase,
+                        back: ex.meaning,
+                        source: sessionId
+                    )
+                    HapticsService.shared.light()
+                } label: {
+                    Image(systemName: isSaved ? "checkmark.circle.fill" : "plus.circle")
+                        .font(.body)
+                        .foregroundStyle(isSaved ? Color.dayreadGold : .secondary)
+                }
+                .buttonStyle(.plain)
+            }
+
             Text(ex.meaning)
-                .font(.caption)
-                .foregroundStyle(.tertiary)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            if !ex.usage.isEmpty {
+                Text(ex.usage)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .italic()
+            }
         }
         .padding(StudyLayout.cardPadding)
         .background(.regularMaterial)

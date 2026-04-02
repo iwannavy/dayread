@@ -12,6 +12,8 @@ struct PatternDrillView: View {
     @State private var submitted = false
     @State private var correctCount = 0
     @State private var totalCount = 0
+    @State private var showCorrectFeedback = false
+    @State private var drillCompleted = false
 
     var body: some View {
         if drillQuestions.isEmpty {
@@ -29,9 +31,33 @@ struct PatternDrillView: View {
                         }
                 }
             }
+        } else if drillCompleted {
+            drillCompletedView
         } else {
             drillContent
         }
+    }
+
+    private var drillCompletedView: some View {
+        HStack {
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundStyle(.green)
+            Text("완료됨")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Text("\(correctCount)/\(totalCount) 정답")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            Spacer()
+            Button("다시 하기") { handleDrillReset() }
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(.quaternary)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
+        .padding(.vertical, 8)
     }
 
     @ViewBuilder
@@ -104,6 +130,12 @@ struct PatternDrillView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .disabled(!canSubmit)
                     } else {
+                        if showCorrectFeedback {
+                            Text("정답이에요!")
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(.green)
+                                .transition(.opacity)
+                        }
                         Button(currentQ + 1 >= drillQuestions.count ? "완료" : "다음") {
                             handleNext()
                         }
@@ -140,10 +172,19 @@ struct PatternDrillView: View {
         submitted = true
         correctCount += correct ? 1 : 0
         totalCount += 1
+
+        if correct {
+            withAnimation { showCorrectFeedback = true }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                withAnimation { showCorrectFeedback = false }
+            }
+        }
     }
 
     private func handleNext() {
+        showCorrectFeedback = false
         if currentQ + 1 >= drillQuestions.count {
+            drillCompleted = true
             onComplete?()
         } else {
             currentQ += 1
@@ -151,6 +192,17 @@ struct PatternDrillView: View {
             userAnswer = ""
             selectedOption = nil
         }
+    }
+
+    private func handleDrillReset() {
+        currentQ = 0
+        userAnswer = ""
+        selectedOption = nil
+        submitted = false
+        correctCount = 0
+        totalCount = 0
+        showCorrectFeedback = false
+        drillCompleted = false
     }
 
     // MARK: - Option Styling

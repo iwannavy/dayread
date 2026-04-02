@@ -46,7 +46,7 @@ struct GrammarVizView: View {
             if !compact, let notes, !notes.isEmpty {
                 Text(notes)
                     .font(.subheadline)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
                     .italic()
                     .lineSpacing(4)
             }
@@ -132,9 +132,7 @@ struct GrammarVizView: View {
                 .accessibilityHint("탭하여 문장에서 강조 표시")
                 .onTapGesture {
                     if !allActive {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                            activeElement = activeElement == idx ? nil : idx
-                        }
+                        activeElement = activeElement == idx ? nil : idx
                     }
                     onWordTap?(el.text.trimmingCharacters(in: .whitespaces))
                 }
@@ -151,7 +149,7 @@ struct GrammarVizView: View {
             Text("수사법")
                 .font(.caption2)
                 .fontWeight(.medium)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(.secondary)
             Text(device)
                 .font(.caption)
                 .foregroundStyle(.secondary)

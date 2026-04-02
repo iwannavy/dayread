@@ -21,7 +21,7 @@ struct StudyOverviewIntroView: View {
                         .foregroundStyle(.secondary)
                     Text("궁금한 문장을 탭해보세요")
                         .font(.caption)
-                        .foregroundStyle(.tertiary)
+                        .foregroundStyle(.secondary)
                 }
                 .padding(.vertical, StudyLayout.spacingBase)
 

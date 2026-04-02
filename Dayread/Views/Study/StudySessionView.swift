@@ -54,7 +54,6 @@ struct StudySessionView: View {
     @State private var currentIndex = 0
     @State private var sentenceStates: [Int: SentenceLearningState] = [:]
     @State private var highlightIndex: Int? = nil
-    @State private var flaggedSentences: Set<Int> = []
 
     // Auto-play
     @State private var autoPlayOnNav = false
@@ -187,7 +186,7 @@ struct StudySessionView: View {
         case .immersive:
             ImmersiveView(
                 sentences: session.sentences,
-                initialIndex: currentIndex,
+                sentenceIndex: $currentIndex,
                 sessionId: sessionId,
                 onAdvanceMode: {
                     setMaxUnlockedStep(max(maxUnlockedStep, 2 + n))
@@ -204,13 +203,6 @@ struct StudySessionView: View {
                     markStudied(id)
                     progressService.recordStudy(sentenceCount: 1)
                 },
-                onFlagSentence: { idx, flagged in
-                    if flagged {
-                        flaggedSentences.insert(idx)
-                    } else {
-                        flaggedSentences.remove(idx)
-                    }
-                }
             )
 
         case .focus:

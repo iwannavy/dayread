@@ -234,7 +234,7 @@ struct ReviewTabView: View {
         VStack(spacing: 16) {
             Image(systemName: "tray")
                 .font(.system(size: 40))
-                .foregroundStyle(.quaternary)
+                .foregroundStyle(.tertiary)
 
             Text("저장된 항목이 없습니다")
                 .font(.subheadline.weight(.medium))
@@ -242,7 +242,7 @@ struct ReviewTabView: View {
 
             Text("학습 중 문장, 표현, 단어 옆의\n+ 버튼을 눌러 복습에 추가하세요")
                 .font(.caption)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity)
@@ -337,7 +337,7 @@ private struct ReviewItemRow: View {
             } else {
                 Text(item.nextIntervalLabel)
                     .font(.system(size: 9))
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
             }
         }
     }

@@ -13,6 +13,8 @@ struct SentenceFocusView: View {
 
     @State private var swipeOffset: CGFloat = 0
     @State private var swipeTriggered = false
+    @State private var translationDone: Set<Int> = []
+    @State private var dictationDone: Set<Int> = []
     private let hapticLight = UIImpactFeedbackGenerator(style: .light)
     private let hapticMedium = UIImpactFeedbackGenerator(style: .medium)
 
@@ -30,6 +32,7 @@ struct SentenceFocusView: View {
 
                         // Grammar visualization
                         grammarSection(sentence)
+                            .id(currentIndex)
 
                         // Analysis section
                         VStack(alignment: .leading, spacing: 0) {
@@ -39,18 +42,28 @@ struct SentenceFocusView: View {
 
                         // Listen & Repeat
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("듣고 반복하기")
+                            Text("번역하고 받아쓰기")
                                 .studySectionHeaderStyle()
 
                             DictationModeView(
                                 sentence: sentence.original,
                                 translation: sentence.translation,
+                                translationDone: translationDone.contains(currentIndex),
+                                dictationDone: dictationDone.contains(currentIndex),
                                 onComplete: { score in
                                     if score >= 70 {
                                         onUpdateStatus(currentIndex, .listened)
                                     }
+                                },
+                                onModeComplete: { mode, _ in
+                                    if mode == .translation {
+                                        translationDone.insert(currentIndex)
+                                    } else {
+                                        dictationDone.insert(currentIndex)
+                                    }
                                 }
                             )
+                            .id(currentIndex)
                             .padding(StudyLayout.cardPadding)
                             .background(.ultraThinMaterial)
                             .clipShape(RoundedRectangle(cornerRadius: StudyLayout.cornerRadiusLG))
